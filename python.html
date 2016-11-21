@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="description" content="" />
+    <title>Macaca • Solution for Automation Test with Ease</title>
+    <link rel="canonical" href="https://macacajs.github.io" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/polymer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/assets/polymer/paper-ripple.html" />
+  </head>
+  <body data-page="/python">
+    <input type="hidden" id="lang" value="en"/>
+
+    <header class="clearfix">
+  <div class="container">
+    <a href="/" class="brand">Macaca</a>
+
+    <nav id="nav">
+      <a href="/">
+        <paper-ripple class="peach"></paper-ripple>
+        Home
+      </a>
+      <a href="/getting-started" class="current">
+        <paper-ripple class="peach"></paper-ripple>
+        Guide
+      </a>
+      <a href="/support">
+        <paper-ripple class="peach"></paper-ripple>
+        Support
+      </a>
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+        <paper-ripple class="peach"></paper-ripple>
+        GitHub
+      </a>
+      <a href="javascript:void(0)" id="lang-button">
+        中文版
+      </a>
+    </nav>
+    <button id="menu" class="menu"></button>
+  </div>
+</header>
+<script>
+  (function() {
+    var menu = document.getElementById('menu');
+    var nav = document.getElementById('nav');
+    var hidden = true;
+
+    menu.addEventListener('click', function() {
+      nav.style.display = hidden ? 'block' : 'none';
+      hidden = !hidden;
+    }, false);
+  })();
+</script>
+
+
+    <section class="container">
+  
+<select class="nav-mobile" onchange="if (this.value) window.location.href=this.value">
+  <option value="">Navigate the docs…</option>
+  
+  <optgroup label="Quick Start">
+    
+      <option value="getting-started">Getting Started</option>
+    
+      <option value="environment-setup">Environment Setup</option>
+    
+      <option value="desired-caps">Desired Capabilities</option>
+    
+      <option value="cli-usage">Macaca CLI Usage</option>
+    
+  </optgroup>
+  
+  <optgroup label="Tools">
+    
+      <option value="debugging">Debugging</option>
+    
+      <option value="inspector">Inspector</option>
+    
+      <option value="recorder">Recorder</option>
+    
+  </optgroup>
+  
+  <optgroup label="API">
+    
+      <option value="javascript">JavaScript</option>
+    
+      <option value="java">Java</option>
+    
+      <option value="python">Python</option>
+    
+  </optgroup>
+  
+  <optgroup label="CI Service">
+    
+      <option value="master-deployment">Reliable Master</option>
+    
+      <option value="slave-deployment">Reliable Slave</option>
+    
+      <option value="using-with-ci">Integration with CI Server</option>
+    
+  </optgroup>
+  
+  <optgroup label="Other">
+    
+      <option value="changelog">Change Log</option>
+    
+      <option value="faq">FAQ</option>
+    
+  </optgroup>
+  
+</select>
+
+  
+<aside id="sidebar">
+  
+  <h4>Quick Start</h4>
+  <ul>
+    
+    
+    <li><a href="getting-started">Getting Started</a></li>
+    
+    
+    <li><a href="environment-setup">Environment Setup</a></li>
+    
+    
+    <li><a href="desired-caps">Desired Capabilities</a></li>
+    
+    
+    <li><a href="cli-usage">Macaca CLI Usage</a></li>
+    
+  </ul>
+  
+  <h4>Tools</h4>
+  <ul>
+    
+    
+    <li><a href="debugging">Debugging</a></li>
+    
+    
+    <li><a href="inspector">Inspector</a></li>
+    
+    
+    <li><a href="recorder">Recorder</a></li>
+    
+  </ul>
+  
+  <h4>API</h4>
+  <ul>
+    
+    
+    <li><a href="javascript">JavaScript</a></li>
+    
+    
+    <li><a href="java">Java</a></li>
+    
+    
+    <li class="current"><a href="python">Python</a></li>
+    
+  </ul>
+  
+  <h4>CI Service</h4>
+  <ul>
+    
+    
+    <li><a href="master-deployment">Reliable Master</a></li>
+    
+    
+    <li><a href="slave-deployment">Reliable Slave</a></li>
+    
+    
+    <li><a href="using-with-ci">Integration with CI Server</a></li>
+    
+  </ul>
+  
+  <h4>Other</h4>
+  <ul>
+    
+    
+    <li><a href="changelog">Change Log</a></li>
+    
+    
+    <li><a href="faq">FAQ</a></li>
+    
+  </ul>
+  
+</aside>
+
+  <article>
+    <h1 id="python">Python</h1>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">macaca</span> <span class="kn">import</span> <span class="n">WebDriver</span>
+
+<span class="n">desired_caps</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'platformName'</span><span class="p">:</span> <span class="s">'Desktop'</span><span class="p">,</span> <span class="o">//</span> <span class="n">iOS</span><span class="p">,</span> <span class="n">Android</span><span class="p">,</span> <span class="n">Desktop</span>
+    <span class="s">'browserName'</span><span class="p">:</span> <span class="s">'Chrome'</span>    <span class="o">//</span> <span class="n">Chrome</span><span class="p">,</span> <span class="n">Electron</span>
+    <span class="s">'app'</span><span class="p">:</span> <span class="s">'path/to/app'</span>       <span class="o">//</span> <span class="n">Only</span> <span class="k">for</span> <span class="n">mobile</span>
+<span class="p">}</span>
+
+<span class="n">server_url</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'hostname'</span><span class="p">:</span> <span class="s">'127.0.0.1'</span><span class="p">,</span>
+    <span class="s">'port'</span><span class="p">:</span> <span class="mi">3456</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">MacacaTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">setUpClass</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">driver</span> <span class="o">=</span> <span class="n">WebDriver</span><span class="p">(</span><span class="n">desired_caps</span><span class="p">,</span> <span class="n">server_url</span><span class="p">)</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">tearDownClass</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="n">cls</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">test_get_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://www.google.com'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="s">'Google'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_search_macaca</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">driver</span>                  \
+            <span class="o">.</span><span class="n">element_by_id</span><span class="p">(</span><span class="s">"lst-ib"</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s">"macaca"</span><span class="p">)</span>     \
+        <span class="bp">self</span><span class="o">.</span><span class="n">driver</span>                  \
+            <span class="o">.</span><span class="n">element_by_name</span><span class="p">(</span><span class="s">"btnK"</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">click</span><span class="p">()</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">source</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="s">'macaca'</span> <span class="ow">in</span> <span class="n">html</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+
+</code></pre>
+</div>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="//macacajs.github.io/wd.py">API doc</a></li>
+  <li><a href="//github.com/macacajs/wd.py">source code</a></li>
+  <li><a href="//github.com/macacajs/macaca-test-sample-python">sample</a></li>
+</ul>
+
+
+  </article>
+</section>
+<script src="/assets/js/smooth-scroll.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+    <footer>
+  <p>
+    Released under the
+    <a href="//github.com/alibaba/macaca/blob/master/LICENSE">MIT License</a>
+  </p>
+  <p>
+    &copy; 2015-2016
+    <a href="//github.com/alibaba/macaca">Macaca</a>
+  </p>
+</footer>
+
+  </body>
+</html>

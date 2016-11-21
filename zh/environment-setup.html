@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="description" content="" />
+    <title>Macaca • 面向多端的自动化测试</title>
+    <link rel="canonical" href="https://macacajs.github.io" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/polymer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/assets/polymer/paper-ripple.html" />
+  </head>
+  <body data-page="/environment-setup">
+    <input type="hidden" id="lang" value="zh"/>
+
+    <header class="clearfix">
+  <div class="container">
+    <a href="/zh/" class="brand">Macaca</a>
+
+    <nav id="nav">
+      <a href="/zh/">
+        <paper-ripple class="peach"></paper-ripple>
+        首页
+      </a>
+      <a href="/zh/getting-started" class="current">
+        <paper-ripple class="peach"></paper-ripple>
+        文档
+      </a>
+      <a href="/zh/support">
+        <paper-ripple class="peach"></paper-ripple>
+        帮助支持
+      </a>
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+        <paper-ripple class="peach"></paper-ripple>
+        GitHub
+      </a>
+      <a href="javascript:void(0)" id="lang-button">
+        English Version
+      </a>
+    </nav>
+    <button id="menu" class="menu"></button>
+  </div>
+</header>
+<script>
+  (function() {
+    var menu = document.getElementById('menu');
+    var nav = document.getElementById('nav');
+    var hidden = true;
+
+    menu.addEventListener('click', function() {
+      nav.style.display = hidden ? 'block' : 'none';
+      hidden = !hidden;
+    }, false);
+  })();
+</script>
+
+
+    <section class="container">
+  
+<select class="nav-mobile" onchange="if (this.value) window.location.href=this.value">
+  <option value="">点击切换文档</option>
+  
+  <optgroup label="快速上手">
+    
+      <option value="getting-started">上手指南</option>
+    
+      <option value="environment-setup">环境配置</option>
+    
+      <option value="desired-caps">脚本初始化参数</option>
+    
+      <option value="cli-usage">命令行工具</option>
+    
+  </optgroup>
+  
+  <optgroup label="周边工具">
+    
+      <option value="debugging">单步调试器</option>
+    
+      <option value="inspector">元素查看器</option>
+    
+      <option value="recorder">录制回放器</option>
+    
+  </optgroup>
+  
+  <optgroup label="API">
+    
+      <option value="javascript">JavaScript版</option>
+    
+      <option value="java">Java版</option>
+    
+      <option value="python">Python版</option>
+    
+  </optgroup>
+  
+  <optgroup label="CI服务">
+    
+      <option value="master-deployment">Reliable Master部署</option>
+    
+      <option value="slave-deployment">Reliable Slave部署</option>
+    
+      <option value="using-with-ci">使用其他CI服务</option>
+    
+  </optgroup>
+  
+  <optgroup label="其它">
+    
+      <option value="changelog">更新日志</option>
+    
+      <option value="faq">常见问题</option>
+    
+  </optgroup>
+  
+</select>
+
+  
+<aside id="sidebar">
+  
+  <h4>快速上手</h4>
+  <ul>
+    
+    
+    <li><a href="getting-started">上手指南</a></li>
+    
+    
+    <li class="current"><a href="environment-setup">环境配置</a></li>
+    
+    
+    <li><a href="desired-caps">脚本初始化参数</a></li>
+    
+    
+    <li><a href="cli-usage">命令行工具</a></li>
+    
+  </ul>
+  
+  <h4>周边工具</h4>
+  <ul>
+    
+    
+    <li><a href="debugging">单步调试器</a></li>
+    
+    
+    <li><a href="inspector">元素查看器</a></li>
+    
+    
+    <li><a href="recorder">录制回放器</a></li>
+    
+  </ul>
+  
+  <h4>API</h4>
+  <ul>
+    
+    
+    <li><a href="javascript">JavaScript版</a></li>
+    
+    
+    <li><a href="java">Java版</a></li>
+    
+    
+    <li><a href="python">Python版</a></li>
+    
+  </ul>
+  
+  <h4>CI服务</h4>
+  <ul>
+    
+    
+    <li><a href="master-deployment">Reliable Master部署</a></li>
+    
+    
+    <li><a href="slave-deployment">Reliable Slave部署</a></li>
+    
+    
+    <li><a href="using-with-ci">使用其他CI服务</a></li>
+    
+  </ul>
+  
+  <h4>其它</h4>
+  <ul>
+    
+    
+    <li><a href="changelog">更新日志</a></li>
+    
+    
+    <li><a href="faq">常见问题</a></li>
+    
+  </ul>
+  
+</aside>
+
+  <article>
+    <h1 id="section">环境配置</h1>
+
+<h2 id="nodejs">安装 Node.js</h2>
+
+<p>请安装 <a href="https://nodejs.org/">Node.js</a> v4.0 或者更高版本。</p>
+
+<h2 id="ios-">iOS 环境</h2>
+
+<ol>
+  <li>请安装 Xcode8 或者更高版本</li>
+  <li>需要安装 <a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> 以便于通过 USB 通道测试 iOS 真机，不需要测试真机则不用安装</li>
+  <li>应用中如含有 WebView，请安装 <a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a></li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
+<span class="gp">$ </span>brew install ios-webkit-debug-proxy
+</code></pre>
+</div>
+
+<h2 id="section-1">安卓</h2>
+
+<ol>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">安装 JDK</a></li>
+  <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装18-23版本中的任一SDK</li>
+  <li>请在 shell 环境设置 <code class="highlighter-rouge">JAVA_HOME</code>, <code class="highlighter-rouge">ANDROID_HOME</code></li>
+</ol>
+
+<h2 id="section-2">命令行工具</h2>
+
+<p>当前版本: <a href="https://npmjs.org/package/macaca-cli"><img src="https://img.shields.io/npm/v/macaca-cli.svg?style=flat-square" alt="NPM version" /></a></p>
+
+<h3 id="section-3">全局安装</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
+</code></pre>
+</div>
+
+<p>如果看到如下可爱的🐒，那恭喜你安装成功啦！重新安装则会覆盖更新。</p>
+
+<p><img src="https://os.alipayobjects.com/rmsportal/zSmLbyWUarTabaP.png" alt="" /></p>
+
+<h3 id="nodejs-">在 Node.js 项目中安装</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli --save-dev
+</code></pre>
+</div>
+
+<h3 id="section-4">安装驱动</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>驱动</th>
+      <th>版本</th>
+      <th>CI状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-android">Android</a></td>
+      <td><a href="https://npmjs.org/package/macaca-android"><img src="https://img.shields.io/npm/v/macaca-android.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-android"><img src="https://img.shields.io/travis/macacajs/macaca-android.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-chrome">Chrome</a></td>
+      <td><a href="https://npmjs.org/package/macaca-chrome"><img src="https://img.shields.io/npm/v/macaca-chrome.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-chrome"><img src="https://img.shields.io/travis/macacajs/macaca-chrome.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-electron">Electron</a></td>
+      <td><a href="https://npmjs.org/package/macaca-electron"><img src="https://img.shields.io/npm/v/macaca-electron.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-electron"><img src="https://img.shields.io/travis/macacajs/macaca-electron.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-ios">iOS</a></td>
+      <td><a href="https://npmjs.org/package/macaca-ios"><img src="https://img.shields.io/npm/v/macaca-ios.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-ios"><img src="https://img.shields.io/travis/macacajs/macaca-ios.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 如只需要测试 iOS，就执行如下命令</span>
+<span class="gp">$ </span>npm i macaca-ios -g
+</code></pre>
+</div>
+
+<h3 id="section-5">环境检查</h3>
+
+<p>通过 <code class="highlighter-rouge">doctor</code> 可以检查环境是否配置成功</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
+</code></pre>
+</div>
+
+<h2 id="section-6">大功告成！</h2>
+
+<p>运行个<a href="./getting-started.html">例子</a>试试吧，若在环境配置过程中遇到问题，请查看常见问题列表寻找解决办法，或提
+issue。</p>
+
+
+  </article>
+</section>
+<script src="/assets/js/smooth-scroll.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+    <footer>
+  <p>
+    Released under the
+    <a href="//github.com/alibaba/macaca/blob/master/LICENSE">MIT License</a>
+  </p>
+  <p>
+    &copy; 2015-2016
+    <a href="//github.com/alibaba/macaca">Macaca</a>
+  </p>
+</footer>
+
+  </body>
+</html>

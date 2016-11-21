@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="description" content="" />
+    <title>Macaca • 面向多端的自动化测试</title>
+    <link rel="canonical" href="https://macacajs.github.io" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/polymer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/assets/polymer/paper-ripple.html" />
+  </head>
+  <body data-page="/cli-usage">
+    <input type="hidden" id="lang" value="zh"/>
+
+    <header class="clearfix">
+  <div class="container">
+    <a href="/zh/" class="brand">Macaca</a>
+
+    <nav id="nav">
+      <a href="/zh/">
+        <paper-ripple class="peach"></paper-ripple>
+        首页
+      </a>
+      <a href="/zh/getting-started" class="current">
+        <paper-ripple class="peach"></paper-ripple>
+        文档
+      </a>
+      <a href="/zh/support">
+        <paper-ripple class="peach"></paper-ripple>
+        帮助支持
+      </a>
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+        <paper-ripple class="peach"></paper-ripple>
+        GitHub
+      </a>
+      <a href="javascript:void(0)" id="lang-button">
+        English Version
+      </a>
+    </nav>
+    <button id="menu" class="menu"></button>
+  </div>
+</header>
+<script>
+  (function() {
+    var menu = document.getElementById('menu');
+    var nav = document.getElementById('nav');
+    var hidden = true;
+
+    menu.addEventListener('click', function() {
+      nav.style.display = hidden ? 'block' : 'none';
+      hidden = !hidden;
+    }, false);
+  })();
+</script>
+
+
+    <section class="container">
+  
+<select class="nav-mobile" onchange="if (this.value) window.location.href=this.value">
+  <option value="">点击切换文档</option>
+  
+  <optgroup label="快速上手">
+    
+      <option value="getting-started">上手指南</option>
+    
+      <option value="environment-setup">环境配置</option>
+    
+      <option value="desired-caps">脚本初始化参数</option>
+    
+      <option value="cli-usage">命令行工具</option>
+    
+  </optgroup>
+  
+  <optgroup label="周边工具">
+    
+      <option value="debugging">单步调试器</option>
+    
+      <option value="inspector">元素查看器</option>
+    
+      <option value="recorder">录制回放器</option>
+    
+  </optgroup>
+  
+  <optgroup label="API">
+    
+      <option value="javascript">JavaScript版</option>
+    
+      <option value="java">Java版</option>
+    
+      <option value="python">Python版</option>
+    
+  </optgroup>
+  
+  <optgroup label="CI服务">
+    
+      <option value="master-deployment">Reliable Master部署</option>
+    
+      <option value="slave-deployment">Reliable Slave部署</option>
+    
+      <option value="using-with-ci">使用其他CI服务</option>
+    
+  </optgroup>
+  
+  <optgroup label="其它">
+    
+      <option value="changelog">更新日志</option>
+    
+      <option value="faq">常见问题</option>
+    
+  </optgroup>
+  
+</select>
+
+  
+<aside id="sidebar">
+  
+  <h4>快速上手</h4>
+  <ul>
+    
+    
+    <li><a href="getting-started">上手指南</a></li>
+    
+    
+    <li><a href="environment-setup">环境配置</a></li>
+    
+    
+    <li><a href="desired-caps">脚本初始化参数</a></li>
+    
+    
+    <li class="current"><a href="cli-usage">命令行工具</a></li>
+    
+  </ul>
+  
+  <h4>周边工具</h4>
+  <ul>
+    
+    
+    <li><a href="debugging">单步调试器</a></li>
+    
+    
+    <li><a href="inspector">元素查看器</a></li>
+    
+    
+    <li><a href="recorder">录制回放器</a></li>
+    
+  </ul>
+  
+  <h4>API</h4>
+  <ul>
+    
+    
+    <li><a href="javascript">JavaScript版</a></li>
+    
+    
+    <li><a href="java">Java版</a></li>
+    
+    
+    <li><a href="python">Python版</a></li>
+    
+  </ul>
+  
+  <h4>CI服务</h4>
+  <ul>
+    
+    
+    <li><a href="master-deployment">Reliable Master部署</a></li>
+    
+    
+    <li><a href="slave-deployment">Reliable Slave部署</a></li>
+    
+    
+    <li><a href="using-with-ci">使用其他CI服务</a></li>
+    
+  </ul>
+  
+  <h4>其它</h4>
+  <ul>
+    
+    
+    <li><a href="changelog">更新日志</a></li>
+    
+    
+    <li><a href="faq">常见问题</a></li>
+    
+  </ul>
+  
+</aside>
+
+  <article>
+    <h1 id="section">命令行工具</h1>
+
+<h3 id="section-1">执行测试用例</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
+<span class="gp">$ </span>macaca run --verbose
+
+<span class="c"># 指定测试文件目录及测试框架</span>
+<span class="c"># 目前支持 mocha, jasmine, tman 和 ava。</span>
+<span class="gp">$ </span>macaca run -d ./test -f mocha
+
+<span class="c"># 将结果导出为文件</span>
+<span class="gp">$ </span>macaca run -o
+
+<span class="c"># 静默执行（只支持桌面浏览器）</span>
+<span class="gp">$ </span>macaca run --no-window
+
+<span class="c"># 使用自定义的报告器</span>
+<span class="gp">$ </span><span class="nv">CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run -d ./test --reporter macaca-simple-reportor
+</code></pre>
+</div>
+
+<h3 id="section-2">只启动服务器</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 普通用法</span>
+<span class="gp">$ </span>macaca server --verbose
+
+<span class="c"># 设置端口号</span>
+<span class="gp">$ </span>macaca server -p 3456
+</code></pre>
+</div>
+
+<h3 id="macaca-">检查当前 Macaca 的安装环境</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
+</code></pre>
+</div>
+
+<h3 id="section-3">更多的选项</h3>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca -h
+
+<span class="c"># 服务器相关选项</span>
+<span class="gp">$ </span>macaca server -h
+
+<span class="c"># 如何执行用例的选项</span>
+<span class="gp">$ </span>macaca run -h
+
+</code></pre>
+</div>
+
+
+  </article>
+</section>
+<script src="/assets/js/smooth-scroll.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+    <footer>
+  <p>
+    Released under the
+    <a href="//github.com/alibaba/macaca/blob/master/LICENSE">MIT License</a>
+  </p>
+  <p>
+    &copy; 2015-2016
+    <a href="//github.com/alibaba/macaca">Macaca</a>
+  </p>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="description" content="" />
+    <title>Macaca • Solution for Automation Test with Ease</title>
+    <link rel="canonical" href="https://macacajs.github.io" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/polymer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/assets/polymer/paper-ripple.html" />
+  </head>
+  <body data-page="/master-deployment">
+    <input type="hidden" id="lang" value="en"/>
+
+    <header class="clearfix">
+  <div class="container">
+    <a href="/" class="brand">Macaca</a>
+
+    <nav id="nav">
+      <a href="/">
+        <paper-ripple class="peach"></paper-ripple>
+        Home
+      </a>
+      <a href="/getting-started" class="current">
+        <paper-ripple class="peach"></paper-ripple>
+        Guide
+      </a>
+      <a href="/support">
+        <paper-ripple class="peach"></paper-ripple>
+        Support
+      </a>
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+        <paper-ripple class="peach"></paper-ripple>
+        GitHub
+      </a>
+      <a href="javascript:void(0)" id="lang-button">
+        中文版
+      </a>
+    </nav>
+    <button id="menu" class="menu"></button>
+  </div>
+</header>
+<script>
+  (function() {
+    var menu = document.getElementById('menu');
+    var nav = document.getElementById('nav');
+    var hidden = true;
+
+    menu.addEventListener('click', function() {
+      nav.style.display = hidden ? 'block' : 'none';
+      hidden = !hidden;
+    }, false);
+  })();
+</script>
+
+
+    <section class="container">
+  
+<select class="nav-mobile" onchange="if (this.value) window.location.href=this.value">
+  <option value="">Navigate the docs…</option>
+  
+  <optgroup label="Quick Start">
+    
+      <option value="getting-started">Getting Started</option>
+    
+      <option value="environment-setup">Environment Setup</option>
+    
+      <option value="desired-caps">Desired Capabilities</option>
+    
+      <option value="cli-usage">Macaca CLI Usage</option>
+    
+  </optgroup>
+  
+  <optgroup label="Tools">
+    
+      <option value="debugging">Debugging</option>
+    
+      <option value="inspector">Inspector</option>
+    
+      <option value="recorder">Recorder</option>
+    
+  </optgroup>
+  
+  <optgroup label="API">
+    
+      <option value="javascript">JavaScript</option>
+    
+      <option value="java">Java</option>
+    
+      <option value="python">Python</option>
+    
+  </optgroup>
+  
+  <optgroup label="CI Service">
+    
+      <option value="master-deployment">Reliable Master</option>
+    
+      <option value="slave-deployment">Reliable Slave</option>
+    
+      <option value="using-with-ci">Integration with CI Server</option>
+    
+  </optgroup>
+  
+  <optgroup label="Other">
+    
+      <option value="changelog">Change Log</option>
+    
+      <option value="faq">FAQ</option>
+    
+  </optgroup>
+  
+</select>
+
+  
+<aside id="sidebar">
+  
+  <h4>Quick Start</h4>
+  <ul>
+    
+    
+    <li><a href="getting-started">Getting Started</a></li>
+    
+    
+    <li><a href="environment-setup">Environment Setup</a></li>
+    
+    
+    <li><a href="desired-caps">Desired Capabilities</a></li>
+    
+    
+    <li><a href="cli-usage">Macaca CLI Usage</a></li>
+    
+  </ul>
+  
+  <h4>Tools</h4>
+  <ul>
+    
+    
+    <li><a href="debugging">Debugging</a></li>
+    
+    
+    <li><a href="inspector">Inspector</a></li>
+    
+    
+    <li><a href="recorder">Recorder</a></li>
+    
+  </ul>
+  
+  <h4>API</h4>
+  <ul>
+    
+    
+    <li><a href="javascript">JavaScript</a></li>
+    
+    
+    <li><a href="java">Java</a></li>
+    
+    
+    <li><a href="python">Python</a></li>
+    
+  </ul>
+  
+  <h4>CI Service</h4>
+  <ul>
+    
+    
+    <li class="current"><a href="master-deployment">Reliable Master</a></li>
+    
+    
+    <li><a href="slave-deployment">Reliable Slave</a></li>
+    
+    
+    <li><a href="using-with-ci">Integration with CI Server</a></li>
+    
+  </ul>
+  
+  <h4>Other</h4>
+  <ul>
+    
+    
+    <li><a href="changelog">Change Log</a></li>
+    
+    
+    <li><a href="faq">FAQ</a></li>
+    
+  </ul>
+  
+</aside>
+
+  <article>
+    <p><a href="//reliablejs.github.io/" target="_blank">Reliable</a> is a distributed reliable continuous delivery service.</p>
+
+<p>In order to build and run the master server quickly, without considering about redis, mongodb, and other third-party tools.</p>
+
+<p>Docker is the default and recommended way to deploy master.</p>
+
+<p><img src="http://ww2.sinaimg.cn/large/6d308bd9gw1f5scrp1p4rj20rs0gatbj.jpg" alt="Macaca-Docker" /></p>
+
+<h2 id="general-requirements">General Requirements</h2>
+
+<ul>
+  <li><a href="http://git-scm.com/" target="_blank">git</a> &gt;= 2.0</li>
+  <li><a href="//www.docker.com/" target="_blank">docker</a> &gt;= 1.9.1</li>
+  <li><a href="//www.docker.com/products/docker-compose" target="_blank">docker compose</a> &gt;= 1.5.2</li>
+</ul>
+
+<blockquote>
+  <p>Note: some requirements, like nodejs, mongodb, redis, can use docker to pull and run. With docker, you don’t need to care.</p>
+</blockquote>
+
+<h2 id="basic-usage">Basic Usage</h2>
+
+<p>Get the source code, then you can use docker and docker-compose to setup <code class="highlighter-rouge">reliable</code>, just like:</p>
+
+<p>Prepare basic docker image:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
+<span class="gp">$ </span><span class="nb">cd </span>reliable-docker-base
+<span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-docker-base"</span> .
+</code></pre>
+</div>
+
+<p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-docker-base</code>.</p>
+
+<p>Prepare master <code class="highlighter-rouge">reliable-master</code> image:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
+<span class="gp">$ </span><span class="nb">cd </span>reliable-master
+<span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-master"</span> .
+</code></pre>
+</div>
+
+<p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-master</code>.</p>
+
+<p>Launch from compose file:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
+<span class="gp">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
+<span class="gp">$ </span>make start
+</code></pre>
+</div>
+
+<p>Edit <code class="highlighter-rouge">docker-compose.yml</code> like this, in ordrer to config your master and slave.</p>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">reliable-master</span><span class="pi">:</span>
+  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable-master"</span>
+  <span class="s">restart</span><span class="pi">:</span> <span class="s2">"</span><span class="s">UNLESS-STOP"</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">reliable-master</span>
+  <span class="s">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">${RELIABLE_MASTER_PORT}:${RELIABLE_MASTER_PORT}"</span>
+  <span class="s">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">mongo:mongo</span>
+    <span class="pi">-</span> <span class="s">redis:redis</span>
+  <span class="s">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">DB_SERVICE=mongo</span>
+    <span class="pi">-</span> <span class="s">DB_PORT=27017</span>
+    <span class="pi">-</span> <span class="s">DB_NAME=reliable_dev</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
+  <span class="s">command</span><span class="pi">:</span> <span class="s">/reliable-master/bin/reliable-master server -p ${RELIABLE_MASTER_PORT} --verbose</span>
+
+<span class="s">mongo</span><span class="pi">:</span>
+  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_mongo"</span>
+  <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">mongo</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/var/mongo/data/db:/data/db</span>
+    <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
+
+<span class="s">redis</span><span class="pi">:</span>
+  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_redis"</span>
+  <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
+  <span class="s">image</span><span class="pi">:</span> <span class="s">redis</span>
+  <span class="s">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
+</code></pre>
+</div>
+
+<h2 id="configuring">Configuring</h2>
+
+<p><code class="highlighter-rouge">relibale</code> default configuration is in <a href="//github.com/reliablejs/reliable-master/blob/master/common/config.js" target="_blank">config.js</a>, you could override it by add config file in root directory which need named <code class="highlighter-rouge">*.reliable.config.js</code>.</p>
+
+<p>There is the relevant description:</p>
+
+<blockquote>
+  <p>It’s a good idea not to change configuration of MongoDB &amp; Redis, because docker-compose will take care of them. If you need to change, please update <a href="//github.com/reliablejs/reliable-macaca-docker-compose/blob/master/docker-compose.yml" target="_blank">docker-compose.yml</a> to satisfy.</p>
+</blockquote>
+
+<ul>
+  <li>server
+Settings for Http server, like port.</li>
+  <li>site
+Some preferences for your site, like title, baseurl, and so on.</li>
+  <li>auth
+Third part token configuration, like <a href="//github.com/" target="_blank">Github</a>, <a href="//gitlab.com" target="_blank">Gitlab</a>.</li>
+  <li>mail
+Mail service configuration, see <a href="//github.com/nodemailer/nodemailer" target="_blank">Nodemailer</a>.</li>
+</ul>
+
+<blockquote>
+  <h5 id="notice">Notice</h5>
+</blockquote>
+
+<p>Please allow a couple of minutes for the Reliable application to start.</p>
+
+<h3 id="add-administrator">Add Administrator</h3>
+
+<p>Using <code class="highlighter-rouge">make adduser</code> in reliable-master container to add administrator for initialization.</p>
+
+<h3 id="running-status">Running status</h3>
+
+<p>Using <code class="highlighter-rouge">make status</code> in reliable-slave container to get docker containers’ running status.</p>
+
+<h3 id="data-backup">Data Backup</h3>
+
+<p>Using <code class="highlighter-rouge">make dump</code> in reliable-master container to dump data from MongoDB containers.</p>
+
+<p>Using <code class="highlighter-rouge">make restore</code> in reliable-master container to restore data into MongoDB containers.</p>
+
+<p>You can use <code class="highlighter-rouge">crontab</code> to backup data. See <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>, edit it for customization, and add it to your crontab script. Like:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
+</code></pre>
+</div>
+
+<p>Configuration:</p>
+
+<ul>
+  <li>home - System user home path where you put repo.</li>
+  <li>repo - Path of <code class="highlighter-rouge">reliable</code> source code folder.</li>
+  <li>url - Url to get slaves info, <code class="highlighter-rouge">http://&lt;hostname&gt;:&lt;port&gt;/slaves</code>, like <code class="highlighter-rouge">http://localhost:3333/slaves</code></li>
+</ul>
+
+<h2 id="integration-with-service">Integration With Service</h2>
+
+<p>Want to integration with other service like Gitlab-CI or Jenkins?</p>
+
+<p>POST <code class="highlighter-rouge">macaca-host/api/task/create/gitlab-push.json</code> to submit a task.</p>
+
+<p>More about the data schema, please check Gitlab documents.</p>
+
+<h2 id="screenshots">Screenshots</h2>
+
+<p><img src="http://ww1.sinaimg.cn/large/6d308bd9gw1f1ygp19gllj20xl0oldna.jpg" alt="reliable-1" /></p>
+
+<p><img src="http://ww3.sinaimg.cn/large/6d308bd9gw1f1ygp26ocej20wr0j2tcz.jpg" alt="reliable-2" /></p>
+
+<p><img src="http://ww4.sinaimg.cn/large/6d308bd9gw1f1yr1jy4ohj20qj0jzgn4.jpg" alt="reliable-3" /></p>
+
+
+  </article>
+</section>
+<script src="/assets/js/smooth-scroll.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+    <footer>
+  <p>
+    Released under the
+    <a href="//github.com/alibaba/macaca/blob/master/LICENSE">MIT License</a>
+  </p>
+  <p>
+    &copy; 2015-2016
+    <a href="//github.com/alibaba/macaca">Macaca</a>
+  </p>
+</footer>
+
+  </body>
+</html>
