@@ -206,23 +206,51 @@
 <ol>
   <li>请安装 Xcode8 或者更高版本</li>
   <li>需要安装 <a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> 以便于通过 USB 通道测试 iOS 真机，不需要测试真机则不用安装</li>
-  <li>应用中如含有 WebView，请安装 <a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a></li>
 </ol>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
-<span class="gp">$ </span>brew install ios-webkit-debug-proxy
 </code></pre>
 </div>
 
-<p>Homebrew 一款常用的 MacOS 的包管理器</p>
+<ol>
+  <li>应用中如含有 WebView，请安装 <a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a></li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
+</code></pre>
+</div>
+
+<p>备注：使用brew命令需要安装<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>（一款常用的 MacOS 的包管理器），请按照官网提示安装。</p>
 
 <h2 id="section-1">安卓</h2>
 
 <ol>
-  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">安装 JDK</a></li>
-  <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装18-23版本中的任一SDK</li>
-  <li>请在 shell 环境设置 <code class="highlighter-rouge">JAVA_HOME</code>, <code class="highlighter-rouge">ANDROID_HOME</code></li>
+  <li>
+    <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">安装 JDK</a></p>
+  </li>
+  <li>
+    <p>配置JAVA_HOME,根据你所使用的shell工具修改不同的文件，比如~/.bashrc, ~/.bash_profile, ~/.zshrc</p>
+  </li>
 </ol>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>path/to/your/Java/Home
+</code></pre>
+</div>
+
+<ol>
+  <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装18-23版本中的任一SDK</li>
+  <li>shell 环境设置 <code class="highlighter-rouge">ANDROID_HOME</code>
+根据你所使用的Terminal修改不同的文件，比如~/.bashrc, ~/.bash_profile, ~/.zshrc</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 如果是通过homebrew安装的android-sdk，则路径如下</span>
+<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
+
+<span class="c"># 如果通过其他方式安装的sdk，路径设置为对应的android sdk的路径</span>
+<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> path/to/your/Android/sdk
+
+</code></pre>
+</div>
 
 <h2 id="section-2">命令行工具</h2>
 
@@ -238,13 +266,7 @@
 
 <p><img src="https://os.alipayobjects.com/rmsportal/zSmLbyWUarTabaP.png" alt="" /></p>
 
-<h3 id="nodejs-">在 Node.js 项目中安装</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli --save-dev
-</code></pre>
-</div>
-
-<h3 id="section-4">安装驱动</h3>
+<h3 id="section-4">安装驱动（不同驱动适应不同平台的支持）</h3>
 
 <table>
   <thead>
@@ -252,6 +274,7 @@
       <th>驱动</th>
       <th>版本</th>
       <th>CI状态</th>
+      <th>安装命令</th>
     </tr>
   </thead>
   <tbody>
@@ -259,37 +282,46 @@
       <td><a href="//github.com/macacajs/macaca-android">Android</a></td>
       <td><a href="https://npmjs.org/package/macaca-android"><img src="https://img.shields.io/npm/v/macaca-android.svg?style=flat-square" alt="NPM version" /></a></td>
       <td><a href="https://travis-ci.org/macacajs/macaca-android"><img src="https://img.shields.io/travis/macacajs/macaca-android.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-android -g</td>
     </tr>
     <tr>
       <td><a href="//github.com/macacajs/macaca-chrome">Chrome</a></td>
       <td><a href="https://npmjs.org/package/macaca-chrome"><img src="https://img.shields.io/npm/v/macaca-chrome.svg?style=flat-square" alt="NPM version" /></a></td>
       <td><a href="https://travis-ci.org/macacajs/macaca-chrome"><img src="https://img.shields.io/travis/macacajs/macaca-chrome.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-chrome -g</td>
     </tr>
     <tr>
       <td><a href="//github.com/macacajs/macaca-electron">Electron</a></td>
       <td><a href="https://npmjs.org/package/macaca-electron"><img src="https://img.shields.io/npm/v/macaca-electron.svg?style=flat-square" alt="NPM version" /></a></td>
       <td><a href="https://travis-ci.org/macacajs/macaca-electron"><img src="https://img.shields.io/travis/macacajs/macaca-electron.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-electron -g</td>
     </tr>
     <tr>
       <td><a href="//github.com/macacajs/macaca-ios">iOS</a></td>
       <td><a href="https://npmjs.org/package/macaca-ios"><img src="https://img.shields.io/npm/v/macaca-ios.svg?style=flat-square" alt="NPM version" /></a></td>
       <td><a href="https://travis-ci.org/macacajs/macaca-ios"><img src="https://img.shields.io/travis/macacajs/macaca-ios.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-ios -g</td>
     </tr>
   </tbody>
 </table>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 如只需要测试 iOS，就执行如下命令</span>
-<span class="gp">$ </span>npm i macaca-ios -g
+<p>上述驱动可以按照自身需要选择性的安装，比如只需要测试 iOS平台用例，就执行iOS的安装命令：</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-ios -g
 </code></pre>
 </div>
 
 <h3 id="section-5">环境检查</h3>
 
-<p>通过 <code class="highlighter-rouge">doctor</code> 可以检查环境是否配置成功</p>
+<p>通过 <code class="highlighter-rouge">macaca doctor</code> 可以检查环境是否配置成功</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
 </code></pre>
 </div>
+
+<p>如下图所示则表示环境均配置正常，如果有标红提示，则需要对应处理。</p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/6b65a607jw1fa3cqjexk2j21c20padqa.jpg" alt="macaca-doctor" /></p>
 
 <h2 id="section-6">大功告成！</h2>
 
