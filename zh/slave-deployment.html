@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.3.1" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -195,28 +195,28 @@
 </aside>
 
   <article>
-    <h1 id="reliable-slave-">Reliable Slave 部署</h1>
+    <h1 id="reliable-slave-部署">Reliable Slave 部署</h1>
 
-<p>After run the <code class="highlighter-rouge">reliable-master</code> server, we could use command to deploy <code class="highlighter-rouge">reliable-macaca-slave</code>.</p>
+<p>启动成功 <code class="highlighter-rouge">reliable-master</code> 后，我们接着来部署 <code class="highlighter-rouge">reliable-slave</code>。</p>
 
 <p><img src="http://ww2.sinaimg.cn/large/6d308bd9gw1fajd8rayohj20qc0j0tbw.jpg" alt="Reliable Macaca Slave" /></p>
 
-<h2 id="requirements">Requirements</h2>
+<h2 id="依赖">依赖</h2>
 
-<p>First of all, in order to run iOS apps, the reliable-macaca-slave can only be installed on a mac.Then you need to install both the iOS and Android Dev Environment to run the test.</p>
+<p>首先，为了运行 iOS app，reliable-slave 只能在 macOS 上运行（当然如果不跑 iOS 任务，Linux 平台也可以）。接着你需要安装 iOS 和 Android 开发环境用以运行测试用例。</p>
 
-<p>run command to check environment:</p>
+<p>执行以下命令检查环境：</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli -g
 <span class="gp">$ </span>macaca doctor
 </code></pre>
 </div>
 
-<h2 id="installation">Installation</h2>
+<h2 id="安装">安装</h2>
 
-<p>You need to install Node.js before.</p>
+<p>首先请安装 Nodejs。</p>
 
-<p>And before install reliable-macaca-slave, you need to install the zeromq library first.</p>
+<p>在安装 reliable-slave 之前，请先安装 zeromq。</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install pkg-config
 <span class="gp">$ </span>brew install zeromq
@@ -227,18 +227,17 @@
 </code></pre>
 </div>
 
-<p>After enviroment checking and installation, it is ready to deploy the reliable-macaca-slave.</p>
+<p>在完成环境检查和安装步骤后，来部署 reliable-slave 吧！</p>
 
-<h2 id="deployment">Deployment</h2>
+<h2 id="部署">部署</h2>
 
-<p>Before deploy the reliable-macaca-slave, there should be a reliable-master server running already, if there wasn’t, you should deploy the <a href="//github.com/reliablejs/reliable-master">reliable-master</a> first. After the reliable-master server is running, we could use command to deploy reliable-macaca-slave.</p>
-
-<h3 id="for-development">For Development:</h3>
+<p>在部署 reliable-slave 之前，我们应该先让 reliable-master 运行起来，如果没有的话，你应该先部署 <a href="/zh/master-deployment">reliable-master</a> 。reliable-master 运行起来后, 执行命令来部署 reliable-slave。</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>reliable server -m &lt;reliable-master:port&gt; --verbose
 </code></pre>
 </div>
-<p>After initialization successfully. Server logs will be shown in your terminal.</p>
+
+<p>初始化完成后，会有相应的日志显示在你的终端里.</p>
 
 
   </article>

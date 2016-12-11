@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.3.1" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -195,17 +195,15 @@
 </aside>
 
   <article>
-    <h1 id="reliable-master-">Reliable Master 部署</h1>
+    <h1 id="reliable-master-部署">Reliable Master 部署</h1>
 
-<p><a href="//reliablejs.github.io/" target="_blank">Reliable</a> is a distributed reliable continuous delivery service.</p>
+<p><a href="//reliablejs.github.io/" target="_blank">Reliable</a> 是一个可靠的分布式交付服务。</p>
 
-<p>In order to build and run the master server quickly, without considering about redis, mongodb, and other third-party tools.</p>
-
-<p>Docker is the default and recommended way to deploy master.</p>
+<p>为了快速上手 Reliable，我们推荐你使用 Docker 进行部署，这样就无需考虑 redis， mongodb 等第三方工具。</p>
 
 <p><img src="http://ww2.sinaimg.cn/large/6d308bd9gw1f5scrp1p4rj20rs0gatbj.jpg" alt="Macaca-Docker" /></p>
 
-<h2 id="general-requirements">General Requirements</h2>
+<h2 id="环境要求">环境要求</h2>
 
 <ul>
   <li><a href="http://git-scm.com/" target="_blank">git</a> &gt;= 2.0</li>
@@ -214,14 +212,14 @@
 </ul>
 
 <blockquote>
-  <p>Note: some requirements, like nodejs, mongodb, redis, can use docker to pull and run. With docker, you don’t need to care.</p>
+  <p>Note: 若采用 Docker 部署，则无需考虑 nodejs，redis 及 mongodb 版本</p>
 </blockquote>
 
-<h2 id="basic-usage">Basic Usage</h2>
+<h2 id="基本用法">基本用法</h2>
 
-<p>Get the source code, then you can use docker and docker-compose to setup <code class="highlighter-rouge">reliable</code>, just like:</p>
+<p>git clone 下源代码后，你可以使用 docker 和 docker-compose 来部署 <code class="highlighter-rouge">reliable</code>，步骤如下：</p>
 
-<p>Prepare basic docker image:</p>
+<p>1) build <code class="highlighter-rouge">reliable-docker-base</code> 镜像：</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-docker-base
@@ -229,9 +227,9 @@
 </code></pre>
 </div>
 
-<p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-docker-base</code>.</p>
+<p>运行 <code class="highlighter-rouge">docker images</code>，你可以看到 <code class="highlighter-rouge">reliable-docker-base</code> 镜像。</p>
 
-<p>Prepare master <code class="highlighter-rouge">reliable-master</code> image:</p>
+<p>2) build <code class="highlighter-rouge">reliable-master</code> 镜像:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-master
@@ -239,9 +237,9 @@
 </code></pre>
 </div>
 
-<p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-master</code>.</p>
+<p>运行 <code class="highlighter-rouge">docker images</code>，你可以看到 <code class="highlighter-rouge">reliable-master</code> 镜像。</p>
 
-<p>Launch from compose file:</p>
+<p>3) 使用 docker-compose 启动:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
@@ -249,7 +247,7 @@
 </code></pre>
 </div>
 
-<p>Edit <code class="highlighter-rouge">docker-compose.yml</code> like this, in ordrer to config your master and slave.</p>
+<p>编辑 <code class="highlighter-rouge">docker-compose.yml</code> 来配置你的 master。</p>
 
 <div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">reliable-master</span><span class="pi">:</span>
   <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable-master"</span>
@@ -285,76 +283,76 @@
 </code></pre>
 </div>
 
-<h2 id="configuring">Configuring</h2>
+<h2 id="配置">配置</h2>
 
-<p><code class="highlighter-rouge">relibale</code> default configuration is in <a href="//github.com/reliablejs/reliable-master/blob/master/common/config.js" target="_blank">config.js</a>, you could override it by add config file in root directory which need named <code class="highlighter-rouge">*.reliable.config.js</code>.</p>
-
-<p>There is the relevant description:</p>
+<p><code class="highlighter-rouge">relibale</code> 的默认配置在 <a href="//github.com/reliablejs/reliable-master/blob/master/common/config.js" target="_blank">config.js</a> 中，你可以用一个命名为 <code class="highlighter-rouge">*.reliable.config.js</code> 的文件覆盖默认配置，以下是一些可配置点：</p>
 
 <blockquote>
-  <p>It’s a good idea not to change configuration of MongoDB &amp; Redis, because docker-compose will take care of them. If you need to change, please update <a href="//github.com/reliablejs/reliable-macaca-docker-compose/blob/master/docker-compose.yml" target="_blank">docker-compose.yml</a> to satisfy.</p>
+  <p>友情提示: 不要试图更改 mongodb 和 redis 的配置项，因为 docker-compose 需要这些。 如果确实需要更改，请修改 <a href="//github.com/reliablejs/reliable-macaca-docker-compose/blob/master/docker-compose.yml" target="_blank">docker-compose.yml</a>。</p>
 </blockquote>
 
 <ul>
-  <li>server
-Settings for Http server, like port.</li>
-  <li>site
-Some preferences for your site, like title, baseurl, and so on.</li>
-  <li>auth
-Third part token configuration, like <a href="//github.com/" target="_blank">Github</a>, <a href="//gitlab.com" target="_blank">Gitlab</a>.</li>
-  <li>mail
-Mail service configuration, see <a href="//github.com/nodemailer/nodemailer" target="_blank">Nodemailer</a>.</li>
+  <li>服务端
+服务端设置，如端口等。</li>
+  <li>网站
+一些个性化配置，如 title， baseurl 等。</li>
+  <li>登录
+配置第三方 token，如 <a href="//github.com/" target="_blank">Github</a>，<a href="//gitlab.com" target="_blank">Gitlab</a>。</li>
+  <li>邮件
+邮件服务配置，可参考 <a href="//github.com/nodemailer/nodemailer" target="_blank">Nodemailer</a>。</li>
 </ul>
 
-<blockquote>
-  <h5 id="notice">Notice</h5>
-</blockquote>
+<h5 id="小提示">小提示</h5>
 
-<p>Please allow a couple of minutes for the Reliable application to start.</p>
+<p>Reliable 启动需要一些时间，请稍作等待。</p>
 
-<h3 id="add-administrator">Add Administrator</h3>
+<h3 id="添加管理员">添加管理员</h3>
 
-<p>Using <code class="highlighter-rouge">make adduser</code> in reliable-master container to add administrator for initialization.</p>
+<p>在 reliable-master 中使用 <code class="highlighter-rouge">make adduser</code> 命令添加管理员用户（对于 docker container 可以使用 <code class="highlighter-rouge">docker exec -it make adduser</code>，下同）。</p>
 
-<h3 id="running-status">Running status</h3>
+<h3 id="运行状态">运行状态</h3>
 
-<p>Using <code class="highlighter-rouge">make status</code> in reliable-slave container to get docker containers’ running status.</p>
+<p>在 reliable-slave 中使用 <code class="highlighter-rouge">make status</code> 获取 slave 运行状态。</p>
 
-<h3 id="data-backup">Data Backup</h3>
+<h3 id="数据备份">数据备份</h3>
 
-<p>Using <code class="highlighter-rouge">make dump</code> in reliable-master container to dump data from MongoDB containers.</p>
+<p>在 reliable-master 中使用 <code class="highlighter-rouge">make dump</code> 以从 MongoDB 中 dump 数据。</p>
 
-<p>Using <code class="highlighter-rouge">make restore</code> in reliable-master container to restore data into MongoDB containers.</p>
+<p>在 reliable-master 中使用 <code class="highlighter-rouge">make restore</code> 将数据重新存储至 MongoDB。</p>
 
-<p>You can use <code class="highlighter-rouge">crontab</code> to backup data. See <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>, edit it for customization, and add it to your crontab script. Like:</p>
+<p>你也可以使用 <code class="highlighter-rouge">crontab</code> 备份数据。参考 <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>，自行配置后，添加到 crontab script 中。 如:</p>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
 </code></pre>
 </div>
 
-<p>Configuration:</p>
+<p>可配置项:</p>
 
 <ul>
-  <li>home - System user home path where you put repo.</li>
-  <li>repo - Path of <code class="highlighter-rouge">reliable</code> source code folder.</li>
-  <li>url - Url to get slaves info, <code class="highlighter-rouge">http://&lt;hostname&gt;:&lt;port&gt;/slaves</code>, like <code class="highlighter-rouge">http://localhost:3333/slaves</code></li>
+  <li>home - 当前用户 home 目录。</li>
+  <li>repo - <code class="highlighter-rouge">reliable</code> 项目文件夹。</li>
+  <li>url - 获取 slave 信息的链接，<code class="highlighter-rouge">http://&lt;hostname&gt;:&lt;port&gt;/slaves</code>，如 <code class="highlighter-rouge">http://localhost:3333/slaves</code>。</li>
 </ul>
 
-<h2 id="integration-with-service">Integration With Service</h2>
+<h2 id="服务集成">服务集成</h2>
 
-<p>Want to integration with other service like Gitlab-CI or Jenkins?</p>
+<p>想要集成其它的服务如 Gitlab-CI 或 Jenkins？</p>
 
-<p>POST <code class="highlighter-rouge">macaca-host/api/task/create/gitlab-push.json</code> to submit a task.</p>
+<p>POST <code class="highlighter-rouge">macaca-host/api/task/create/gitlab-push.json</code> 来创建任务。</p>
 
-<p>More about the data schema, please check Gitlab documents.</p>
+<p>更多信息，请查看 gitlab 文档。</p>
 
-<h2 id="screenshots">Screenshots</h2>
+<h2 id="截图">截图</h2>
 
 <p><img src="http://ww1.sinaimg.cn/large/6d308bd9gw1f1ygp19gllj20xl0oldna.jpg" alt="reliable-1" /></p>
 
 <p><img src="http://ww3.sinaimg.cn/large/6d308bd9gw1f1ygp26ocej20wr0j2tcz.jpg" alt="reliable-2" /></p>
 
 <p><img src="http://ww4.sinaimg.cn/large/6d308bd9gw1f1yr1jy4ohj20qj0jzgn4.jpg" alt="reliable-3" /></p>
+
+<h2 id="下一步">下一步</h2>
+
+<p>部署 <a href="/zh/slave-deployment">slave</a></p>
 
 
   </article>
