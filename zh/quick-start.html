@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/slave-deployment">
+  <body data-page="/quick-start">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -131,7 +131,7 @@
     <li><a href="introduction">简要介绍</a></li>
     
     
-    <li><a href="quick-start">快速上手</a></li>
+    <li class="current"><a href="quick-start">快速上手</a></li>
     
     
     <li><a href="environment-setup">环境配置</a></li>
@@ -179,7 +179,7 @@
     <li><a href="master-deployment">Reliable Master部署</a></li>
     
     
-    <li class="current"><a href="slave-deployment">Reliable Slave部署</a></li>
+    <li><a href="slave-deployment">Reliable Slave部署</a></li>
     
     
     <li><a href="using-with-ci">使用其他CI服务</a></li>
@@ -200,49 +200,69 @@
 </aside>
 
   <article>
-    <h1 id="reliable-slave-">Reliable Slave 部署</h1>
+    <h1 id="section">上手指南</h1>
 
-<p>启动成功 <code class="highlighter-rouge">reliable-master</code> 后，我们接着来部署 <code class="highlighter-rouge">reliable-slave</code>。</p>
+<h2 id="section-1">运行官方示例</h2>
 
-<p><img src="http://ww2.sinaimg.cn/large/6d308bd9gw1fajd8rayohj20qc0j0tbw.jpg" alt="Reliable Macaca Slave" /></p>
+<p>将官方示例(<a href="//github.com/macaca-sample/mobile-app-sample-nodejs">mobile-app-sample-nodejs</a>)克隆到本地，更多的示例请访问<a href="//github.com/macaca-sample">macaca-sample</a>。</p>
 
-<h2 id="section">依赖</h2>
-
-<p>首先，为了运行 iOS app，reliable-slave 只能在 macOS 上运行（当然如果不跑 iOS 任务，Linux 平台也可以）。接着你需要安装 iOS 和 Android 开发环境用以运行测试用例。</p>
-
-<p>执行以下命令检查环境：</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli -g
-<span class="gp">$ </span>macaca doctor
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/macaca-sample/mobile-app-sample-nodejs.git --depth<span class="o">=</span>1
+<span class="gp">$ </span><span class="nb">cd </span>mobile-app-sample-nodejs
+<span class="gp">$ </span>npm i
+<span class="c"># 更多运行方式见Makefile</span>
+<span class="gp">$ </span>macaca run --verbose
 </code></pre>
 </div>
 
-<h2 id="section-1">安装</h2>
+<h2 id="section-2">运行命令行工具</h2>
 
-<p>首先请安装 Nodejs。</p>
-
-<p>在安装 reliable-slave 之前，请先安装 zeromq。</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install pkg-config
-<span class="gp">$ </span>brew install zeromq
-
-<span class="c"># Then</span>
-
-<span class="gp">$ </span>npm install reliable-macaca-slave -g
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca run
 </code></pre>
 </div>
 
-<p>在完成环境检查和安装步骤后，来部署 reliable-slave 吧！</p>
+<p>更多的命令行用法请见<a href="./cli-usage.html">命令行文档</a>.</p>
 
-<h2 id="section-2">部署</h2>
+<h2 id="app">准备移动端App</h2>
 
-<p>在部署 reliable-slave 之前，我们应该先让 reliable-master 运行起来，如果没有的话，你应该先部署 <a href="/zh/master-deployment">reliable-master</a> 。reliable-master 运行起来后, 执行命令来部署 reliable-slave。</p>
+<p>iOS: 支持 <code class="highlighter-rouge">.app</code> 格式的包。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>reliable server -m &lt;reliable-master:port&gt; --verbose
-</code></pre>
-</div>
+<p>Android: 支持 <code class="highlighter-rouge">.apk</code> 格式的包。</p>
 
-<p>初始化完成后，会有相应的日志显示在你的终端里.</p>
+<p>Desktop: 支持任意浏览器网页。</p>
+
+<ul>
+  <li>桌面客户端软件即将支持</li>
+</ul>
+
+<h3 id="ios--webview">iOS 应用测试(含 WebView)</h3>
+
+<video preload="auto" controls="">
+  <source src="https://os.alipayobjects.com/rmsportal/fyuMolxdSsGMlNw.mp4" type="video/mp4" />
+</video>
+
+<h3 id="ios-">iOS 手机端浏览器</h3>
+
+<video preload="auto" controls="">
+  <source src="https://os.alipayobjects.com/rmsportal/TDeTXmTfeqRlxhj.mp4" type="video/mp4" />
+</video>
+
+<h3 id="android--webview">Android 应用测试(含 WebView)</h3>
+
+<video preload="auto" controls="">
+  <source src="https://os.alipayobjects.com/rmsportal/vjoZfJaZmCvInDv.mp4" type="video/mp4" />
+</video>
+
+<h3 id="android-">Android 手机端浏览器</h3>
+
+<video preload="auto" controls="">
+  <source src="https://os.alipayobjects.com/rmsportal/VoxFKOVDsOjKyMs.mp4" type="video/mp4" />
+</video>
+
+<h3 id="electron">桌面端 (Electron)</h3>
+
+<video preload="auto" controls="">
+  <source src="https://os.alipayobjects.com/rmsportal/bgBKHXYSrlYpuvv.mp4" type="video/mp4" />
+</video>
 
 
   </article>
