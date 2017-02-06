@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.4.0" />
+    <meta name="generator" content="Jekyll v3.3.0" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -79,6 +79,8 @@
     
       <option value="cli-usage">命令行工具</option>
     
+      <option value="versioning">版本说明</option>
+    
   </optgroup>
   
   <optgroup label="周边工具">
@@ -142,6 +144,9 @@
     
     <li><a href="cli-usage">命令行工具</a></li>
     
+    
+    <li><a href="versioning">版本说明</a></li>
+    
   </ul>
   
   <h4>周边工具</h4>
@@ -200,7 +205,7 @@
 </aside>
 
   <article>
-    <h1 id="reliable-master-部署">Reliable Master 部署</h1>
+    <h1 id="reliable-master-">Reliable Master 部署</h1>
 
 <p><a href="//reliablejs.github.io/" target="_blank">Reliable</a> 是一个可靠（reliable）的持续集成服务。</p>
 
@@ -208,7 +213,7 @@
 
 <p><img src="http://ww2.sinaimg.cn/large/6d308bd9gw1f5scrp1p4rj20rs0gatbj.jpg" alt="Macaca-Docker" /></p>
 
-<h2 id="环境要求">环境要求</h2>
+<h2 id="section">环境要求</h2>
 
 <ul>
   <li><a href="http://git-scm.com/" target="_blank">git</a> &gt;= 2.0</li>
@@ -220,7 +225,7 @@
   <p>Note: 若采用 Docker 部署，则无需考虑 nodejs，redis 及 mongodb 版本</p>
 </blockquote>
 
-<h2 id="基本用法">基本用法</h2>
+<h2 id="section-1">基本用法</h2>
 
 <p>git clone 下源代码后，你可以使用 docker 和 docker-compose 来部署 <code class="highlighter-rouge">reliable</code>，步骤如下：</p>
 
@@ -288,7 +293,7 @@
 </code></pre>
 </div>
 
-<h2 id="配置">配置</h2>
+<h2 id="section-2">配置</h2>
 
 <p><code class="highlighter-rouge">relibale</code> 的默认配置在 <a href="//github.com/reliablejs/reliable-master/blob/master/common/config.js" target="_blank">config.js</a> 中，你可以用一个命名为 <code class="highlighter-rouge">*.reliable.config.js</code> 的文件覆盖默认配置，以下是一些可配置点：</p>
 
@@ -307,19 +312,19 @@
 邮件服务配置，可参考 <a href="//github.com/nodemailer/nodemailer" target="_blank">Nodemailer</a>。</li>
 </ul>
 
-<h5 id="小提示">小提示</h5>
+<h5 id="section-3">小提示</h5>
 
 <p>Reliable 启动需要一些时间，请稍作等待。</p>
 
-<h3 id="添加管理员">添加管理员</h3>
+<h3 id="section-4">添加管理员</h3>
 
 <p>在 reliable-master 中使用 <code class="highlighter-rouge">make adduser</code> 命令添加管理员用户（对于 docker container 可以使用 <code class="highlighter-rouge">docker exec -it make adduser</code>，下同）。</p>
 
-<h3 id="运行状态">运行状态</h3>
+<h3 id="section-5">运行状态</h3>
 
 <p>在 reliable-slave 中使用 <code class="highlighter-rouge">make status</code> 获取 slave 运行状态。</p>
 
-<h3 id="数据备份">数据备份</h3>
+<h3 id="section-6">数据备份</h3>
 
 <p>在 reliable-master 中使用 <code class="highlighter-rouge">make dump</code> 以从 MongoDB 中 dump 数据。</p>
 
@@ -339,7 +344,7 @@
   <li>url - 获取 slave 信息的链接，<code class="highlighter-rouge">http://&lt;hostname&gt;:&lt;port&gt;/slaves</code>，如 <code class="highlighter-rouge">http://localhost:3333/slaves</code>。</li>
 </ul>
 
-<h2 id="服务集成">服务集成</h2>
+<h2 id="section-7">服务集成</h2>
 
 <p>想要集成其它的服务如 Gitlab-CI 或 Jenkins？</p>
 
@@ -347,7 +352,7 @@
 
 <p>更多信息，请查看 gitlab 文档。</p>
 
-<h2 id="截图">截图</h2>
+<h2 id="section-8">截图</h2>
 
 <p><img src="http://ww1.sinaimg.cn/large/6d308bd9gw1f1ygp19gllj20xl0oldna.jpg" alt="reliable-1" /></p>
 
@@ -355,7 +360,7 @@
 
 <p><img src="http://ww4.sinaimg.cn/large/6d308bd9gw1f1yr1jy4ohj20qj0jzgn4.jpg" alt="reliable-3" /></p>
 
-<h2 id="下一步">下一步</h2>
+<h2 id="section-9">下一步</h2>
 
 <p>部署 <a href="/zh/slave-deployment">slave</a></p>
 

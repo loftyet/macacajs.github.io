@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/cli-usage">
+  <body data-page="/versioning">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -142,10 +142,10 @@
     <li><a href="desired-caps">脚本初始化参数</a></li>
     
     
-    <li class="current"><a href="cli-usage">命令行工具</a></li>
+    <li><a href="cli-usage">命令行工具</a></li>
     
     
-    <li><a href="versioning">版本说明</a></li>
+    <li class="current"><a href="versioning">版本说明</a></li>
     
   </ul>
   
@@ -205,58 +205,52 @@
 </aside>
 
   <article>
-    <h1 id="section">命令行工具</h1>
+    <h1 id="section">版本说明</h1>
 
-<h3 id="section-1">执行测试用例</h3>
+<p>Macaca 命令行工具，驱动模块和周边工具遵从 <a href="//github.com/mojombo/semver">Semantic Versioning</a> 规范。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
-<span class="gp">$ </span>macaca run --verbose
+<h2 id="section-1">工具版本</h2>
 
-<span class="c"># 指定测试文件目录及测试框架，此功能只支持 Node.js 版</span>
-<span class="c"># 目前支持 mocha, jasmine, tman 和 ava。</span>
-<span class="gp">$ </span>macaca run -d ./test -f mocha
+<p>当前版本: <a href="https://npmjs.org/package/macaca-cli"><img src="https://img.shields.io/npm/v/macaca-cli.svg?style=flat-square" alt="NPM version" /></a></p>
 
-<span class="c"># 将结果导出为文件</span>
-<span class="gp">$ </span>macaca run -o
+<h2 id="section-2">驱动模块版本</h2>
 
-<span class="c"># 静默执行（只支持桌面浏览器）</span>
-<span class="gp">$ </span>macaca run --no-window
-
-<span class="c"># 使用自定义的报告器</span>
-<span class="gp">$ </span><span class="nv">CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run -d ./test --reporter macaca-simple-reportor
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">macaca-simple-reportor</code> 是自定义报告器的一个示例，可以作为参考。</p>
-
-<h3 id="section-2">只启动服务器</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 普通用法，添加了 --verbose 可以看到详细的信息</span>
-<span class="gp">$ </span>macaca server --verbose
-
-<span class="c"># 设置端口号</span>
-<span class="gp">$ </span>macaca server -p 3456
-</code></pre>
-</div>
-
-<h3 id="macaca-">检查当前 Macaca 的安装环境</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
-</code></pre>
-</div>
-
-<h3 id="section-3">更多的选项</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca -h
-
-<span class="c"># 服务器相关选项</span>
-<span class="gp">$ </span>macaca server -h
-
-<span class="c"># 如何执行用例的选项</span>
-<span class="gp">$ </span>macaca run -h
-
-</code></pre>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>驱动</th>
+      <th>版本</th>
+      <th>CI状态</th>
+      <th>安装与升级</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-android">Android</a></td>
+      <td><a href="https://npmjs.org/package/macaca-android"><img src="https://img.shields.io/npm/v/macaca-android.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-android"><img src="https://img.shields.io/travis/macacajs/macaca-android.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-android -g</td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-chrome">Chrome</a></td>
+      <td><a href="https://npmjs.org/package/macaca-chrome"><img src="https://img.shields.io/npm/v/macaca-chrome.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-chrome"><img src="https://img.shields.io/travis/macacajs/macaca-chrome.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-chrome -g</td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-electron">Electron</a></td>
+      <td><a href="https://npmjs.org/package/macaca-electron"><img src="https://img.shields.io/npm/v/macaca-electron.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-electron"><img src="https://img.shields.io/travis/macacajs/macaca-electron.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-electron -g</td>
+    </tr>
+    <tr>
+      <td><a href="//github.com/macacajs/macaca-ios">iOS</a></td>
+      <td><a href="https://npmjs.org/package/macaca-ios"><img src="https://img.shields.io/npm/v/macaca-ios.svg?style=flat-square" alt="NPM version" /></a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-ios"><img src="https://img.shields.io/travis/macacajs/macaca-ios.svg?style=flat-square" alt="build status" /></a></td>
+      <td>npm i macaca-ios -g</td>
+    </tr>
+  </tbody>
+</table>
 
 
   </article>
