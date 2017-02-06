@@ -83,16 +83,6 @@
     
   </optgroup>
   
-  <optgroup label="周边工具">
-    
-      <option value="debugging">单步调试器</option>
-    
-      <option value="inspector">元素查看器</option>
-    
-      <option value="recorder">录制回放器</option>
-    
-  </optgroup>
-  
   <optgroup label="API">
     
       <option value="nodejs">Node.js版</option>
@@ -103,7 +93,13 @@
     
   </optgroup>
   
-  <optgroup label="CI服务">
+  <optgroup label="高级进阶">
+    
+      <option value="debugging">单步调试器</option>
+    
+      <option value="inspector">元素查看器</option>
+    
+      <option value="recorder">录制回放器</option>
     
       <option value="master-deployment">Reliable Master部署</option>
     
@@ -115,9 +111,9 @@
   
   <optgroup label="其它">
     
-      <option value="changelog">更新日志</option>
+      <option value="changelog">重要里程碑</option>
     
-      <option value="faq">常见问题</option>
+      <option value="faq">常见问题汇总</option>
     
   </optgroup>
   
@@ -149,20 +145,6 @@
     
   </ul>
   
-  <h4>周边工具</h4>
-  <ul>
-    
-    
-    <li><a href="debugging">单步调试器</a></li>
-    
-    
-    <li><a href="inspector">元素查看器</a></li>
-    
-    
-    <li><a href="recorder">录制回放器</a></li>
-    
-  </ul>
-  
   <h4>API</h4>
   <ul>
     
@@ -177,8 +159,17 @@
     
   </ul>
   
-  <h4>CI服务</h4>
+  <h4>高级进阶</h4>
   <ul>
+    
+    
+    <li><a href="debugging">单步调试器</a></li>
+    
+    
+    <li><a href="inspector">元素查看器</a></li>
+    
+    
+    <li><a href="recorder">录制回放器</a></li>
     
     
     <li><a href="master-deployment">Reliable Master部署</a></li>
@@ -195,10 +186,10 @@
   <ul>
     
     
-    <li><a href="changelog">更新日志</a></li>
+    <li><a href="changelog">重要里程碑</a></li>
     
     
-    <li><a href="faq">常见问题</a></li>
+    <li><a href="faq">常见问题汇总</a></li>
     
   </ul>
   
@@ -208,6 +199,12 @@
     <h1 id="section">版本说明</h1>
 
 <p>Macaca 命令行工具，驱动模块和周边工具遵从 <a href="//github.com/mojombo/semver">Semantic Versioning</a> 规范。</p>
+
+<p>升级与安装的命令是一致的，直接使用 <code class="highlighter-rouge">npm install</code> 命令即可，比如安装命令行工具和 <code class="highlighter-rouge">Android</code> 端驱动：</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli macaca-android -g
+</code></pre>
+</div>
 
 <h2 id="section-1">工具版本</h2>
 
