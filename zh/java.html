@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.4.0" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -200,13 +200,13 @@
 </aside>
 
   <article>
-    <h1 id="java-">Java 版</h1>
+    <h1 id="java-版">Java 版</h1>
 
 <p>请使用如下最新版本</p>
 
 <p><a href="https://bintray.com/xudafeng/maven/macacaclient/_latestVersion"><img src="https://api.bintray.com/packages/xudafeng/maven/macacaclient/images/download.svg" alt="Download" /></a></p>
 
-<h2 id="section">用法示例</h2>
+<h2 id="用法示例">用法示例</h2>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">macaca</span><span class="o">.</span><span class="na">client</span><span class="o">;</span>
 
@@ -226,7 +226,7 @@
 	<span class="n">MacacaClient</span> <span class="n">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MacacaClient</span><span class="o">();</span>
 
 	<span class="nd">@Before</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 		<span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">getClass</span><span class="o">());</span>
 		<span class="n">JSONObject</span> <span class="n">porps</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
 		<span class="n">porps</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"autoAcceptAlerts"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
@@ -243,7 +243,7 @@
 	<span class="o">}</span>
 
 	<span class="nd">@Test</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">test_case_1</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">test_case_1</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 		<span class="n">driver</span>
 			<span class="o">.</span><span class="na">elementById</span><span class="o">(</span><span class="s">"kw"</span><span class="o">)</span>
 			<span class="o">.</span><span class="na">sendKeys</span><span class="o">(</span><span class="s">"macaca"</span><span class="o">)</span>
@@ -257,19 +257,19 @@
 	<span class="o">}</span>
 
 	<span class="nd">@Test</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">test_case_2</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">test_case_2</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test case #2"</span><span class="o">);</span>
 	<span class="o">}</span>
 
 	<span class="nd">@After</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="n">tearDown</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 		<span class="n">driver</span><span class="o">.</span><span class="na">quit</span><span class="o">();</span>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre>
 </div>
 
-<h2 id="section-1">相关链接</h2>
+<h2 id="相关链接">相关链接</h2>
 
 <ul>
   <li><a href="//macacajs.github.io/wd.java">API 文档</a></li>

@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.4.0" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -200,13 +200,13 @@
 </aside>
 
   <article>
-    <h1 id="section">环境配置</h1>
+    <h1 id="环境配置">环境配置</h1>
 
-<h2 id="nodejs">安装 Node.js</h2>
+<h2 id="安装-nodejs">安装 Node.js</h2>
 
 <p>请安装 <a href="https://nodejs.org/">Node.js</a> v4.0 或者更高版本，装好 <code class="highlighter-rouge">Node.js</code> 后命令行里就已经集成了 <code class="highlighter-rouge">npm</code> 工具，为了提高安装模块的速度，请使用国内的 <code class="highlighter-rouge">cnpm</code>。</p>
 
-<h2 id="ios-">iOS 环境</h2>
+<h2 id="ios-环境">iOS 环境</h2>
 
 <ol>
   <li>请安装 Xcode8 或者更高版本</li>
@@ -231,7 +231,7 @@
   <li>准备 App 包：如需要测试 iOS 应用，请使用 Scheme 设置为 debug 的 <code class="highlighter-rouge">.app</code> 包。</li>
 </ul>
 
-<h2 id="section-1">安卓</h2>
+<h2 id="安卓">安卓</h2>
 
 <ol>
   <li>
@@ -242,9 +242,9 @@
   </li>
 </ol>
 
-<p><code class="highlighter-rouge">shell
-  export JAVA_HOME=path/to/your/Java/Home
- </code></p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>  <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>path/to/your/Java/Home
+</code></pre>
+</div>
 
 <ol>
   <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装<code class="highlighter-rouge">18-24</code>版本中的任一 SDK</li>
@@ -265,11 +265,11 @@
   <li>准备 App 包：如需要测试 Android 应用，请使用 <code class="highlighter-rouge">.apk</code> 格式的包。</li>
 </ul>
 
-<h2 id="section-2">命令行工具</h2>
+<h2 id="命令行工具">命令行工具</h2>
 
 <p>当前版本: <a href="https://npmjs.org/package/macaca-cli"><img src="https://img.shields.io/npm/v/macaca-cli.svg?style=flat-square" alt="NPM version" /></a></p>
 
-<h3 id="section-3">全局安装</h3>
+<h3 id="全局安装">全局安装</h3>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
 </code></pre>
@@ -279,7 +279,7 @@
 
 <p><img src="http://ww4.sinaimg.cn/large/6d308bd9gw1faie2w55hnj20rs0ov4fu.jpg" alt="" /></p>
 
-<h3 id="section-4">安装驱动（不同驱动适应不同平台的支持）</h3>
+<h3 id="安装驱动不同驱动适应不同平台的支持">安装驱动（不同驱动适应不同平台的支持）</h3>
 
 <table>
   <thead>
@@ -324,7 +324,7 @@
 </code></pre>
 </div>
 
-<h3 id="section-5">环境检查</h3>
+<h3 id="环境检查">环境检查</h3>
 
 <p>通过 <code class="highlighter-rouge">macaca doctor</code> 可以检查环境是否配置成功</p>
 
@@ -336,7 +336,7 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/6b65a607jw1fa3cqjexk2j21c20padqa.jpg" alt="macaca-doctor" /></p>
 
-<h2 id="section-6">大功告成！</h2>
+<h2 id="大功告成">大功告成！</h2>
 
 <p>运行个<a href="./getting-started.html">例子</a>试试吧，若在环境配置过程中遇到问题，请查看常见问题列表寻找解决办法，或提
 issue。</p>
