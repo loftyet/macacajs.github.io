@@ -85,6 +85,8 @@
   
   <optgroup label="API">
     
+      <option value="multi-lang">多语言栈支持</option>
+    
       <option value="nodejs">Node.js版</option>
     
       <option value="java">Java版</option>
@@ -149,6 +151,9 @@
   <ul>
     
     
+    <li><a href="multi-lang">多语言栈支持</a></li>
+    
+    
     <li><a href="nodejs">Node.js版</a></li>
     
     
@@ -200,35 +205,30 @@
 
 <h2 id="section-1">运行官方示例</h2>
 
-<p>将官方示例(<a href="//github.com/macaca-sample/mobile-app-sample-nodejs">mobile-app-sample-nodejs</a>)克隆到本地，更多的示例请访问<a href="//github.com/macaca-sample">macaca-sample</a>。</p>
+<p>将官方示例(<a href="//github.com/macaca-sample/mobile-app-sample-nodejs">mobile-app-sample-nodejs</a>)克隆到本地，然后按照如下命令即可下载已提供好的<code class="highlighter-rouge">示例 App</code>，并运行自动化测试。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/macaca-sample/mobile-app-sample-nodejs.git --depth<span class="o">=</span>1
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 安装工具包和驱动</span>
+<span class="gp">$ </span>npm i macaca-cli macaca-ios -g
+<span class="gp">$ </span>git clone https://github.com/macaca-sample/mobile-app-sample-nodejs.git --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>mobile-app-sample-nodejs
+<span class="c"># 安装项目依赖</span>
 <span class="gp">$ </span>npm i
-<span class="c"># 更多运行方式见Makefile</span>
 <span class="c"># macaca run --verbose</span>
+<span class="c"># 更多运行方式见 Makefile</span>
 </code></pre>
 </div>
 
-<h2 id="section-2">运行命令行工具</h2>
+<p><strong>注：</strong> 相比桌面浏览器，移动 App 测试有更多环境上的要求，如果没有看到预期的效果一般都是简单的坏境问题导致的，可以看下面提供的示例视频进行了解，更多关于环境的配置可以参考<a href="./environment-setup">环境配置</a>。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca run
-</code></pre>
-</div>
+<h2 id="section-2">多语言栈</h2>
 
-<p>更多的命令行用法请见<a href="./cli-usage">命令行文档</a>.</p>
+<p>如上示例基于 Node.js 开发平台，Macaca 也提供多语言栈支持，请阅读<a href="./multi-lang">多语言</a>。</p>
 
-<h2 id="app">准备移动端App</h2>
+<h2 id="section-3">示例集合</h2>
 
-<p>iOS: 支持 <code class="highlighter-rouge">.app</code> 格式的包。</p>
+<p>更多的示例请访问<a href="//github.com/macaca-sample">macaca-sample</a>。</p>
 
-<p>Android: 支持 <code class="highlighter-rouge">.apk</code> 格式的包。</p>
-
-<p>Desktop: 支持任意浏览器网页。</p>
-
-<ul>
-  <li>桌面客户端软件即将支持</li>
-</ul>
+<h2 id="section-4">视频演示</h2>
 
 <h3 id="ios--webview">iOS 应用测试(含 WebView)</h3>
 

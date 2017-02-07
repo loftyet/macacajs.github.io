@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/cli-usage">
+  <body data-page="/multi-lang">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -140,7 +140,7 @@
     <li><a href="desired-caps">脚本初始化参数</a></li>
     
     
-    <li class="current"><a href="cli-usage">命令行工具</a></li>
+    <li><a href="cli-usage">命令行工具</a></li>
     
     
     <li><a href="versioning">版本说明</a></li>
@@ -151,7 +151,7 @@
   <ul>
     
     
-    <li><a href="multi-lang">多语言栈支持</a></li>
+    <li class="current"><a href="multi-lang">多语言栈支持</a></li>
     
     
     <li><a href="nodejs">Node.js版</a></li>
@@ -201,58 +201,16 @@
 </aside>
 
   <article>
-    <h1 id="section">命令行工具</h1>
+    <h1 id="section">多语言栈支持</h1>
 
-<h3 id="section-1">执行测试用例</h3>
+<p>Macaca 提供 Node.js, Java, Python 三大主流的语言栈，方便工程师和所在团队选择合适的开发语言。由于 Macaca 的工具链基于 Node.js，多种因素导致 Node.js 端提供的支持和周边工具会相对多一些。Java 与 Python 有大量用实践，社区共享与贡献较多，也是很好的选择。欢迎社区的用户提供更多语言的绑定支持。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
-<span class="gp">$ </span>macaca run --verbose
+<p><strong>注意：</strong>官网提供各语言的 API 及文档，SDK 的更新情况请到对应的 Github 仓库查看。</p>
 
-<span class="c"># 指定测试文件目录及测试框架，此功能只支持 Node.js 版</span>
-<span class="c"># 目前支持 mocha, jasmine, tman 和 ava。</span>
-<span class="gp">$ </span>macaca run -d ./test -f mocha
+<h2 id="section-1">录制器</h2>
 
-<span class="c"># 将结果导出为文件</span>
-<span class="gp">$ </span>macaca run -o
-
-<span class="c"># 静默执行（只支持桌面浏览器）</span>
-<span class="gp">$ </span>macaca run --no-window
-
-<span class="c"># 使用自定义的报告器</span>
-<span class="gp">$ </span><span class="nv">CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run -d ./test --reporter macaca-simple-reportor
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">macaca-simple-reportor</code> 是自定义报告器的一个示例，可以作为参考。</p>
-
-<h3 id="section-2">只启动服务器</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 普通用法，添加了 --verbose 可以看到详细的信息</span>
-<span class="gp">$ </span>macaca server --verbose
-
-<span class="c"># 设置端口号</span>
-<span class="gp">$ </span>macaca server -p 3456
-</code></pre>
-</div>
-
-<h3 id="macaca-">检查当前 Macaca 的安装环境</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
-</code></pre>
-</div>
-
-<h3 id="section-3">更多的选项</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca -h
-
-<span class="c"># 服务器相关选项</span>
-<span class="gp">$ </span>macaca server -h
-
-<span class="c"># 如何执行用例的选项</span>
-<span class="gp">$ </span>macaca run -h
-
-</code></pre>
-</div>
+<p>Macaca 提出了多端录制器计划，即通过统一的技术方案实现支持多端的录制回放工具，可以通过 UI
+ 界面操作生产运行脚本，请在合适的场景下使用，目前已经开放，更多请见<a href="./recorder">多端录制回放器</a>。</p>
 
 
   </article>

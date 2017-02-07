@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/cli-usage">
+  <body data-page="/multi-lang">
     <input type="hidden" id="lang" value="en"/>
 
     <header class="clearfix">
@@ -140,7 +140,7 @@
     <li><a href="desired-caps">Desired Capabilities</a></li>
     
     
-    <li class="current"><a href="cli-usage">Macaca CLI Usage</a></li>
+    <li><a href="cli-usage">Macaca CLI Usage</a></li>
     
     
     <li><a href="versioning">Versioning</a></li>
@@ -151,7 +151,7 @@
   <ul>
     
     
-    <li><a href="multi-lang">Multi Lang</a></li>
+    <li class="current"><a href="multi-lang">Multi Lang</a></li>
     
     
     <li><a href="nodejs">Node.js</a></li>
@@ -201,56 +201,9 @@
 </aside>
 
   <article>
-    <h1 id="cli-usage">CLI Usage</h1>
+    <h1 id="multi-lang">Multi Lang</h1>
 
-<h3 id="run-test-tasks">Run test tasks</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
-<span class="gp">$ </span>macaca run --verbose
-
-<span class="c"># run test in a pointed directry and set a framework</span>
-<span class="c"># mocha, jasmine, tman, ava supported for Node.js env.</span>
-<span class="gp">$ </span>macaca run -d ./test -f mocha
-
-<span class="c"># output log file as html code</span>
-<span class="gp">$ </span>macaca run -o
-
-<span class="c"># run in silence, desktop only</span>
-<span class="gp">$ </span>macaca run --no-window
-
-<span class="c"># custom mocha reporter</span>
-<span class="gp">$ </span><span class="nv">CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run -d ./test --reporter macaca-simple-reportor
-</code></pre>
-</div>
-
-<h3 id="start-webdriver-server-only">Start webdriver server only</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># normal usage</span>
-<span class="gp">$ </span>macaca server --verbose
-
-<span class="c"># set a port</span>
-<span class="gp">$ </span>macaca server -p 3456
-</code></pre>
-</div>
-
-<h3 id="environment-doctor">Environment doctor</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
-</code></pre>
-</div>
-
-<h3 id="more-help">More Help</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca -h
-
-<span class="c"># helper for server</span>
-<span class="gp">$ </span>macaca server -h
-
-<span class="c"># helper for how to run test</span>
-<span class="gp">$ </span>macaca run -h
-
-</code></pre>
-</div>
+<p>Macaca support Node.js, Java &amp; Python.</p>
 
 
   </article>
