@@ -214,7 +214,7 @@
   <li>需要安装 <a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> 以便于通过 USB 通道测试 iOS 真机，不需要测试真机则不用安装</li>
 </ol>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
 </code></pre>
 </div>
 
@@ -222,7 +222,7 @@
   <li>应用中如含有 WebView，请安装 <a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a></li>
 </ol>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
 </code></pre>
 </div>
 
@@ -243,9 +243,9 @@
   </li>
 </ol>
 
-<p><code class="highlighter-rouge">shell
-  export JAVA_HOME=path/to/your/Java/Home
- </code></p>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>path/to/your/Java/Home
+</code></pre>
+</div>
 
 <ol>
   <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装<code class="highlighter-rouge">18-24</code>版本中的任一 SDK</li>
@@ -253,12 +253,11 @@
  根据你所使用的Terminal修改不同的文件，比如~/.bashrc, ~/.bash_profile, ~/.zshrc</li>
 </ol>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 如果是通过homebrew安装的android-sdk，则路径如下</span>
-<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 如果是通过homebrew安装的android-sdk，则路径如下</span>
+<span class="gp">$ </span><span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
 
 <span class="c"># 如果通过其他方式安装的sdk，路径设置为对应的android sdk的路径</span>
-<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> path/to/your/Android/sdk
-
+<span class="gp">$ </span><span class="nb">export </span>ANDROID_HOME <span class="o">=</span> path/to/your/Android/sdk
 </code></pre>
 </div>
 
@@ -278,7 +277,7 @@
 
 <h3 id="section-3">全局安装</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
 </code></pre>
 </div>
 
@@ -290,7 +289,7 @@
 
 <p>上述驱动可以按照自身需要选择性的安装，比如只需要测试 iOS平台用例，就执行iOS的安装命令：</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-ios -g
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-ios -g
 </code></pre>
 </div>
 
@@ -298,13 +297,32 @@
 
 <p>通过 <code class="highlighter-rouge">macaca doctor</code> 可以检查环境是否配置成功</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
 </code></pre>
 </div>
 
 <p>如下图所示则表示环境均配置正常，如果有标红提示，则需要对应处理。</p>
 
 <p><img src="http://ww1.sinaimg.cn/large/6b65a607jw1fa3cqjexk2j21c20padqa.jpg" alt="macaca-doctor" /></p>
+
+<h2 id="section-6">一些开源镜像</h2>
+
+<blockquote>
+  <p>由于网络原因导致的安装失败可以通过指定软件的镜像来解决</p>
+</blockquote>
+
+<p>Chromedriver 和 Electron 可以使用如下镜像：</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">CHROMEDRIVER_CDNURL</span><span class="o">=</span>http://npm.taobao.org/mirrors/chromedriver/
+<span class="gp">$ </span><span class="nb">export </span><span class="nv">ELECTRON_MIRROR</span><span class="o">=</span>https://npm.taobao.org/mirrors/electron/
+</code></pre>
+</div>
+
+<p>Homebrew 可以使用如下镜像：</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">HOMEBREW_BOTTLE_DOMAIN</span><span class="o">=</span>https://mirrors.ustc.edu.cn/homebrew-bottles brew install ios-webkit-debug-proxy
+</code></pre>
+</div>
 
 
   </article>
