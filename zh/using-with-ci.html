@@ -206,7 +206,7 @@
 </aside>
 
   <article>
-    <h1 id="ci-">使用其他 CI 服务</h1>
+    <h1 id="ci-">使用开放 CI 服务</h1>
 
 <h2 id="travis-ci">Travis-CI</h2>
 
@@ -220,129 +220,141 @@
   </thead>
   <tbody>
     <tr>
-      <td>Desktop PC</td>
+      <td>Node.js</td>
       <td><a href="https://travis-ci.org/macaca-sample/desktop-browser-sample-nodejs"><img src="https://img.shields.io/travis/macaca-sample/desktop-browser-sample-nodejs.svg?style=flat-square" alt="build status" /></a></td>
-      <td><a href="//github.com/macaca-sample/desktop-browser-sample-nodejs">desktop-browser-sample-nodejs</a></td>
-    </tr>
-    <tr>
-      <td>iOS</td>
-      <td><a href="https://travis-ci.org/macaca-sample/macaca-ci-sample-ios-travis"><img src="https://img.shields.io/travis/macaca-sample/macaca-ci-sample-ios-travis.svg?style=flat-square" alt="build status" /></a></td>
-      <td><a href="//github.com/macaca-sample/macaca-test-sample-ios-ci">macaca-test-sample-ios-ci</a></td>
-    </tr>
-    <tr>
-      <td>Android</td>
-      <td><a href="https://travis-ci.org/macaca-sample/macaca-ci-sample-android-travis"><img src="https://img.shields.io/travis/macaca-sample/macaca-ci-sample-android-travis.svg?style=flat-square" alt="build status" /></a></td>
-      <td><a href="//github.com/macaca-sample/macaca-test-sample-android-ci">macaca-test-sample-android-ci</a></td>
+      <td><a href="//github.com/macaca-sample/sample-nodejs">sample-nodejs</a></td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="chrome">Chrome</h3>
-
 <p>Add config to your <code class="highlighter-rouge">.travis.yml</code>:</p>
 
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
-<span class="s">sudo</span><span class="pi">:</span> <span class="s">required</span>
-<span class="s">node_js</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">4"</span>
-<span class="s">dist</span><span class="pi">:</span> <span class="s">trusty</span>
-<span class="s">addons</span><span class="pi">:</span>
-  <span class="s">apt</span><span class="pi">:</span>
-    <span class="s">sources</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">google-chrome</span>
-    <span class="s">packages</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">google-chrome-stable</span>
-    <span class="pi">-</span> <span class="s">xvfb</span>
-<span class="s">before_install</span><span class="pi">:</span>
- <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
- <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
-</code></pre>
-</div>
-
-<h3 id="electron">Electron</h3>
-
-<p>Add config to your <code class="highlighter-rouge">.travis.yml</code>:</p>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
-<span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-<span class="s">node_js</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s2">"</span><span class="s">4"</span>
-<span class="s">addons</span><span class="pi">:</span>
-  <span class="s">apt</span><span class="pi">:</span>
-    <span class="s">packages</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">xvfb</span>
-<span class="s">install</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">export DISPLAY=':99.0'</span>
-  <span class="pi">-</span> <span class="s">Xvfb :99 -screen 0 1366x768x24 &gt; /dev/null 2&gt;&amp;1 &amp;</span>
-</code></pre>
-</div>
-
-<h3 id="ios">iOS</h3>
-
-<p>Add config to your <code class="highlighter-rouge">.travis.yml</code>:</p>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-<span class="s">osx_image</span><span class="pi">:</span> <span class="s">xcode7.3</span>
-<span class="s">before_install</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">source $(brew --prefix nvm)/nvm.sh</span>
-  <span class="pi">-</span> <span class="s">nvm install 4.4.3</span>
-  <span class="pi">-</span> <span class="s">brew update</span>
-  <span class="pi">-</span> <span class="s">brew install ios-webkit-debug-proxy</span>
-</code></pre>
-</div>
-
-<h3 id="android">Android</h3>
-
-<p>Add config to your <code class="highlighter-rouge">.travis.yml</code>:</p>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">language</span><span class="pi">:</span> <span class="s">android</span>
-<span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-<span class="s">addons</span><span class="pi">:</span>
-  <span class="s">apt</span><span class="pi">:</span>
-    <span class="s">packages</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">xvfb</span>
-<span class="s">jdk</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">openjdk7</span>
-<span class="s">android</span><span class="pi">:</span>
-  <span class="s">components</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">build-tools-23.0.2</span>
-    <span class="pi">-</span> <span class="s">android-23</span>
-    <span class="pi">-</span> <span class="s">extra-android-m2repository</span>
-    <span class="pi">-</span> <span class="s">extra-android-support</span>
-<span class="s">before_install</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">export CHROME_BIN=chromium-browser</span>
-  <span class="pi">-</span> <span class="s">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
-  <span class="pi">-</span> <span class="s">export ANDROID_HOME=/usr/local/android-sdk</span>
-  <span class="pi">-</span> <span class="s">echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force</span>
-  <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
-  <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
-<span class="s">before_script</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh</span>
-  <span class="pi">-</span> <span class="s">nvm install 4</span>
-  <span class="pi">-</span> <span class="s">nvm use 4</span>
-  <span class="pi">-</span> <span class="s">npm install</span>
-  <span class="pi">-</span> <span class="s">echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a</span>
-  <span class="pi">-</span> <span class="s">emulator -avd test -no-audio -no-window &amp;</span>
-  <span class="pi">-</span> <span class="s">android-wait-for-emulator</span>
-  <span class="pi">-</span> <span class="s">adb shell input keyevent 82 &amp;</span>
-</code></pre>
-</div>
-
-<h2 id="circle-ci">Circle-CI</h2>
-
-<h3 id="electron-1">Electron</h3>
-
-<p>Circle CI is awesome and has xvfb and $DISPLAY already setup, so no further configuration is required.</p>
-
-<p>Add config to your <code class="highlighter-rouge">circle.yml</code>:</p>
-
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">general</span><span class="pi">:</span>
-  <span class="s">branches</span><span class="pi">:</span>
-    <span class="s">ignore</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">gh-pages</span> <span class="c1"># list of branches to ignore</span>
-<span class="s">machine</span><span class="pi">:</span>
-  <span class="s">node</span><span class="pi">:</span>
-    <span class="s">version</span><span class="pi">:</span> <span class="s">v4.2.1</span>
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">os</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">osx</span>
+  <span class="pi">-</span> <span class="s">linux</span>
+<span class="s">env</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">TEST_SUITE=ios</span>
+  <span class="pi">-</span> <span class="s">TEST_SUITE=android</span>
+  <span class="pi">-</span> <span class="s">TEST_SUITE=ios-browser</span>
+  <span class="pi">-</span> <span class="s">TEST_SUITE=android-browser</span>
+  <span class="pi">-</span> <span class="s">TEST_SUITE=pc-browser</span>
+<span class="s">matrix</span><span class="pi">:</span>
+    <span class="s">fast_finish</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="s">exclude</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+    <span class="s">include</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+        <span class="s">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
+        <span class="s">language</span><span class="pi">:</span> <span class="s">objective-c</span>
+        <span class="s">before_install</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">brew update</span>
+          <span class="pi">-</span> <span class="s">brew install nvm</span>
+          <span class="pi">-</span> <span class="s">source $(brew --prefix nvm)/nvm.sh</span>
+          <span class="pi">-</span> <span class="s">nvm install 7</span>
+          <span class="pi">-</span> <span class="s">brew install ios-webkit-debug-proxy</span>
+        <span class="s">script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">make travis-ios</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+        <span class="s">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
+        <span class="s">language</span><span class="pi">:</span> <span class="s">objective-c</span>
+        <span class="s">before_install</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">brew update</span>
+          <span class="pi">-</span> <span class="s">brew install nvm</span>
+          <span class="pi">-</span> <span class="s">source $(brew --prefix nvm)/nvm.sh</span>
+          <span class="pi">-</span> <span class="s">nvm install 7</span>
+          <span class="pi">-</span> <span class="s">brew install ios-webkit-debug-proxy</span>
+        <span class="s">script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">make travis-ios-safari</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+        <span class="s">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
+        <span class="s">language</span><span class="pi">:</span> <span class="s">android</span>
+        <span class="s">android</span><span class="pi">:</span>
+          <span class="s">components</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">build-tools-23.0.2</span>
+            <span class="pi">-</span> <span class="s">android-23</span>
+            <span class="pi">-</span> <span class="s">extra-android-m2repository</span>
+            <span class="pi">-</span> <span class="s">extra-android-support</span>
+        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
+        <span class="s">before_install</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">export CHROME_BIN=chromium-browser</span>
+          <span class="pi">-</span> <span class="s">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
+          <span class="pi">-</span> <span class="s">export ANDROID_HOME=/usr/local/android-sdk</span>
+          <span class="pi">-</span> <span class="s">echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force</span>
+          <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
+          <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
+        <span class="s">before_script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh</span>
+          <span class="pi">-</span> <span class="s">nvm install 7</span>
+          <span class="pi">-</span> <span class="s">echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a</span>
+          <span class="pi">-</span> <span class="s">emulator -avd test -no-audio -no-window &amp;</span>
+          <span class="pi">-</span> <span class="s">android-wait-for-emulator</span>
+          <span class="pi">-</span> <span class="s">adb shell input keyevent 82 &amp;</span>
+        <span class="s">script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">make travis-android</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+        <span class="s">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
+        <span class="s">language</span><span class="pi">:</span> <span class="s">android</span>
+        <span class="s">android</span><span class="pi">:</span>
+          <span class="s">components</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">build-tools-23.0.2</span>
+            <span class="pi">-</span> <span class="s">android-23</span>
+            <span class="pi">-</span> <span class="s">extra-android-m2repository</span>
+            <span class="pi">-</span> <span class="s">extra-android-support</span>
+        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
+        <span class="s">before_install</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">export CHROME_BIN=chromium-browser</span>
+          <span class="pi">-</span> <span class="s">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
+          <span class="pi">-</span> <span class="s">export ANDROID_HOME=/usr/local/android-sdk</span>
+          <span class="pi">-</span> <span class="s">echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force</span>
+          <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
+          <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
+        <span class="s">before_script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh</span>
+          <span class="pi">-</span> <span class="s">nvm install 7</span>
+          <span class="pi">-</span> <span class="s">echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a</span>
+          <span class="pi">-</span> <span class="s">emulator -avd test -no-audio -no-window &amp;</span>
+          <span class="pi">-</span> <span class="s">android-wait-for-emulator</span>
+          <span class="pi">-</span> <span class="s">adb shell input keyevent 82 &amp;</span>
+        <span class="s">script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">make travis-android-chrome</span>
+      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+        <span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
+        <span class="s">node_js</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s2">"</span><span class="s">7"</span>
+        <span class="s">addons</span><span class="pi">:</span>
+          <span class="s">apt</span><span class="pi">:</span>
+            <span class="s">packages</span><span class="pi">:</span>
+              <span class="pi">-</span> <span class="s">xvfb</span>
+        <span class="s">before_install</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">export DISPLAY=':99.0'</span>
+          <span class="pi">-</span> <span class="s">Xvfb :99 -screen 0 1366x768x24 &gt; /dev/null 2&gt;&amp;1 &amp;</span>
+        <span class="s">script</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">make travis-pc-electron</span>
 </code></pre>
 </div>
 
