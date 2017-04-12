@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="description" content="" />
+    <title>Macaca • 面向多端的自动化测试</title>
+    <link rel="canonical" href="https://macacajs.github.io" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/polymer/webcomponents-lite.min.js"></script>
+    <link rel="import" href="/assets/polymer/paper-ripple.html" />
+  </head>
+  <body data-page="/computer-vision">
+    <input type="hidden" id="lang" value="zh"/>
+
+    <header class="clearfix">
+  <div class="container">
+    <a href="/zh/" class="brand">Macaca</a>
+
+    <nav id="nav">
+      <a href="/zh/">
+        <paper-ripple class="peach"></paper-ripple>
+        首页
+      </a>
+      <a href="/zh/introduction" class="current">
+        <paper-ripple class="peach"></paper-ripple>
+        文档
+      </a>
+      <a href="/zh/support">
+        <paper-ripple class="peach"></paper-ripple>
+        帮助支持
+      </a>
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+        <paper-ripple class="peach"></paper-ripple>
+        GitHub
+      </a>
+      <a href="javascript:void(0)" id="lang-button">
+        English Version
+      </a>
+    </nav>
+    <button id="menu" class="menu"></button>
+  </div>
+</header>
+<script>
+  (function() {
+    var menu = document.getElementById('menu');
+    var nav = document.getElementById('nav');
+    var hidden = true;
+
+    menu.addEventListener('click', function() {
+      nav.style.display = hidden ? 'block' : 'none';
+      hidden = !hidden;
+    }, false);
+  })();
+</script>
+
+
+    <section class="container">
+  
+<select class="nav-mobile" onchange="if (this.value) window.location.href=this.value">
+  <option value="">点击切换文档</option>
+  
+  <optgroup label="使用指南">
+    
+      <option value="introduction">简要介绍</option>
+    
+      <option value="quick-start">快速上手</option>
+    
+      <option value="environment-setup">环境配置</option>
+    
+      <option value="desired-caps">脚本初始化参数</option>
+    
+      <option value="cli-usage">命令行工具</option>
+    
+      <option value="versioning">版本说明</option>
+    
+  </optgroup>
+  
+  <optgroup label="高级进阶">
+    
+      <option value="debugging">单步调试器</option>
+    
+      <option value="inspector">元素查看器</option>
+    
+      <option value="recorder">录制回放器</option>
+    
+      <option value="monkey-testing">Monkey测试</option>
+    
+      <option value="computer-vision">计算机视觉</option>
+    
+      <option value="pageuitest">页面UI测试</option>
+    
+  </optgroup>
+  
+  <optgroup label="API">
+    
+      <option value="multi-lang">多语言栈支持</option>
+    
+      <option value="nodejs">Node.js</option>
+    
+      <option value="java">Java</option>
+    
+      <option value="python">Python</option>
+    
+  </optgroup>
+  
+  <optgroup label="持续集成">
+    
+      <option value="master-deployment">Reliable Master部署</option>
+    
+      <option value="slave-deployment">Reliable Slave部署</option>
+    
+      <option value="using-with-ci">使用其他CI服务</option>
+    
+  </optgroup>
+  
+  <optgroup label="其它">
+    
+      <option value="changelog">重要里程碑</option>
+    
+      <option value="faq">常见问题汇总</option>
+    
+  </optgroup>
+  
+</select>
+
+  
+<aside id="sidebar">
+  
+  <h4>使用指南</h4>
+  <ul>
+    
+    
+    <li><a href="introduction">简要介绍</a></li>
+    
+    
+    <li><a href="quick-start">快速上手</a></li>
+    
+    
+    <li><a href="environment-setup">环境配置</a></li>
+    
+    
+    <li><a href="desired-caps">脚本初始化参数</a></li>
+    
+    
+    <li><a href="cli-usage">命令行工具</a></li>
+    
+    
+    <li><a href="versioning">版本说明</a></li>
+    
+  </ul>
+  
+  <h4>高级进阶</h4>
+  <ul>
+    
+    
+    <li><a href="debugging">单步调试器</a></li>
+    
+    
+    <li><a href="inspector">元素查看器</a></li>
+    
+    
+    <li><a href="recorder">录制回放器</a></li>
+    
+    
+    <li><a href="monkey-testing">Monkey测试</a></li>
+    
+    
+    <li class="current"><a href="computer-vision">计算机视觉</a></li>
+    
+    
+    <li><a href="pageuitest">页面UI测试</a></li>
+    
+  </ul>
+  
+  <h4>API</h4>
+  <ul>
+    
+    
+    <li><a href="multi-lang">多语言栈支持</a></li>
+    
+    
+    <li><a href="nodejs">Node.js</a></li>
+    
+    
+    <li><a href="java">Java</a></li>
+    
+    
+    <li><a href="python">Python</a></li>
+    
+  </ul>
+  
+  <h4>持续集成</h4>
+  <ul>
+    
+    
+    <li><a href="master-deployment">Reliable Master部署</a></li>
+    
+    
+    <li><a href="slave-deployment">Reliable Slave部署</a></li>
+    
+    
+    <li><a href="using-with-ci">使用其他CI服务</a></li>
+    
+  </ul>
+  
+  <h4>其它</h4>
+  <ul>
+    
+    
+    <li><a href="changelog">重要里程碑</a></li>
+    
+    
+    <li><a href="faq">常见问题汇总</a></li>
+    
+  </ul>
+  
+</aside>
+
+  <article>
+    <h1 id="section">计算机视觉</h1>
+
+<p>Macaca 提供计算机视觉解决方案，用来处理 View 体系之外的问题。如识别测试过程中的截图、测试游戏类产品等，本文档会介绍 OpenCV, Sikuli 和其它被广泛使用的库是如何与 Macaca 结合使用的。另外也会介绍 NodeCV 服务部署，然后便可随时随地使用此图形服务。</p>
+
+<h2 id="opencv">OpenCV</h2>
+
+<h3 id="section-1">安装</h3>
+
+<p>MacOS 可使用 brew 来安装:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install opencv
+</code></pre>
+</div>
+
+<p>请使用稳定的v2(2.4.13.2)版本，源码包<a href="//codeload.github.com/opencv/opencv/zip/2.4.13.2">下载地址</a>，windows 平台的安装请参考 <a href="//github.com/opencv/opencv">OpenCV 官网</a>。</p>
+
+<p>如果不想本机安装使用的请直接使用后面提到的 NodeCV 服务，避免环境的诸多问题。</p>
+
+<h3 id="section-2">各语言的实践</h3>
+
+<h4 id="nodejs">Node.js:</h4>
+
+<p>只需要引入 <a href="https://github.com/xudafeng/nodecv">nodecv</a> 模块即可完成图像相似度，特征匹配，特征识别等功能，如下示例。</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">nodecv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'nodecv'</span><span class="p">);</span>
+
+<span class="nx">nodecv</span><span class="p">.</span><span class="nx">imread</span><span class="p">(</span><span class="nx">image1Path</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">image1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">nodecv</span><span class="p">.</span><span class="nx">imread</span><span class="p">(</span><span class="nx">image2Path</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">image2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">nodecv</span><span class="p">.</span><span class="nx">imageDissimilarity</span><span class="p">(</span><span class="nx">image1</span><span class="p">,</span> <span class="nx">image2</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">dissimilarity</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">Dissimilarity</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>更多 Node.js 示例请访问 <a href="//github.com/macaca-sample/cv-sample-node">macaca-sample/cv-sample-node</a>。</p>
+
+<h4 id="python">Python:</h4>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">opencvSample</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sourceimage</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sourceimage</span> <span class="o">=</span> <span class="n">sourceimage</span>
+
+    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">templateimage</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sourceimage</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">templateimage</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">minMaxLoc</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">similarity</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>更多 Python 示例请访问 <a href="//github.com/macaca-sample/cv-sample-python">macaca-sample/cv-sample-python</a>。</p>
+
+<h4 id="java">Java:</h4>
+
+<p>Java 端请直接使用 <a href="//github.com/bytedeco/javacv">JavaCV</a>，更多 Java 示例请访问 <a href="//github.com/macaca-sample/cv-sample-java">macaca-sample/cv-sample-java</a>。</p>
+
+<h3 id="nodecv-">部署 NodeCV 服务</h3>
+
+<p>Macaca 提供便捷的 Opencv 服务部署，只需要 Docker 环境便可一键部署。</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone git@github.com:macacajs/nodecv-server.git --depth<span class="o">=</span>1
+<span class="gp">$ </span><span class="nb">cd </span>nodecv-server
+<span class="gp">$ </span>docker build . -t<span class="o">=</span><span class="s2">"node-server"</span>
+</code></pre>
+</div>
+
+<p>然后便可在任意服务器环境启动 OpenCV 的 <code class="highlighter-rouge">HTTP</code> 服务，<a href="//github.com/macaca-sample">macaca-sample</a> 也提供各语言针对服务端通信的示例。</p>
+
+<p>服务启动成功后可访问 demo 页面： <code class="highlighter-rouge">http://localhost:9900/opencv/demo</code></p>
+
+<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1fek6oa9i3vj21kw0zrn4y.jpg" alt="" /></p>
+
+<h2 id="api">API</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/dissimilarity
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/matchtemplate
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/cascadedetect
+</code></pre>
+</div>
+
+<p>请求 HTTP 服务示例：</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">remoteHost</span><span class="p">}</span><span class="sr">/opencv/</span><span class="nx">dissimilarity</span><span class="err">`</span><span class="p">,</span>
+  <span class="nx">formData</span><span class="err">:</span> <span class="nx">formData</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">httpResponse</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'upload failed:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server responded with:'</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Dissimilarity</span> <span class="na">is</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+</code></pre>
+</div>
+
+<p>更多请见 <a href="//github.com/macacajs/nodecv-server">nodecv-server</a>。</p>
+
+<h2 id="section-3">其它方案</h2>
+
+<h3 id="sikuli">Sikuli</h3>
+
+<p>Sikuli 是一种图形脚本语言，与 Macaca 配合使用可适应特定的测试场景，更多请见官网<a href="//github.com/sikuli/sikuli">sikuli</a>。</p>
+
+<h3 id="tesseract">Tesseract</h3>
+
+<p><a href="//github.com/tesseract-ocr/tesseract">tesseract</a> 在文字识别等方面非常专业，可与 OpenCV 配合使用。</p>
+
+<h3 id="image-diff">Image Diff</h3>
+
+<p>基于像素点对比的图像 Diff，可以使用：</p>
+
+<ul>
+  <li><a href="//github.com/uber-archive/image-diff">uber-archive/image-diff</a></li>
+  <li><a href="//github.com/yahoo/blink-diff">yahoo/blink-diff</a></li>
+</ul>
+
+<p>与 Macaca 结合使用的<a href="//github.com/macaca-sample/react-native-sample">示例地址：macaca-sample/react-native-sample</a>，效果如下：</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/6d308bd9gw1f3ymytc3mzj21kw0xpjx1.jpg" alt="" /></p>
+
+<p>游戏框架 Hilo 也是基于像素点对比的，与 Macaca 结合使用示例见 <a href="//github.com/hiloteam/Hilo">hiloteam/Hilo 官网</a>。</p>
+
+
+  </article>
+</section>
+<script src="/assets/js/smooth-scroll.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+    <footer>
+  <p>
+    Released under the
+    <a href="//github.com/alibaba/macaca/blob/master/LICENSE">MIT License</a>
+  </p>
+  <p>
+    &copy; 2015-2017
+    <a href="//github.com/alibaba/macaca">Macaca</a>
+  </p>
+</footer>
+
+  </body>
+</html>
