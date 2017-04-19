@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/environment-setup">
+  <body data-page="/browser">
     <input type="hidden" id="lang" value="en"/>
 
     <header class="clearfix">
@@ -146,7 +146,7 @@
     <li><a href="quick-start">Quick Start</a></li>
     
     
-    <li class="current"><a href="environment-setup">Environment Setup</a></li>
+    <li><a href="environment-setup">Environment Setup</a></li>
     
     
     <li><a href="desired-caps">Desired Capabilities</a></li>
@@ -181,7 +181,7 @@
     <li><a href="pageuitest">PageUITest</a></li>
     
     
-    <li><a href="browser">Browser Testing</a></li>
+    <li class="current"><a href="browser">Browser Testing</a></li>
     
   </ul>
   
@@ -230,91 +230,33 @@
 </aside>
 
   <article>
-    <h1 id="environment-setup">Environment Setup</h1>
+    <h1 id="browser-testing">Browser Testing</h1>
 
-<h2 id="nodejs">Node.js</h2>
+<h2 id="selenium-standalone">selenium-standalone</h2>
 
-<p><a href="https://nodejs.org/">Node.js</a> v4.0 or higher.</p>
+<p><a href="//github.com/vvo/selenium-standalone">selenium-standalone</a> is command line or programmatic install and launch of selenium standalone server, chrome driver, internet explorer driver, firefox driver.</p>
 
-<h2 id="ios">iOS</h2>
+<h2 id="use-as-service">Use As Service</h2>
 
-<p>Xcode v7.3 or higher is required.</p>
+<p><a href="//github.com/alibaba/f2etest">F2ETest DOC</a></p>
 
-<p><a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> is needed in order to testing real iOS device via USB.</p>
+<p><img src="http://wx1.sinaimg.cn/large/6d308bd9gy1feru097e8cj20sw0dcagm.jpg" alt="" /></p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
-</code></pre>
-</div>
+<h3 id="usage">Usage</h3>
 
-<p><a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a> is needed in order to testing WebViews.</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
-</code></pre>
-</div>
-
-<h2 id="android">Android</h2>
-
-<ol>
-  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Install the latest JDK</a></li>
-  <li>Install the Android SDK, run <code class="highlighter-rouge">brew install android-sdk</code></li>
-  <li>Set the <code class="highlighter-rouge">ANDROID_HOME</code> environment variable to your <code class="highlighter-rouge">~/.bashrc</code>, <code class="highlighter-rouge">~/.bash_profile</code>, <code class="highlighter-rouge">~/.zshrc</code> or whatever your shell uses:</li>
-</ol>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c">## if you have installed the SDK via Homebrew</span>
-<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
-
-<span class="c">## otherwise</span>
-<span class="nb">export </span>ANDROID_HOME <span class="o">=</span> path/to/your/Android/sdk
-</code></pre>
-</div>
-
-<h2 id="prepare-application">Prepare application</h2>
-
-<p>iOS: An valid iOS application package suffixed with <code class="highlighter-rouge">.app</code>.</p>
-
-<p>Android: An valid Android application package suffixed with <code class="highlighter-rouge">.apk</code>.</p>
-
-<p>Desktop: All web application could be run with initial url.</p>
-
-<p>Further options could be found in <a href="./cli-usage">this document</a>.</p>
-
-<h2 id="macaca-cli">Macaca Cli</h2>
-
-<h3 id="global-installation">Global Installation</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
-</code></pre>
-</div>
-
-<p>If you saw the picture below, congratulations! Macaca has been installed successfully!</p>
-
-<p><img src="http://ww4.sinaimg.cn/large/6d308bd9gw1faie2w55hnj20rs0ov4fu.jpg" alt="" /></p>
-
-<h3 id="local-installation">Local Installation</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli --save-dev
-
-<span class="c"># start Macaca</span>
-<span class="gp">$ </span>./node_modules/.bin/macaca run --verbose
-</code></pre>
-</div>
-
-<h3 id="driver-installation">Driver Installation</h3>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># please run below for newer npm</span>
-<span class="gp">$ </span>npm i macaca-ios -g
-</code></pre>
-</div>
-
-<h3 id="environment">Environment</h3>
-
-<p>Let’s check the version and verify the environment.</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># show version</span>
-<span class="gp">$ </span>macaca -v
-
-<span class="c"># verify environment</span>
-<span class="gp">$ </span>macaca doctor
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">remoteConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">host</span><span class="p">:</span> <span class="s1">'host'</span><span class="p">,</span>
+  <span class="na">port</span><span class="p">:</span> <span class="mi">4444</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">(</span><span class="nx">remoteConfig</span><span class="p">);</span>
+<span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">platformName</span><span class="p">:</span> <span class="s1">'desktop'</span><span class="p">,</span>
+  <span class="na">browserName</span><span class="p">:</span> <span class="s1">'ie'</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="s1">'11'</span><span class="p">,</span>
+  <span class="s1">'f2etest.userid'</span><span class="p">:</span> <span class="s1">'xxxxxx'</span><span class="p">,</span>
+  <span class="s1">'f2etest.apiKey'</span><span class="p">:</span> <span class="s1">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>
+<span class="p">})</span>
 </code></pre>
 </div>
 

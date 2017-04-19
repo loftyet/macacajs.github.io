@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/inspector">
+  <body data-page="/browser">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -166,7 +166,7 @@
     <li><a href="debugging">单步调试器</a></li>
     
     
-    <li class="current"><a href="inspector">元素查看器</a></li>
+    <li><a href="inspector">元素查看器</a></li>
     
     
     <li><a href="recorder">录制回放器</a></li>
@@ -181,7 +181,7 @@
     <li><a href="pageuitest">页面UI测试</a></li>
     
     
-    <li><a href="browser">浏览器测试</a></li>
+    <li class="current"><a href="browser">浏览器测试</a></li>
     
   </ul>
   
@@ -230,36 +230,45 @@
 </aside>
 
   <article>
-    <h1 id="section">元素查看器</h1>
+    <h1 id="section">浏览器测试</h1>
 
-<h2 id="android-">Android 端</h2>
+<p>本篇文档介绍如何对桌面端浏览器做兼容性测试。</p>
 
-<p><img src="http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwlhpakwg20s40kge3k.gif" alt="" /></p>
+<h2 id="section-1">多浏览器支持</h2>
 
-<h2 id="ios-">iOS 端</h2>
+<p>通过在本机运行 <a href="//github.com/vvo/selenium-standalone">selenium-standalone</a> 实现驱动桌面端浏览器。</p>
 
-<p><img src="http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwp1mgiyg20s40kg7wh.gif" alt="" /></p>
+<p>可以通过如下命令加速安装：</p>
 
-<h2 id="section-1">安装</h2>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i app-inspector -g
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>selenium-standalone install --drivers.firefox.baseURL<span class="o">=</span>http://npm.taobao.org/mirrors/geckodriver --baseURL<span class="o">=</span>http://npm.taobao.org/mirrors/selenium --drivers.chrome.baseURL<span class="o">=</span>http://npm.taobao.org/mirrors/chromedriver --drivers.ie.baseURL<span class="o">=</span>http://npm.taobao.org/mirrors/selenium
 </code></pre>
 </div>
 
-<h2 id="section-2">用法</h2>
+<h2 id="section-2">私有云部署</h2>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># 直接 -u + 设备的 udid 即可</span>
-<span class="gp">$ </span>app-inspector -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+<p><a href="//github.com/alibaba/f2etest">F2ETest</a> 支持服务端私有部署，是多浏览器兼容性测试整体解决方案。</p>
+
+<p><img src="http://wx1.sinaimg.cn/large/6d308bd9gy1feru097e8cj20sw0dcagm.jpg" alt="" /></p>
+
+<h3 id="section-3">用法</h3>
+
+<p>通过如下配置可以测试多种类型的桌面端浏览器：</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">remoteConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">host</span><span class="p">:</span> <span class="s1">'host'</span><span class="p">,</span>
+  <span class="na">port</span><span class="p">:</span> <span class="mi">4444</span>
+<span class="p">};</span>
+<span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">(</span><span class="nx">remoteConfig</span><span class="p">);</span>
+<span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+  <span class="na">platformName</span><span class="p">:</span> <span class="s1">'desktop'</span><span class="p">,</span>
+  <span class="na">browserName</span><span class="p">:</span> <span class="s1">'ie'</span><span class="p">,</span>
+  <span class="na">version</span><span class="p">:</span> <span class="s1">'11'</span><span class="p">,</span>
+  <span class="s1">'f2etest.userid'</span><span class="p">:</span> <span class="s1">'xxxxxx'</span><span class="p">,</span>
+  <span class="s1">'f2etest.apiKey'</span><span class="p">:</span> <span class="s1">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>
+<span class="p">})</span>
 </code></pre>
 </div>
-
-<h2 id="section-3">帮助</h2>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>app-inspector -h
-</code></pre>
-</div>
-
-<p><a href="//github.com/macacajs/app-inspector">更多关于 Inspector</a></p>
 
 
   </article>
