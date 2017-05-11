@@ -75,7 +75,7 @@
     
       <option value="environment-setup">Environment Setup</option>
     
-      <option value="desired-caps">Desired Capabilities</option>
+      <option value="helpful-settings">Helpful Settings</option>
     
       <option value="cli-usage">Macaca CLI Usage</option>
     
@@ -149,7 +149,7 @@
     <li><a href="environment-setup">Environment Setup</a></li>
     
     
-    <li><a href="desired-caps">Desired Capabilities</a></li>
+    <li><a href="helpful-settings">Helpful Settings</a></li>
     
     
     <li><a href="cli-usage">Macaca CLI Usage</a></li>
@@ -256,7 +256,7 @@
 
 <p>Prepare basic docker image:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-docker-base
 <span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-docker-base"</span> .
 </code></pre>
@@ -266,7 +266,7 @@
 
 <p>Prepare master <code class="highlighter-rouge">reliable-master</code> image:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-master
 <span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-master"</span> .
 </code></pre>
@@ -276,7 +276,7 @@
 
 <p>Launch from compose file:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
 <span class="gp">$ </span>make start
 </code></pre>
@@ -361,7 +361,7 @@ Mail service configuration, see <a href="//github.com/nodemailer/nodemailer" tar
 
 <p>You can use <code class="highlighter-rouge">crontab</code> to backup data. See <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>, edit it for customization, and add it to your crontab script. Like:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
 </code></pre>
 </div>
 

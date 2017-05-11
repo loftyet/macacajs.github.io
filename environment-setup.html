@@ -75,7 +75,7 @@
     
       <option value="environment-setup">Environment Setup</option>
     
-      <option value="desired-caps">Desired Capabilities</option>
+      <option value="helpful-settings">Helpful Settings</option>
     
       <option value="cli-usage">Macaca CLI Usage</option>
     
@@ -149,7 +149,7 @@
     <li class="current"><a href="environment-setup">Environment Setup</a></li>
     
     
-    <li><a href="desired-caps">Desired Capabilities</a></li>
+    <li><a href="helpful-settings">Helpful Settings</a></li>
     
     
     <li><a href="cli-usage">Macaca CLI Usage</a></li>
@@ -238,17 +238,23 @@
 
 <h2 id="ios">iOS</h2>
 
-<p>Xcode v7.3 or higher is required.</p>
+<p>Xcode v8.3 or higher is required.</p>
 
 <p><a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> is needed in order to testing real iOS device via USB.</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install usbmuxd
 </code></pre>
 </div>
 
 <p><a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a> is needed in order to testing WebViews.</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install ios-webkit-debug-proxy
+</code></pre>
+</div>
+
+<p><a href="//github.com/Carthage/Carthage">carthage</a> is needed in order to build <a href="//github.com/macacajs/XCTestWD">XCTestWD</a>.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install carthage
 </code></pre>
 </div>
 
@@ -260,7 +266,7 @@
   <li>Set the <code class="highlighter-rouge">ANDROID_HOME</code> environment variable to your <code class="highlighter-rouge">~/.bashrc</code>, <code class="highlighter-rouge">~/.bash_profile</code>, <code class="highlighter-rouge">~/.zshrc</code> or whatever your shell uses:</li>
 </ol>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c">## if you have installed the SDK via Homebrew</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">## if you have installed the SDK via Homebrew</span>
 <span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
 
 <span class="c">## otherwise</span>
@@ -268,21 +274,17 @@
 </code></pre>
 </div>
 
-<h2 id="prepare-application">Prepare application</h2>
+<p><a href="https://gradle.org">gradle</a> is needed in order to build <a href="//github.com/macacajs/UIAutomatorWD">UIAutomatorWD</a> and other package.</p>
 
-<p>iOS: An valid iOS application package suffixed with <code class="highlighter-rouge">.app</code>.</p>
-
-<p>Android: An valid Android application package suffixed with <code class="highlighter-rouge">.apk</code>.</p>
-
-<p>Desktop: All web application could be run with initial url.</p>
-
-<p>Further options could be found in <a href="./cli-usage">this document</a>.</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install gradle
+</code></pre>
+</div>
 
 <h2 id="macaca-cli">Macaca Cli</h2>
 
 <h3 id="global-installation">Global Installation</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i -g macaca-cli
 </code></pre>
 </div>
 
@@ -292,7 +294,7 @@
 
 <h3 id="local-installation">Local Installation</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli --save-dev
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli --save-dev
 
 <span class="c"># start Macaca</span>
 <span class="gp">$ </span>./node_modules/.bin/macaca run --verbose
@@ -301,7 +303,7 @@
 
 <h3 id="driver-installation">Driver Installation</h3>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># please run below for newer npm</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># please run below for newer npm</span>
 <span class="gp">$ </span>npm i macaca-ios -g
 </code></pre>
 </div>
@@ -310,13 +312,23 @@
 
 <p>Let’s check the version and verify the environment.</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="c"># show version</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># show version</span>
 <span class="gp">$ </span>macaca -v
 
 <span class="c"># verify environment</span>
 <span class="gp">$ </span>macaca doctor
 </code></pre>
 </div>
+
+<h2 id="prepare-application">Prepare Application</h2>
+
+<p>iOS: An valid iOS application package suffixed with <code class="highlighter-rouge">.app</code>.</p>
+
+<p>Android: An valid Android application package suffixed with <code class="highlighter-rouge">.apk</code>.</p>
+
+<p>Desktop: All web application could be run with initial url.</p>
+
+<p>Further options could be found in <a href="./cli-usage">this document</a>.</p>
 
 
   </article>

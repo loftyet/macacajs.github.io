@@ -75,7 +75,7 @@
     
       <option value="environment-setup">环境配置</option>
     
-      <option value="desired-caps">脚本初始化参数</option>
+      <option value="helpful-settings">参数设置</option>
     
       <option value="cli-usage">命令行工具</option>
     
@@ -149,7 +149,7 @@
     <li><a href="environment-setup">环境配置</a></li>
     
     
-    <li><a href="desired-caps">脚本初始化参数</a></li>
+    <li><a href="helpful-settings">参数设置</a></li>
     
     
     <li><a href="cli-usage">命令行工具</a></li>
@@ -258,7 +258,7 @@
 
 <p>1) build <code class="highlighter-rouge">reliable-docker-base</code> 镜像：</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-docker-base
 <span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-docker-base"</span> .
 </code></pre>
@@ -268,7 +268,7 @@
 
 <p>2) build <code class="highlighter-rouge">reliable-master</code> 镜像:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-master
 <span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-master"</span> .
 </code></pre>
@@ -278,7 +278,7 @@
 
 <p>3) 使用 docker-compose 启动:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
 <span class="gp">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
 <span class="gp">$ </span>make start
 </code></pre>
@@ -359,7 +359,7 @@
 
 <p>你也可以使用 <code class="highlighter-rouge">crontab</code> 备份数据。参考 <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>，自行配置后，添加到 crontab script 中。 如:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
 </code></pre>
 </div>
 

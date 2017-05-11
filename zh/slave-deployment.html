@@ -75,7 +75,7 @@
     
       <option value="environment-setup">环境配置</option>
     
-      <option value="desired-caps">脚本初始化参数</option>
+      <option value="helpful-settings">参数设置</option>
     
       <option value="cli-usage">命令行工具</option>
     
@@ -149,7 +149,7 @@
     <li><a href="environment-setup">环境配置</a></li>
     
     
-    <li><a href="desired-caps">脚本初始化参数</a></li>
+    <li><a href="helpful-settings">参数设置</a></li>
     
     
     <li><a href="cli-usage">命令行工具</a></li>
@@ -244,7 +244,7 @@
 
 <p>执行以下命令检查环境：</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli -g
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i macaca-cli -g
 <span class="gp">$ </span>macaca doctor
 </code></pre>
 </div>
@@ -255,7 +255,7 @@
 
 <p>在安装 reliable-slave 之前，请先安装 zeromq。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install pkg-config
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install pkg-config
 <span class="gp">$ </span>brew install zeromq
 
 <span class="c"># Then</span>
@@ -270,7 +270,7 @@
 
 <p>在部署 reliable-slave 之前，我们应该先让 reliable-master 运行起来，如果没有的话，你应该先部署 <a href="/zh/master-deployment">reliable-master</a> 。reliable-master 运行起来后, 执行命令来部署 reliable-slave。</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>reliable server -m &lt;reliable-master:port&gt; --verbose
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>reliable server -m &lt;reliable-master:port&gt; --verbose
 </code></pre>
 </div>
 

@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/desired-caps">
+  <body data-page="/helpful-settings">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -75,7 +75,7 @@
     
       <option value="environment-setup">环境配置</option>
     
-      <option value="desired-caps">脚本初始化参数</option>
+      <option value="helpful-settings">参数设置</option>
     
       <option value="cli-usage">命令行工具</option>
     
@@ -149,7 +149,7 @@
     <li><a href="environment-setup">环境配置</a></li>
     
     
-    <li class="current"><a href="desired-caps">脚本初始化参数</a></li>
+    <li class="current"><a href="helpful-settings">参数设置</a></li>
     
     
     <li><a href="cli-usage">命令行工具</a></li>
@@ -230,11 +230,21 @@
 </aside>
 
   <article>
-    <h1 id="section">脚本初始化参数</h1>
+    <h1 id="section">参数设置</h1>
+
+<h2 id="keycode-">支持的 Keycode 列表</h2>
+
+<p>coming soon …</p>
+
+<h2 id="locator">选择器说明 Locator</h2>
+
+<p>coming soon …</p>
+
+<h2 id="section-1">脚本初始化参数</h2>
 
 <p>Desired Capabilities 是用来在启动时配置服务器的参数。</p>
 
-<h2 id="section-1">基本用法</h2>
+<h3 id="section-2">入参示例</h3>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
@@ -252,7 +262,7 @@
 </code></pre>
 </div>
 
-<h2 id="section-2">常见的参数</h2>
+<h3 id="section-3">常见的参数</h3>
 
 <table>
   <thead>
@@ -276,7 +286,7 @@
   </tbody>
 </table>
 
-<h2 id="app-">App 相关参数</h2>
+<h3 id="app-">App 相关参数</h3>
 
 <table>
   <thead>
@@ -305,7 +315,7 @@
   </tbody>
 </table>
 
-<h2 id="android-">Android 的参数介绍</h2>
+<h3 id="android-">Android 的参数介绍</h3>
 
 <table>
   <thead>
@@ -339,7 +349,7 @@
   </tbody>
 </table>
 
-<h2 id="ios-">iOS 的参数介绍</h2>
+<h3 id="ios-">iOS 的参数介绍</h3>
 
 <table>
   <thead>
