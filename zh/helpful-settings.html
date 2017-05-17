@@ -376,13 +376,13 @@
     </tr>
     <tr>
       <td>press</td>
-      <td>{ x: 100,  y: 100，duration: 2 (iOS，单位 S), steps: 100(Android) }</td>
+      <td>{ x: 100,  y: 100, duration: 2 (单位 S) }</td>
       <td>driver.touch(‘press’, { x: 100, y: 100}) | element.touch(‘press’, { duration: 2 })</td>
       <td>长按某个坐标或者当前元素</td>
     </tr>
     <tr>
       <td>pinch</td>
-      <td>{ x: 100,  y: 100，scale: 2 (iOS), velocity: 1(iOS),  direction: “in” or “out”(Android), percent: 200(Android), steps: 100(Android) }</td>
+      <td>{ x: 100,  y: 100，scale: 2 (iOS), velocity: 1(iOS),  direction: “in” or “out”(Android), percent: 200(Android), duration: 100(Android) }</td>
       <td>iOS: element.touch(‘pinch’, { scale: 2 }), Android: element.touch(‘pinch’, { direction: “in”, percent: 50 })</td>
       <td>两只手指放大或者缩小当前元素</td>
     </tr>
@@ -394,7 +394,7 @@
     </tr>
     <tr>
       <td>drag</td>
-      <td>{ fromX: 100, fromY: 100, toX: 200, toY: 200, duration: 2(iOS，单位 S), steps: 100(Android)}</td>
+      <td>{ fromX: 100, fromY: 100, toX: 200, toY: 200, duration: 2(单位 S)}</td>
       <td>driver.touch(‘drag’, { fromX: 100, fromY: 100, toX: 200, toY: 200 }) | element.touch(‘drag’, { toX: 200, toY: 200 })</td>
       <td>拖拽一个元素或者在多个坐标之间移动</td>
     </tr>
