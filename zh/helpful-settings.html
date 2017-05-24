@@ -239,7 +239,11 @@
 
 <h2 id="keycode-">Keycode 支持</h2>
 
-<h4 id="pc-">PC 按键映射</h4>
+<h4 id="section-1">按键映射</h4>
+
+<blockquote>
+  <p>PC 默认都支持</p>
+</blockquote>
 
 <ul>
   <li><code class="highlighter-rouge">\uE002</code>	“HELP” =&gt; <code class="highlighter-rouge">259 (0x00000103)</code></li>
@@ -277,7 +281,11 @@
   <li><code class="highlighter-rouge">\uE03D</code>	“META” =&gt; <code class="highlighter-rouge">117 (0x00000075)</code></li>
 </ul>
 
-<h4 id="android-">Android 按键映射</h4>
+<h4 id="android-">Android 按键扩展映射</h4>
+
+<blockquote>
+  <p>Android 平台扩展的按键</p>
+</blockquote>
 
 <ul>
   <li><code class="highlighter-rouge">\uE101</code> “POWER 电源键” =&gt;  <code class="highlighter-rouge">26 (0x0000001a)</code></li>
@@ -301,6 +309,10 @@
 <p><a href="https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_SPACE">android-reference-KeyEvent</a></p>
 
 <h4 id="ios-">iOS 按键映射</h4>
+
+<blockquote>
+  <p>iOS 平台扩展的按键</p>
+</blockquote>
 
 <ul>
   <li><code class="highlighter-rouge">\uE105</code> “HOME_SCREEN HOME键”</li>
@@ -355,7 +367,7 @@
 
 <hr />
 
-<h2 id="section-1">手势操作</h2>
+<h2 id="section-2">手势操作</h2>
 
 <table>
   <thead>
@@ -406,7 +418,7 @@
   </tbody>
 </table>
 
-<h4 id="section-2">连续操作</h4>
+<h4 id="section-3">连续操作</h4>
 
 <p>连续执行多个 touch 操作，类似于下图的密码解锁。</p>
 
@@ -437,11 +449,11 @@
 
 <hr />
 
-<h2 id="section-3">初始化参数</h2>
+<h2 id="section-4">初始化参数</h2>
 
 <p>Desired Capabilities 是用来在启动时配置服务器的参数。</p>
 
-<h4 id="section-4">入参示例</h4>
+<h4 id="section-5">入参示例</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
@@ -459,7 +471,7 @@
 </code></pre>
 </div>
 
-<h4 id="section-5">常见的参数</h4>
+<h4 id="section-6">常见的参数</h4>
 
 <table>
   <thead>
