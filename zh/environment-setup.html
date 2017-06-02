@@ -274,6 +274,16 @@
   <li>准备 App 包：如需要测试 iOS 应用，请使用 Scheme 设置为 debug 的 <code class="highlighter-rouge">.app</code> 包。</li>
 </ul>
 
+<h3 id="ios--1">iOS 真机环境</h3>
+
+<p><img src="http://wx1.sinaimg.cn/large/6d308bd9gy1fg7cnt9hf6j20t70h7782.jpg" alt="" /></p>
+
+<p>在安装过程中可以将 TEAM_ID 通过环境变量传入即可支持真机，TEAM_ID 如何获取请见上图。</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nv">DEVELOPMENT_TEAM_ID</span><span class="o">=</span>TEAM_ID npm i macaca-ios -g
+</code></pre>
+</div>
+
 <h2 id="android-">Android 环境</h2>
 
 <ol>
