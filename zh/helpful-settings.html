@@ -507,6 +507,11 @@
   </thead>
   <tbody>
     <tr>
+      <td>reuse</td>
+      <td>Number</td>
+      <td>0: 启动并安装 app。1 (默认): 卸载并重装 app。 2: 仅重装 app。3: 在测试结束后保持 app 状态。</td>
+    </tr>
+    <tr>
       <td>deviceName</td>
       <td>String</td>
       <td>模拟器的名称，例如 ‘iPhone 6’ 或者 ‘Nexus 5x’。</td>
@@ -520,6 +525,16 @@
       <td>udid</td>
       <td>String</td>
       <td>测试设备的唯一设备 ID。</td>
+    </tr>
+    <tr>
+      <td>autoAcceptAlerts</td>
+      <td>Boolean</td>
+      <td>自动接受所有的系统弹窗信息。默认是 false。</td>
+    </tr>
+    <tr>
+      <td>autoDismissAlerts</td>
+      <td>Boolean</td>
+      <td>自动拒绝所有的系统弹窗信息。默认是 false。</td>
     </tr>
   </tbody>
 </table>
@@ -535,11 +550,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>reuse</td>
-      <td>Number</td>
-      <td>0: 启动并安装 app。1 (默认): 卸载并重装 app。 2: 仅重装 app。3: 在测试结束后保持 app 状态。</td>
-    </tr>
     <tr>
       <td>package</td>
       <td>String</td>
@@ -575,24 +585,9 @@
   </thead>
   <tbody>
     <tr>
-      <td>reuse</td>
-      <td>Number</td>
-      <td>0: 清楚数据并重装 app。 1: (默认) 卸载并重装 app。 2: 仅重装 app。 3: 在测试结束后保持 app 状态。</td>
-    </tr>
-    <tr>
       <td>bundleId</td>
       <td>String</td>
       <td>应用的 Bundle ID，例如 com.apple.Maps。</td>
-    </tr>
-    <tr>
-      <td>autoAcceptAlerts</td>
-      <td>Boolean</td>
-      <td>自动接受所有的系统弹窗信息。默认是 false。</td>
-    </tr>
-    <tr>
-      <td>autoDismissAlerts</td>
-      <td>Boolean</td>
-      <td>自动拒绝所有的系统弹窗信息。默认是 false。</td>
     </tr>
   </tbody>
 </table>

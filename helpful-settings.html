@@ -509,6 +509,21 @@
       <td>String</td>
       <td>Unique device identifier of the connected Device/Simulator or  device.</td>
     </tr>
+    <tr>
+      <td>autoAcceptAlerts</td>
+      <td>Boolean</td>
+      <td>Accept all iOS alerts automatically if they pop up. Default is false.</td>
+    </tr>
+    <tr>
+      <td>autoDismissAlerts</td>
+      <td>Boolean</td>
+      <td>Dismiss all iOS alerts automatically if they pop up. Default is false.</td>
+    </tr>
+    <tr>
+      <td>reuse</td>
+      <td>Number</td>
+      <td>0: Launch the simulator and install the app. 1 (default): Uninstall the app and reinstall the app. 2: Only reinstall the app. 3: Keep the simulator and app after testing.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -523,11 +538,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>reuse</td>
-      <td>Number</td>
-      <td>0: Launch the simulator and install the app. 1 (default): Uninstall the app and reinstall the app. 2: Only reinstall the app. 3: Keep the simulator and app after testing.</td>
-    </tr>
     <tr>
       <td>package</td>
       <td>String</td>
@@ -563,24 +573,9 @@
   </thead>
   <tbody>
     <tr>
-      <td>reuse</td>
-      <td>Number</td>
-      <td>0: Erase the simulator and install the app. 1: (default) Uninstall the app and reinstall the app. 2: Only reinstall the app. 3: Keep the simulator and app after testing.</td>
-    </tr>
-    <tr>
       <td>bundleId</td>
       <td>String</td>
       <td>Bundle ID of the app such as com.apple.Maps.</td>
-    </tr>
-    <tr>
-      <td>autoAcceptAlerts</td>
-      <td>Boolean</td>
-      <td>Accept all iOS alerts automatically if they pop up. Default is false.</td>
-    </tr>
-    <tr>
-      <td>autoDismissAlerts</td>
-      <td>Boolean</td>
-      <td>Dismiss all iOS alerts automatically if they pop up. Default is false.</td>
     </tr>
   </tbody>
 </table>
