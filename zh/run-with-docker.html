@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/support">
+  <body data-page="/run-with-docker">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -29,11 +29,11 @@
         <paper-ripple class="peach"></paper-ripple>
         首页
       </a>
-      <a href="/zh/introduction">
+      <a href="/zh/introduction" class="current">
         <paper-ripple class="peach"></paper-ripple>
         文档
       </a>
-      <a href="/zh/support" class="current">
+      <a href="/zh/support">
         <paper-ripple class="peach"></paper-ripple>
         帮助支持
       </a>
@@ -210,7 +210,7 @@
   <ul>
     
     
-    <li><a href="run-with-docker">使用Docker</a></li>
+    <li class="current"><a href="run-with-docker">使用Docker</a></li>
     
     
     <li><a href="master-deployment">Reliable Master部署</a></li>
@@ -240,88 +240,36 @@
 </aside>
 
   <article>
-    <h1 id="section">帮助支持</h1>
+    <h1 id="docker">使用 Docker</h1>
 
-<h2 id="github">GitHub</h2>
+<h2 id="section">支持列表</h2>
 
-<p><a href="//github.com/alibaba/macaca"><img src="https://img.shields.io/github/stars/alibaba/macaca.svg?style=flat-square" alt="GitHub stars" title="GitHub stars" /></a>
-<a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&amp;q="><img src="https://img.shields.io/github/issues/alibaba/macaca.svg?style=flat-square" alt="GitHub issues" title="GitHub issues" /></a></p>
-
-<p>Macaca 依赖的功能模块非常多，所以我们使用主仓库 (<a href="//github.com/alibaba/macaca">Macaca</a>) 来管理所有任务，bug 等等，请使用 <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&amp;q=">GitHub issues</a> 上报问题或交流。</p>
-
-<p>源码管理在 <a href="//github.com/macacajs">Macaca Group</a> 和 <a href="//github.com/reliablejs">Reliable Group</a> 两个组。</p>
-
-<h2 id="section-1">团队成员</h2>
-
-<p><a href="//github.com/orgs/macacajs/people">成员列表</a></p>
-
-<h2 id="section-2">国内社区</h2>
-
-<ul>
-  <li><a href="https://testerhome.com/topics/node68">Testerhome</a></li>
-  <li><a href="https://cnodejs.org">Cnodejs</a></li>
-</ul>
-
-<h2 id="section-3">他们在使用</h2>
-
-<ul id="who-use-list" class="clearfix">
-  <li>
-    <a href="https://www.alipay.com" target="_blank">
-      <img src="http://wx1.sinaimg.cn/large/6d308bd9gy1fd4tr0jhxej203c03ct8o.jpg" />
-    </a>
-    <p>Alipay</p>
-  </li>
-  <li>
-    <a href="https://www.aliyun.com" target="_blank">
-      <img src="http://wx1.sinaimg.cn/square/6d308bd9gy1fd4w3yh89hj203c03c744.jpg" />
-    </a>
-    <p>Aliyun</p>
-  </li>
-  <li>
-    <a href="https://www.taobao.com" target="_blank">
-      <img src="http://wx1.sinaimg.cn/square/6d308bd9gy1fd4w3zvgewj2020020mx1.jpg" />
-    </a>
-    <p>Taobao</p>
-  </li>
-  <li>
-    <a href="https://www.dingtalk.com" target="_blank">
-      <img src="http://wx2.sinaimg.cn/square/6d308bd9gy1fd4w3z89xbj203c03czk6.jpg" />
-    </a>
-    <p>DingTalk</p>
-  </li>
-  <li>
-    <a href="https://www.alibaba.com" target="_blank">
-      <img src="http://wx4.sinaimg.cn/square/6d308bd9gy1fd4w3xrucxj2020020mx0.jpg" />
-    </a>
-    <p>Alibaba</p>
-  </li>
-  <li>
-    <a href="https://www.youku.com" target="_blank">
-      <img src="http://wx4.sinaimg.cn/square/6d308bd9gy1fd4w414i38j20200200sk.jpg" />
-    </a>
-    <p>Youku</p>
-  </li>
-  <li>
-    <a href="https://www.tmall.com" target="_blank">
-      <img src="http://wx2.sinaimg.cn/square/6d308bd9gy1fd4w40on0qj203c03caa2.jpg" />
-    </a>
-    <p>Tmall</p>
-  </li>
-</ul>
-
-<h2 id="section-4">相关周边</h2>
-
-<p>Macaca T-shirt 采用的设计及 Logo 在保留原设计不修改的前提下可无偿使用。</p>
-
-<p><img src="http://wx4.sinaimg.cn/large/6d308bd9gy1ffrrpxt3sbj20i20i23ym.jpg" width="300" /></p>
-
-<p>更多请见:</p>
-
-<ul>
-  <li><a href="//github.com/macacajs/macaca-products-design">macaca-products-design</a></li>
-  <li><a href="//github.com/macacajs/macaca-products-design/issues/1">photos</a></li>
-  <li><a href="//github.com/macacajs/macaca-logo">macaca-logo</a></li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Dockerfile</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>macaca-android</td>
+      <td><a href="//github.com/macacajs/macaca-android-docker">macaca-android-docker</a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-android-docker"><img src="https://img.shields.io/travis/macacajs/macaca-android-docker.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+    <tr>
+      <td>macaca-electron</td>
+      <td><a href="//github.com/macacajs/macaca-electron-docker">macaca-electron-docker</a></td>
+      <td><a href="https://travis-ci.org/macacajs/macaca-electron-docker"><img src="https://img.shields.io/travis/macacajs/macaca-electron-docker.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+    <tr>
+      <td>nodecv</td>
+      <td><a href="//github.com/macacajs/nodecv-server">nodecv-server</a></td>
+      <td><a href="https://travis-ci.org/macacajs/nodecv-server"><img src="https://img.shields.io/travis/macacajs/nodecv-server.svg?style=flat-square" alt="build status" /></a></td>
+    </tr>
+  </tbody>
+</table>
 
 
   </article>
