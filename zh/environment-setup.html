@@ -305,16 +305,12 @@
 </div>
 
 <ol>
-  <li>安装安卓 SDK，运行 <code class="highlighter-rouge">brew install android-sdk</code>，然后安装<code class="highlighter-rouge">18-25</code>版本中的任一 SDK 和 <code class="highlighter-rouge">Android Support Repository</code></li>
-  <li>shell 环境设置 <code class="highlighter-rouge">ANDROID_HOME</code>
- 根据你所使用的Terminal修改不同的文件，比如~/.bashrc, ~/.bash_profile, ~/.zshrc</li>
+  <li>安装 <code class="highlighter-rouge">18-25</code> 版本中的任一 SDK 和 <code class="highlighter-rouge">Android Support Repository</code></li>
+  <li>shell 环境设置 <code class="highlighter-rouge">ANDROID_HOME</code>，根据你所使用的Terminal修改不同的文件，比如~/.bashrc, ~/.bash_profile, ~/.zshrc</li>
 </ol>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 如果是通过homebrew安装的android-sdk，则路径如下</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 例如</span>
 <span class="gp">$ </span><span class="nb">export </span>ANDROID_HOME <span class="o">=</span> /usr/local/opt/android-sdk
-
-<span class="c"># 如果通过其他方式安装的sdk，路径设置为对应的android sdk的路径</span>
-<span class="gp">$ </span><span class="nb">export </span>ANDROID_HOME <span class="o">=</span> path/to/your/Android/sdk
 </code></pre>
 </div>
 
