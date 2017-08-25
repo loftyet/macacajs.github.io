@@ -242,13 +242,84 @@
   <article>
     <h1 id="ui">页面UI测试</h1>
 
-<h2 id="section">安装</h2>
+<h2 id="torchjs">使用 torchjs(推荐)</h2>
+
+<blockquote>
+  <p>Test framework to light up the world.</p>
+</blockquote>
+
+<p><img src="http://wx4.sinaimg.cn/large/6d308bd9gy1fiw8er0a5eg20zc0k0he0.gif" alt="" /></p>
+
+<h3 id="section">安装</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i torchjs --save-dev
+</code></pre>
+</div>
+
+<h3 id="section-1">配置</h3>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>torch --help
+
+  Usage: torch <span class="o">[</span>options]
+
+  Options:
+
+    -h, --help                              output usage information
+    -V, --version                           output the version number
+    -C, --no-colors                         force disabling of colors
+    -O, --reporter-options &lt;<span class="nv">k</span><span class="o">=</span>v,k2<span class="o">=</span>v2,...&gt;  reporter-specific options
+    -R, --reporter &lt;name&gt;                   specify the reporter to use
+    -S, --sort                              sort <span class="nb">test </span>files
+    -b, --bail                              bail after first <span class="nb">test </span>failure
+    -g, --grep &lt;pattern&gt;                    only run tests matching &lt;pattern&gt;
+    -f, --fgrep &lt;string&gt;                    only run tests containing &lt;string&gt;
+    -i, --invert                            inverts --grep and --fgrep matches
+    -r, --require &lt;name&gt;                    require the given module
+    -s, --slow &lt;ms&gt;                         <span class="s2">"slow"</span> <span class="nb">test </span>threshold <span class="k">in </span>milliseconds <span class="o">[</span>75]
+    -t, --timeout &lt;ms&gt;                      <span class="nb">set test</span>-case timeout <span class="k">in </span>milliseconds <span class="o">[</span>2000]
+    -u, --ui &lt;name&gt;                         specify user-interface <span class="o">(</span>bdd|tdd|exports<span class="o">)</span>
+    --check-leaks                           check <span class="k">for </span>global variable leaks
+    --compile                               compile with babel
+    --compile-opts &lt;path&gt;                   path of compile options
+    --compilers &lt;ext&gt;:&lt;module&gt;,...          use the given module<span class="o">(</span>s<span class="o">)</span> to compile files
+    --coverage                              report coverage
+    --debug                                 <span class="nb">enable </span>Electron debugger on port <span class="o">[</span>5858]; <span class="k">for</span> --renderer tests show window and dev-tools
+    --debug-brk                             like --debug but pauses the script on the first line
+    --globals &lt;names&gt;                       allow the given comma-delimited global <span class="o">[</span>names]
+    --inline-diffs                          display actual/expected differences inline within each string
+    --interactive                           run tests <span class="k">in </span>renderer process <span class="k">in </span>a visible window that can be reloaded to re-run tests
+    --interfaces                            display available interfaces
+    --no-timeouts                           disables timeouts
+    --notify-on-fail                        notify on failures
+    --notify-on-success                     notify on success
+    --opts &lt;path&gt;                           specify opts path
+    --preload &lt;name&gt;                        preload the given script <span class="k">in </span>renderer process
+    --recursive                             include sub directories
+    --renderer                              run tests <span class="k">in </span>renderer process
+    --require-main &lt;name&gt;                   load the given script <span class="k">in </span>main process before executing tests
+    --source-pattern &lt;sources&gt;              glob pattern of <span class="nb">source </span>files
+    --watch                                 watching <span class="nb">source </span>file changes
+    --watch-aggregate-timeout               delay <span class="nb">time </span><span class="k">for </span>re-run <span class="nb">test </span>cases after files changed
+</code></pre>
+</div>
+
+<p><a href="//github.com/macacajs/torchjs">更多配置</a></p>
+
+<p><img src="http://wx4.sinaimg.cn/large/6d308bd9gy1fivuatxep5j21kw13dgs6.jpg" alt="" /></p>
+
+<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1fivtfos9r5j21kw130af7.jpg" alt="" /></p>
+
+<hr />
+
+<h2 id="uitest">使用 UITest</h2>
+
+<h3 id="section-2">安装</h3>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i uitest --save-dev
 </code></pre>
 </div>
 
-<h2 id="section-1">用法</h2>
+<h3 id="section-3">用法</h3>
 
 <p><img src="http://ww3.sinaimg.cn/large/6d308bd9gw1f6wsic5dmxj20rl0qqtbi.jpg" alt="" /></p>
 
@@ -293,7 +364,7 @@
 </code></pre>
 </div>
 
-<h2 id="nodejs">Node.js</h2>
+<h3 id="nodejs">Node.js</h3>
 
 <p><img src="http://ww1.sinaimg.cn/large/6d308bd9gw1f6wsibnfldg20nk0gr7kg.gif" alt="" /></p>
 
@@ -316,7 +387,7 @@
 </code></pre>
 </div>
 
-<h2 id="gulp">Gulp</h2>
+<h3 id="gulp">Gulp</h3>
 
 <p>也可以通过 Gulp 引入：</p>
 
