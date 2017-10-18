@@ -242,223 +242,11 @@
   <article>
     <h1 id="section">参数设置</h1>
 
-<h2 id="keycode-">Keycode 支持</h2>
-
-<h4 id="section-1">按键映射</h4>
-
-<blockquote>
-  <p>PC 默认都支持</p>
-</blockquote>
-
-<ul>
-  <li><code class="highlighter-rouge">\uE002</code>	“HELP” =&gt; <code class="highlighter-rouge">259 (0x00000103)</code></li>
-  <li><code class="highlighter-rouge">\uE003</code>	“BACK_SPACE” =&gt; <code class="highlighter-rouge">67 (0x00000043)</code></li>
-  <li><code class="highlighter-rouge">\uE004</code>	“TAB” =&gt; <code class="highlighter-rouge">61 (0x0000003d)</code></li>
-  <li><code class="highlighter-rouge">\uE005</code>	“CLEAR” =&gt; <code class="highlighter-rouge">28 (0x0000001c)</code></li>
-  <li><code class="highlighter-rouge">\uE007</code>	“ENTER” =&gt; <code class="highlighter-rouge">66 (0x00000042)</code></li>
-  <li><code class="highlighter-rouge">\uE008</code>	“SHIFT” =&gt; <code class="highlighter-rouge">59 (0x0000003b)</code></li>
-  <li><code class="highlighter-rouge">\uE009</code>	“CONTROL” =&gt; <code class="highlighter-rouge">113 (0x00000071)</code></li>
-  <li><code class="highlighter-rouge">\uE00A</code>	“ALT” =&gt; <code class="highlighter-rouge">57 (0x00000039)</code></li>
-  <li><code class="highlighter-rouge">\uE00B</code>	“PAUSE” =&gt; <code class="highlighter-rouge">121 (0x00000079)</code></li>
-  <li><code class="highlighter-rouge">\uE00C</code>	“ESCAPE” =&gt;  <code class="highlighter-rouge">111 (0x0000006f)</code></li>
-  <li><code class="highlighter-rouge">\uE00E</code>	“PAGE_UP” =&gt; <code class="highlighter-rouge">92 (0x0000005c)</code></li>
-  <li><code class="highlighter-rouge">\uE00F</code>	“PAGE_DOWN” =&gt; <code class="highlighter-rouge">93 (0x0000005d)</code></li>
-  <li><code class="highlighter-rouge">\uE010</code>	“END” =&gt; <code class="highlighter-rouge">123 (0x0000007b)</code></li>
-  <li><code class="highlighter-rouge">\uE011</code>	“HOME” =&gt; <code class="highlighter-rouge">122 (0x0000007a)</code></li>
-  <li><code class="highlighter-rouge">\uE012</code>	“ARROW_LEFT” =&gt; <code class="highlighter-rouge">21 (0x00000015)</code></li>
-  <li><code class="highlighter-rouge">\uE013</code>	“ARROW_UP” =&gt; <code class="highlighter-rouge">19 (0x00000013)</code></li>
-  <li><code class="highlighter-rouge">\uE014</code>	“ARROW_RIGHT” =&gt; <code class="highlighter-rouge">22 (0x00000016)</code></li>
-  <li><code class="highlighter-rouge">\uE015</code>	“ARROW_DOWN” =&gt; <code class="highlighter-rouge">20 (0x00000014)</code></li>
-  <li><code class="highlighter-rouge">\uE016</code>	“INSERT” =&gt; <code class="highlighter-rouge">124 (0x0000007c)</code></li>
-  <li><code class="highlighter-rouge">\uE017</code>	“DELETE” =&gt; <code class="highlighter-rouge">112 (0x00000070)</code></li>
-  <li><code class="highlighter-rouge">\uE031</code>	“F1” =&gt; <code class="highlighter-rouge">131 (0x00000083)</code></li>
-  <li><code class="highlighter-rouge">\uE032</code>	“F2” =&gt; <code class="highlighter-rouge">132 (0x00000084)</code></li>
-  <li><code class="highlighter-rouge">\uE033</code>	“F3” =&gt; <code class="highlighter-rouge">133 (0x00000085)</code></li>
-  <li><code class="highlighter-rouge">\uE034</code>	“F4” =&gt; <code class="highlighter-rouge">134 (0x00000086)</code></li>
-  <li><code class="highlighter-rouge">\uE035</code>	“F5” =&gt; <code class="highlighter-rouge">135 (0x00000087)</code></li>
-  <li><code class="highlighter-rouge">\uE036</code>	“F6” =&gt; <code class="highlighter-rouge">136 (0x00000088)</code></li>
-  <li><code class="highlighter-rouge">\uE037</code>	“F7” =&gt; <code class="highlighter-rouge">137 (0x00000089)</code></li>
-  <li><code class="highlighter-rouge">\uE038</code>	“F8” =&gt; <code class="highlighter-rouge">138 (0x0000008a)</code></li>
-  <li><code class="highlighter-rouge">\uE039</code>	“F9” =&gt; <code class="highlighter-rouge">139 (0x0000008b)</code></li>
-  <li><code class="highlighter-rouge">\uE03A</code>	“F10” =&gt; <code class="highlighter-rouge">140 (0x0000008c)</code></li>
-  <li><code class="highlighter-rouge">\uE03B</code>	“F11” =&gt; <code class="highlighter-rouge">141 (0x0000008d)</code></li>
-  <li><code class="highlighter-rouge">\uE03C</code>	“F12” =&gt; <code class="highlighter-rouge">142 (0x0000008e)</code></li>
-  <li><code class="highlighter-rouge">\uE03D</code>	“META” =&gt; <code class="highlighter-rouge">117 (0x00000075)</code></li>
-</ul>
-
-<h4 id="android-">Android 按键扩展映射</h4>
-
-<blockquote>
-  <p>Android 平台扩展的按键</p>
-</blockquote>
-
-<ul>
-  <li><code class="highlighter-rouge">\uE101</code> “POWER 电源键” =&gt;  <code class="highlighter-rouge">26 (0x0000001a)</code></li>
-  <li><code class="highlighter-rouge">\uE102</code> “VOLUME_UP 音量加” =&gt; <code class="highlighter-rouge">24 (0x00000018)</code></li>
-  <li><code class="highlighter-rouge">\uE103</code> “VOLUME_DOWN 音量减” =&gt; <code class="highlighter-rouge">25 (0x00000019)</code></li>
-  <li><code class="highlighter-rouge">\uE104</code> “VOLUME_MUTE 禁音” =&gt; <code class="highlighter-rouge">164 (0x000000a4)</code></li>
-  <li><code class="highlighter-rouge">\uE105</code> “HOME_SCREEN HOME键” =&gt; <code class="highlighter-rouge">3 (0x00000003)</code></li>
-  <li><code class="highlighter-rouge">\uE106</code> “BACK BACK键” =&gt; <code class="highlighter-rouge">4 (0x00000004)</code></li>
-  <li><code class="highlighter-rouge">\uE107</code> “MENU MENU键” =&gt; <code class="highlighter-rouge">82 (0x00000052)</code></li>
-  <li><code class="highlighter-rouge">\uE108</code> “CAMERA 拍照键” =&gt; <code class="highlighter-rouge">27 (0x0000001b)</code></li>
-  <li><code class="highlighter-rouge">\uE109</code> “CALL 电话键” =&gt; <code class="highlighter-rouge">5 (0x00000005)</code></li>
-  <li><code class="highlighter-rouge">\uE10A</code> “END_CALL 结束电话键” =&gt; <code class="highlighter-rouge">6 (0x00000006)</code></li>
-  <li><code class="highlighter-rouge">\uE10B</code> “SEARCH 搜索键” =&gt; <code class="highlighter-rouge">84 (0x00000054)</code></li>
-  <li><code class="highlighter-rouge">\uE10C</code> “DPAD_LEFT 导航左键” =&gt; <code class="highlighter-rouge">21 (0x00000015)</code></li>
-  <li><code class="highlighter-rouge">\uE10D</code> “DPAD_UP 导航上键” =&gt; <code class="highlighter-rouge">19 (0x00000013)</code></li>
-  <li><code class="highlighter-rouge">\uE10E</code> “DPAD_RIGHT 导航右键” =&gt; <code class="highlighter-rouge">22 (0x00000016)</code></li>
-  <li><code class="highlighter-rouge">\uE10F</code> “DPAD_DOWN 导航下键” =&gt; <code class="highlighter-rouge">20 (0x00000014)</code></li>
-  <li><code class="highlighter-rouge">\uE110</code> “DPAD_CENTER 导航确定键” =&gt; <code class="highlighter-rouge">23 (0x00000017)</code></li>
-</ul>
-
-<p><a href="https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_SPACE">android-reference-KeyEvent</a></p>
-
-<h4 id="ios-">iOS 按键映射</h4>
-
-<blockquote>
-  <p>iOS 平台扩展的按键</p>
-</blockquote>
-
-<ul>
-  <li><code class="highlighter-rouge">\uE105</code> “HOME_SCREEN HOME键”</li>
-</ul>
-
-<hr />
-
-<h2 id="locator">选择器说明 Locator</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Locator</th>
-      <th>iOS</th>
-      <th>Android</th>
-      <th>PC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>label or value</td>
-      <td>content-desc or rawtext</td>
-      <td>element name</td>
-    </tr>
-    <tr>
-      <td>xpath</td>
-      <td>xpath</td>
-      <td>xpath</td>
-      <td>xpath</td>
-    </tr>
-    <tr>
-      <td>class name</td>
-      <td>class/type</td>
-      <td>class</td>
-      <td>element node name</td>
-    </tr>
-    <tr>
-      <td>id</td>
-      <td>accessibility Id</td>
-      <td>resource Id</td>
-      <td>element id</td>
-    </tr>
-    <tr>
-      <td>css</td>
-      <td>native unsupport</td>
-      <td>native	unsupport</td>
-      <td>element css</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h2 id="section-2">手势操作</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Params</th>
-      <th>Example</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tap</td>
-      <td>{ x: 100,  y: 100 }</td>
-      <td>driver.touch(‘tap’, { x: 100, y: 100}) | element.touch(‘tap’)</td>
-      <td>点击某个坐标或者当前元素</td>
-    </tr>
-    <tr>
-      <td>doubleTap</td>
-      <td>{ x: 100,  y: 100 }</td>
-      <td>driver.touch(‘doubleTap’, { x: 100, y: 100}) | element.touch(‘doubleTap’)</td>
-      <td>双击某个坐标或者当前元素</td>
-    </tr>
-    <tr>
-      <td>press</td>
-      <td>{ x: 100,  y: 100, duration: 2 (单位 S) }</td>
-      <td>driver.touch(‘press’, { x: 100, y: 100}) | element.touch(‘press’, { duration: 2 })</td>
-      <td>长按某个坐标或者当前元素</td>
-    </tr>
-    <tr>
-      <td>pinch</td>
-      <td>{ x: 100,  y: 100，scale: 2 (iOS), velocity: 1(iOS),  direction: “in” or “out”(Android), percent: 200(Android), duration: 100(Android) }</td>
-      <td>iOS: element.touch(‘pinch’, { scale: 2 }), Android: element.touch(‘pinch’, { direction: “in”, percent: 50 })</td>
-      <td>两只手指放大或者缩小当前元素</td>
-    </tr>
-    <tr>
-      <td>rotate (iOS Only)</td>
-      <td>{ rotation: 6(弧度), velocity: 1 }</td>
-      <td>element.touch(‘rotate’, { rotation: 6, velocity: 1 })</td>
-      <td>旋转当前元素</td>
-    </tr>
-    <tr>
-      <td>drag</td>
-      <td>{ fromX: 100, fromY: 100, toX: 200, toY: 200, duration: 2(单位 S)}</td>
-      <td>driver.touch(‘drag’, { fromX: 100, fromY: 100, toX: 200, toY: 200 }) | element.touch(‘drag’, { toX: 200, toY: 200 })</td>
-      <td>拖拽一个元素或者在多个坐标之间移动</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="section-3">连续操作</h4>
-
-<p>连续执行多个 touch 操作，类似于下图的密码解锁。</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">driver</span><span class="p">.</span><span class="nx">touch</span><span class="p">([{</span>
-  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
-  <span class="na">fromX</span><span class="p">:</span> <span class="mi">265</span><span class="p">,</span>
-  <span class="na">fromY</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
-  <span class="na">toX</span><span class="p">:</span> <span class="mi">825</span><span class="p">,</span>
-  <span class="na">toY</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
-  <span class="na">steps</span><span class="p">:</span> <span class="mi">200</span>
-<span class="p">},</span> <span class="p">{</span>
-  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
-  <span class="na">toX</span><span class="p">:</span> <span class="mi">265</span><span class="p">,</span>
-  <span class="na">toY</span><span class="p">:</span> <span class="mi">1460</span><span class="p">,</span>
-  <span class="na">duration</span><span class="p">:</span> <span class="mi">3</span>
-<span class="p">},</span> <span class="p">{</span>
-  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
-  <span class="na">toX</span><span class="p">:</span> <span class="mi">825</span><span class="p">,</span>
-  <span class="na">toY</span><span class="p">:</span> <span class="mi">1460</span><span class="p">,</span>
-  <span class="na">duration</span><span class="p">:</span> <span class="mi">3</span>
-<span class="p">}]);</span>
-</code></pre>
-</div>
-
-<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0wxvjij20ri0mg4al.jpg" alt="touch-gestures" /></p>
-
-<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0we3eig20g60ssqv6.gif" width="240" /></p>
-
-<hr />
-
-<h2 id="section-4">初始化参数</h2>
+<h2 id="section-1">初始化参数</h2>
 
 <p>Desired Capabilities 是用来在启动时配置服务器的参数。</p>
 
-<h4 id="section-5">入参示例</h4>
+<h4 id="section-2">入参示例</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
@@ -476,7 +264,7 @@
 </code></pre>
 </div>
 
-<h4 id="section-6">常见的参数</h4>
+<h4 id="section-3">常见的参数</h4>
 
 <table>
   <thead>
@@ -544,7 +332,7 @@
   </tbody>
 </table>
 
-<h4 id="android--1">Android 的参数介绍</h4>
+<h4 id="android-">Android 的参数介绍</h4>
 
 <table>
   <thead>
@@ -578,7 +366,7 @@
   </tbody>
 </table>
 
-<h4 id="ios--1">iOS 的参数介绍</h4>
+<h4 id="ios-">iOS 的参数介绍</h4>
 
 <table>
   <thead>
@@ -644,6 +432,216 @@
     </tr>
   </tbody>
 </table>
+
+<h2 id="keycode-">Keycode 支持</h2>
+
+<h4 id="section-4">按键映射</h4>
+
+<blockquote>
+  <p>PC 默认都支持</p>
+</blockquote>
+
+<ul>
+  <li><code class="highlighter-rouge">\uE002</code>	“HELP” =&gt; <code class="highlighter-rouge">259 (0x00000103)</code></li>
+  <li><code class="highlighter-rouge">\uE003</code>	“BACK_SPACE” =&gt; <code class="highlighter-rouge">67 (0x00000043)</code></li>
+  <li><code class="highlighter-rouge">\uE004</code>	“TAB” =&gt; <code class="highlighter-rouge">61 (0x0000003d)</code></li>
+  <li><code class="highlighter-rouge">\uE005</code>	“CLEAR” =&gt; <code class="highlighter-rouge">28 (0x0000001c)</code></li>
+  <li><code class="highlighter-rouge">\uE007</code>	“ENTER” =&gt; <code class="highlighter-rouge">66 (0x00000042)</code></li>
+  <li><code class="highlighter-rouge">\uE008</code>	“SHIFT” =&gt; <code class="highlighter-rouge">59 (0x0000003b)</code></li>
+  <li><code class="highlighter-rouge">\uE009</code>	“CONTROL” =&gt; <code class="highlighter-rouge">113 (0x00000071)</code></li>
+  <li><code class="highlighter-rouge">\uE00A</code>	“ALT” =&gt; <code class="highlighter-rouge">57 (0x00000039)</code></li>
+  <li><code class="highlighter-rouge">\uE00B</code>	“PAUSE” =&gt; <code class="highlighter-rouge">121 (0x00000079)</code></li>
+  <li><code class="highlighter-rouge">\uE00C</code>	“ESCAPE” =&gt;  <code class="highlighter-rouge">111 (0x0000006f)</code></li>
+  <li><code class="highlighter-rouge">\uE00E</code>	“PAGE_UP” =&gt; <code class="highlighter-rouge">92 (0x0000005c)</code></li>
+  <li><code class="highlighter-rouge">\uE00F</code>	“PAGE_DOWN” =&gt; <code class="highlighter-rouge">93 (0x0000005d)</code></li>
+  <li><code class="highlighter-rouge">\uE010</code>	“END” =&gt; <code class="highlighter-rouge">123 (0x0000007b)</code></li>
+  <li><code class="highlighter-rouge">\uE011</code>	“HOME” =&gt; <code class="highlighter-rouge">122 (0x0000007a)</code></li>
+  <li><code class="highlighter-rouge">\uE012</code>	“ARROW_LEFT” =&gt; <code class="highlighter-rouge">21 (0x00000015)</code></li>
+  <li><code class="highlighter-rouge">\uE013</code>	“ARROW_UP” =&gt; <code class="highlighter-rouge">19 (0x00000013)</code></li>
+  <li><code class="highlighter-rouge">\uE014</code>	“ARROW_RIGHT” =&gt; <code class="highlighter-rouge">22 (0x00000016)</code></li>
+  <li><code class="highlighter-rouge">\uE015</code>	“ARROW_DOWN” =&gt; <code class="highlighter-rouge">20 (0x00000014)</code></li>
+  <li><code class="highlighter-rouge">\uE016</code>	“INSERT” =&gt; <code class="highlighter-rouge">124 (0x0000007c)</code></li>
+  <li><code class="highlighter-rouge">\uE017</code>	“DELETE” =&gt; <code class="highlighter-rouge">112 (0x00000070)</code></li>
+  <li><code class="highlighter-rouge">\uE031</code>	“F1” =&gt; <code class="highlighter-rouge">131 (0x00000083)</code></li>
+  <li><code class="highlighter-rouge">\uE032</code>	“F2” =&gt; <code class="highlighter-rouge">132 (0x00000084)</code></li>
+  <li><code class="highlighter-rouge">\uE033</code>	“F3” =&gt; <code class="highlighter-rouge">133 (0x00000085)</code></li>
+  <li><code class="highlighter-rouge">\uE034</code>	“F4” =&gt; <code class="highlighter-rouge">134 (0x00000086)</code></li>
+  <li><code class="highlighter-rouge">\uE035</code>	“F5” =&gt; <code class="highlighter-rouge">135 (0x00000087)</code></li>
+  <li><code class="highlighter-rouge">\uE036</code>	“F6” =&gt; <code class="highlighter-rouge">136 (0x00000088)</code></li>
+  <li><code class="highlighter-rouge">\uE037</code>	“F7” =&gt; <code class="highlighter-rouge">137 (0x00000089)</code></li>
+  <li><code class="highlighter-rouge">\uE038</code>	“F8” =&gt; <code class="highlighter-rouge">138 (0x0000008a)</code></li>
+  <li><code class="highlighter-rouge">\uE039</code>	“F9” =&gt; <code class="highlighter-rouge">139 (0x0000008b)</code></li>
+  <li><code class="highlighter-rouge">\uE03A</code>	“F10” =&gt; <code class="highlighter-rouge">140 (0x0000008c)</code></li>
+  <li><code class="highlighter-rouge">\uE03B</code>	“F11” =&gt; <code class="highlighter-rouge">141 (0x0000008d)</code></li>
+  <li><code class="highlighter-rouge">\uE03C</code>	“F12” =&gt; <code class="highlighter-rouge">142 (0x0000008e)</code></li>
+  <li><code class="highlighter-rouge">\uE03D</code>	“META” =&gt; <code class="highlighter-rouge">117 (0x00000075)</code></li>
+</ul>
+
+<h4 id="android--1">Android 按键扩展映射</h4>
+
+<blockquote>
+  <p>Android 平台扩展的按键</p>
+</blockquote>
+
+<ul>
+  <li><code class="highlighter-rouge">\uE101</code> “POWER 电源键” =&gt;  <code class="highlighter-rouge">26 (0x0000001a)</code></li>
+  <li><code class="highlighter-rouge">\uE102</code> “VOLUME_UP 音量加” =&gt; <code class="highlighter-rouge">24 (0x00000018)</code></li>
+  <li><code class="highlighter-rouge">\uE103</code> “VOLUME_DOWN 音量减” =&gt; <code class="highlighter-rouge">25 (0x00000019)</code></li>
+  <li><code class="highlighter-rouge">\uE104</code> “VOLUME_MUTE 禁音” =&gt; <code class="highlighter-rouge">164 (0x000000a4)</code></li>
+  <li><code class="highlighter-rouge">\uE105</code> “HOME_SCREEN HOME键” =&gt; <code class="highlighter-rouge">3 (0x00000003)</code></li>
+  <li><code class="highlighter-rouge">\uE106</code> “BACK BACK键” =&gt; <code class="highlighter-rouge">4 (0x00000004)</code></li>
+  <li><code class="highlighter-rouge">\uE107</code> “MENU MENU键” =&gt; <code class="highlighter-rouge">82 (0x00000052)</code></li>
+  <li><code class="highlighter-rouge">\uE108</code> “CAMERA 拍照键” =&gt; <code class="highlighter-rouge">27 (0x0000001b)</code></li>
+  <li><code class="highlighter-rouge">\uE109</code> “CALL 电话键” =&gt; <code class="highlighter-rouge">5 (0x00000005)</code></li>
+  <li><code class="highlighter-rouge">\uE10A</code> “END_CALL 结束电话键” =&gt; <code class="highlighter-rouge">6 (0x00000006)</code></li>
+  <li><code class="highlighter-rouge">\uE10B</code> “SEARCH 搜索键” =&gt; <code class="highlighter-rouge">84 (0x00000054)</code></li>
+  <li><code class="highlighter-rouge">\uE10C</code> “DPAD_LEFT 导航左键” =&gt; <code class="highlighter-rouge">21 (0x00000015)</code></li>
+  <li><code class="highlighter-rouge">\uE10D</code> “DPAD_UP 导航上键” =&gt; <code class="highlighter-rouge">19 (0x00000013)</code></li>
+  <li><code class="highlighter-rouge">\uE10E</code> “DPAD_RIGHT 导航右键” =&gt; <code class="highlighter-rouge">22 (0x00000016)</code></li>
+  <li><code class="highlighter-rouge">\uE10F</code> “DPAD_DOWN 导航下键” =&gt; <code class="highlighter-rouge">20 (0x00000014)</code></li>
+  <li><code class="highlighter-rouge">\uE110</code> “DPAD_CENTER 导航确定键” =&gt; <code class="highlighter-rouge">23 (0x00000017)</code></li>
+</ul>
+
+<p><a href="https://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_SPACE">android-reference-KeyEvent</a></p>
+
+<h4 id="ios--1">iOS 按键映射</h4>
+
+<blockquote>
+  <p>iOS 平台扩展的按键</p>
+</blockquote>
+
+<ul>
+  <li><code class="highlighter-rouge">\uE105</code> “HOME_SCREEN HOME键”</li>
+</ul>
+
+<hr />
+
+<h2 id="locator">选择器说明 Locator</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Locator</th>
+      <th>iOS</th>
+      <th>Android</th>
+      <th>PC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>label or value</td>
+      <td>content-desc or rawtext</td>
+      <td>element name</td>
+    </tr>
+    <tr>
+      <td>xpath</td>
+      <td>xpath</td>
+      <td>xpath</td>
+      <td>xpath</td>
+    </tr>
+    <tr>
+      <td>class name</td>
+      <td>class/type</td>
+      <td>class</td>
+      <td>element node name</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>accessibility Id</td>
+      <td>resource Id</td>
+      <td>element id</td>
+    </tr>
+    <tr>
+      <td>css</td>
+      <td>native unsupport</td>
+      <td>native	unsupport</td>
+      <td>element css</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="section-5">手势操作</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Params</th>
+      <th>Example</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tap</td>
+      <td>{ x: 100,  y: 100 }</td>
+      <td>driver.touch(‘tap’, { x: 100, y: 100}) | element.touch(‘tap’)</td>
+      <td>点击某个坐标或者当前元素</td>
+    </tr>
+    <tr>
+      <td>doubleTap</td>
+      <td>{ x: 100,  y: 100 }</td>
+      <td>driver.touch(‘doubleTap’, { x: 100, y: 100}) | element.touch(‘doubleTap’)</td>
+      <td>双击某个坐标或者当前元素</td>
+    </tr>
+    <tr>
+      <td>press</td>
+      <td>{ x: 100,  y: 100, duration: 2 (单位 S) }</td>
+      <td>driver.touch(‘press’, { x: 100, y: 100}) | element.touch(‘press’, { duration: 2 })</td>
+      <td>长按某个坐标或者当前元素</td>
+    </tr>
+    <tr>
+      <td>pinch</td>
+      <td>{ x: 100,  y: 100，scale: 2 (iOS), velocity: 1(iOS),  direction: “in” or “out”(Android), percent: 200(Android), duration: 100(Android) }</td>
+      <td>iOS: element.touch(‘pinch’, { scale: 2 }), Android: element.touch(‘pinch’, { direction: “in”, percent: 50 })</td>
+      <td>两只手指放大或者缩小当前元素</td>
+    </tr>
+    <tr>
+      <td>rotate (iOS Only)</td>
+      <td>{ rotation: 6(弧度), velocity: 1 }</td>
+      <td>element.touch(‘rotate’, { rotation: 6, velocity: 1 })</td>
+      <td>旋转当前元素</td>
+    </tr>
+    <tr>
+      <td>drag</td>
+      <td>{ fromX: 100, fromY: 100, toX: 200, toY: 200, duration: 2(单位 S)}</td>
+      <td>driver.touch(‘drag’, { fromX: 100, fromY: 100, toX: 200, toY: 200 }) | element.touch(‘drag’, { toX: 200, toY: 200 })</td>
+      <td>拖拽一个元素或者在多个坐标之间移动</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="section-6">连续操作</h4>
+
+<p>连续执行多个 touch 操作，类似于下图的密码解锁。</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">driver</span><span class="p">.</span><span class="nx">touch</span><span class="p">([{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
+  <span class="na">fromX</span><span class="p">:</span> <span class="mi">265</span><span class="p">,</span>
+  <span class="na">fromY</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
+  <span class="na">toX</span><span class="p">:</span> <span class="mi">825</span><span class="p">,</span>
+  <span class="na">toY</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
+  <span class="na">steps</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
+  <span class="na">toX</span><span class="p">:</span> <span class="mi">265</span><span class="p">,</span>
+  <span class="na">toY</span><span class="p">:</span> <span class="mi">1460</span><span class="p">,</span>
+  <span class="na">duration</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
+  <span class="na">toX</span><span class="p">:</span> <span class="mi">825</span><span class="p">,</span>
+  <span class="na">toY</span><span class="p">:</span> <span class="mi">1460</span><span class="p">,</span>
+  <span class="na">duration</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}]);</span>
+</code></pre>
+</div>
+
+<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0wxvjij20ri0mg4al.jpg" alt="touch-gestures" /></p>
+
+<p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0we3eig20g60ssqv6.gif" width="240" /></p>
 
 
   </article>

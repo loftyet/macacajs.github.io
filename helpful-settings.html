@@ -242,6 +242,197 @@
   <article>
     <h1 id="helpful-settings">Helpful Settings</h1>
 
+<h2 id="desired-capabilities">Desired Capabilities</h2>
+
+<p>Desired Capabilities are used to configure webdriver when initiating the session.</p>
+
+<h4 id="basic-usage">Basic usage</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
+  <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+  <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">desiredCaps</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">platformName</span><span class="p">:</span> <span class="s1">'ios'</span><span class="p">,</span>
+  <span class="na">deviceName</span><span class="p">:</span> <span class="s1">'iPhone 6s'</span><span class="p">,</span>
+  <span class="na">app</span><span class="p">:</span> <span class="s1">'path/to/app'</span>
+<span class="p">}</span>
+
+<span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">desiredCaps</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h4 id="common-capabilities">Common Capabilities</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>platformName</td>
+      <td>String</td>
+      <td>Which platform the app/browser should be running on. { iOS / Android / Desktop }</td>
+    </tr>
+    <tr>
+      <td>browserName</td>
+      <td>String</td>
+      <td>The name of the browser being used. { iOS: Safari } { Android: Chrome } { Desktop: Chrome / Electron }</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="app-capabilities">App Capabilities</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>deviceName</td>
+      <td>String</td>
+      <td>The name of the Simulator such as ‘iPhone 6’ or ‘Nexus 5x’.</td>
+    </tr>
+    <tr>
+      <td>app</td>
+      <td>Stirng</td>
+      <td>The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.</td>
+    </tr>
+    <tr>
+      <td>udid</td>
+      <td>String</td>
+      <td>Unique device identifier of the connected Device/Simulator or  device.</td>
+    </tr>
+    <tr>
+      <td>autoAcceptAlerts</td>
+      <td>Boolean</td>
+      <td>Accept all iOS alerts automatically if they pop up. Default is false.</td>
+    </tr>
+    <tr>
+      <td>autoDismissAlerts</td>
+      <td>Boolean</td>
+      <td>Dismiss all iOS alerts automatically if they pop up. Default is false.</td>
+    </tr>
+    <tr>
+      <td>reuse</td>
+      <td>Number</td>
+      <td>0: Launch the simulator and install the app. 1 (default): Uninstall the app and reinstall the app. 2: Only reinstall the app. 3: Keep the simulator and app after testing.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="android-only-capabilities">Android-only Capabilities</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>package</td>
+      <td>String</td>
+      <td>Java package of the Android app you want to run.</td>
+    </tr>
+    <tr>
+      <td>activity</td>
+      <td>String</td>
+      <td>Activity name for the Android activity you want to launch from your package.</td>
+    </tr>
+    <tr>
+      <td>androidProcess</td>
+      <td>String</td>
+      <td>Process name for the chromedriver binding when test webview</td>
+    </tr>
+    <tr>
+      <td>isWaitActivity</td>
+      <td>Boolean</td>
+      <td>Wait the app’s main acitivity. Default is true.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ios-only-capabilities">iOS-only Capabilities</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bundleId</td>
+      <td>String</td>
+      <td>Bundle ID of the app such as com.apple.Maps.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="electron-only-capabilities">Electron-only Capabilities</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uesrAgent</td>
+      <td>String</td>
+      <td>A user agent originating the request.</td>
+    </tr>
+    <tr>
+      <td>extraHeaders</td>
+      <td>String</td>
+      <td>Extra headers separated by “\n”.</td>
+    </tr>
+    <tr>
+      <td>cookies</td>
+      <td>Object</td>
+      <td>Set the custom cookies.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="puppeteer-capabilities">Puppeteer Capabilities</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uesrAgent</td>
+      <td>String</td>
+      <td>A user agent originating the request.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="keycode">Keycode</h2>
 
 <h4 id="pc-keycode">PC keycode</h4>
@@ -439,199 +630,6 @@
 <p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0wxvjij20ri0mg4al.jpg" alt="touch-gestures" /></p>
 
 <p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0we3eig20g60ssqv6.gif" width="240" /></p>
-
-<hr />
-
-<h2 id="desired-capabilities">Desired Capabilities</h2>
-
-<p>Desired Capabilities are used to configure webdriver when initiating the session.</p>
-
-<h4 id="basic-usage">Basic usage</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
-  <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-  <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
-<span class="p">});</span>
-
-<span class="kr">const</span> <span class="nx">desiredCaps</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">platformName</span><span class="p">:</span> <span class="s1">'ios'</span><span class="p">,</span>
-  <span class="na">deviceName</span><span class="p">:</span> <span class="s1">'iPhone 6s'</span><span class="p">,</span>
-  <span class="na">app</span><span class="p">:</span> <span class="s1">'path/to/app'</span>
-<span class="p">}</span>
-
-<span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">desiredCaps</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h4 id="common-capabilities">Common Capabilities</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>platformName</td>
-      <td>String</td>
-      <td>Which platform the app/browser should be running on. { iOS / Android / Desktop }</td>
-    </tr>
-    <tr>
-      <td>browserName</td>
-      <td>String</td>
-      <td>The name of the browser being used. { iOS: Safari } { Android: Chrome } { Desktop: Chrome / Electron }</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="app-capabilities">App Capabilities</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>deviceName</td>
-      <td>String</td>
-      <td>The name of the Simulator such as ‘iPhone 6’ or ‘Nexus 5x’.</td>
-    </tr>
-    <tr>
-      <td>app</td>
-      <td>Stirng</td>
-      <td>The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.</td>
-    </tr>
-    <tr>
-      <td>udid</td>
-      <td>String</td>
-      <td>Unique device identifier of the connected Device/Simulator or  device.</td>
-    </tr>
-    <tr>
-      <td>autoAcceptAlerts</td>
-      <td>Boolean</td>
-      <td>Accept all iOS alerts automatically if they pop up. Default is false.</td>
-    </tr>
-    <tr>
-      <td>autoDismissAlerts</td>
-      <td>Boolean</td>
-      <td>Dismiss all iOS alerts automatically if they pop up. Default is false.</td>
-    </tr>
-    <tr>
-      <td>reuse</td>
-      <td>Number</td>
-      <td>0: Launch the simulator and install the app. 1 (default): Uninstall the app and reinstall the app. 2: Only reinstall the app. 3: Keep the simulator and app after testing.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="android-only-capabilities">Android-only Capabilities</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>package</td>
-      <td>String</td>
-      <td>Java package of the Android app you want to run.</td>
-    </tr>
-    <tr>
-      <td>activity</td>
-      <td>String</td>
-      <td>Activity name for the Android activity you want to launch from your package.</td>
-    </tr>
-    <tr>
-      <td>androidProcess</td>
-      <td>String</td>
-      <td>Process name for the chromedriver binding when test webview</td>
-    </tr>
-    <tr>
-      <td>isWaitActivity</td>
-      <td>Boolean</td>
-      <td>Wait the app’s main acitivity. Default is true.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="ios-only-capabilities">iOS-only Capabilities</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>bundleId</td>
-      <td>String</td>
-      <td>Bundle ID of the app such as com.apple.Maps.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="electron-only-capabilities">Electron-only Capabilities</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>uesrAgent</td>
-      <td>String</td>
-      <td>A user agent originating the request.</td>
-    </tr>
-    <tr>
-      <td>extraHeaders</td>
-      <td>String</td>
-      <td>Extra headers separated by “\n”.</td>
-    </tr>
-    <tr>
-      <td>cookies</td>
-      <td>Object</td>
-      <td>Set the custom cookies.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="puppeteer-capabilities">Puppeteer Capabilities</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>uesrAgent</td>
-      <td>String</td>
-      <td>A user agent originating the request.</td>
-    </tr>
-  </tbody>
-</table>
 
 
   </article>
