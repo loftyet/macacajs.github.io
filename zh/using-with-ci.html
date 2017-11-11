@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,7 +240,7 @@
 </aside>
 
   <article>
-    <h1 id="ci-">使用开放 CI 服务</h1>
+    <h1 id="使用开放-ci-服务">使用开放 CI 服务</h1>
 
 <h2 id="travis-ci">Travis-CI</h2>
 
@@ -263,134 +263,133 @@
 
 <p>Add config to your <code class="highlighter-rouge">.travis.yml</code>:</p>
 
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">os</span><span class="pi">:</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">os</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">osx</span>
   <span class="pi">-</span> <span class="s">linux</span>
-<span class="s">env</span><span class="pi">:</span>
+<span class="na">env</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">TEST_SUITE=ios</span>
   <span class="pi">-</span> <span class="s">TEST_SUITE=android</span>
   <span class="pi">-</span> <span class="s">TEST_SUITE=ios-browser</span>
   <span class="pi">-</span> <span class="s">TEST_SUITE=android-browser</span>
   <span class="pi">-</span> <span class="s">TEST_SUITE=pc-browser</span>
-<span class="s">matrix</span><span class="pi">:</span>
-    <span class="s">fast_finish</span><span class="pi">:</span> <span class="s">true</span>
-    <span class="s">exclude</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
-    <span class="s">include</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
-        <span class="s">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
-        <span class="s">language</span><span class="pi">:</span> <span class="s">objective-c</span>
-        <span class="s">before_install</span><span class="pi">:</span>
+<span class="na">matrix</span><span class="pi">:</span>
+    <span class="na">fast_finish</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">exclude</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+    <span class="na">include</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios</span>
+        <span class="na">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
+        <span class="na">language</span><span class="pi">:</span> <span class="s">objective-c</span>
+        <span class="na">before_install</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">brew update</span>
           <span class="pi">-</span> <span class="s">brew install nvm</span>
           <span class="pi">-</span> <span class="s">source $(brew --prefix nvm)/nvm.sh</span>
           <span class="pi">-</span> <span class="s">nvm install 7</span>
           <span class="pi">-</span> <span class="s">brew install ios-webkit-debug-proxy</span>
-        <span class="s">script</span><span class="pi">:</span>
+        <span class="na">script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">make travis-ios</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">osx</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
-        <span class="s">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
-        <span class="s">language</span><span class="pi">:</span> <span class="s">objective-c</span>
-        <span class="s">before_install</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">osx</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=ios-browser</span>
+        <span class="na">osx_image</span><span class="pi">:</span> <span class="s">xcode8</span>
+        <span class="na">language</span><span class="pi">:</span> <span class="s">objective-c</span>
+        <span class="na">before_install</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">brew update</span>
           <span class="pi">-</span> <span class="s">brew install nvm</span>
           <span class="pi">-</span> <span class="s">source $(brew --prefix nvm)/nvm.sh</span>
           <span class="pi">-</span> <span class="s">nvm install 7</span>
           <span class="pi">-</span> <span class="s">brew install ios-webkit-debug-proxy</span>
-        <span class="s">script</span><span class="pi">:</span>
+        <span class="na">script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">make travis-ios-safari</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
-        <span class="s">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
-        <span class="s">language</span><span class="pi">:</span> <span class="s">android</span>
-        <span class="s">android</span><span class="pi">:</span>
-          <span class="s">components</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android</span>
+        <span class="na">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
+        <span class="na">language</span><span class="pi">:</span> <span class="s">android</span>
+        <span class="na">android</span><span class="pi">:</span>
+          <span class="na">components</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">build-tools-23.0.2</span>
             <span class="pi">-</span> <span class="s">android-23</span>
             <span class="pi">-</span> <span class="s">extra-android-m2repository</span>
             <span class="pi">-</span> <span class="s">extra-android-support</span>
-        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-        <span class="s">before_install</span><span class="pi">:</span>
+        <span class="na">sudo</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">before_install</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">export CHROME_BIN=chromium-browser</span>
           <span class="pi">-</span> <span class="s">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
           <span class="pi">-</span> <span class="s">export ANDROID_HOME=/usr/local/android-sdk</span>
           <span class="pi">-</span> <span class="s">echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force</span>
           <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
           <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
-        <span class="s">before_script</span><span class="pi">:</span>
+        <span class="na">before_script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh</span>
           <span class="pi">-</span> <span class="s">nvm install 7</span>
           <span class="pi">-</span> <span class="s">echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a</span>
           <span class="pi">-</span> <span class="s">emulator -avd test -no-audio -no-window &amp;</span>
           <span class="pi">-</span> <span class="s">android-wait-for-emulator</span>
           <span class="pi">-</span> <span class="s">adb shell input keyevent 82 &amp;</span>
-        <span class="s">script</span><span class="pi">:</span>
+        <span class="na">script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">make travis-android</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
-        <span class="s">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
-        <span class="s">language</span><span class="pi">:</span> <span class="s">android</span>
-        <span class="s">android</span><span class="pi">:</span>
-          <span class="s">components</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=android-browser</span>
+        <span class="na">jdk</span><span class="pi">:</span> <span class="s">openjdk7</span>
+        <span class="na">language</span><span class="pi">:</span> <span class="s">android</span>
+        <span class="na">android</span><span class="pi">:</span>
+          <span class="na">components</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">build-tools-23.0.2</span>
             <span class="pi">-</span> <span class="s">android-23</span>
             <span class="pi">-</span> <span class="s">extra-android-m2repository</span>
             <span class="pi">-</span> <span class="s">extra-android-support</span>
-        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-        <span class="s">before_install</span><span class="pi">:</span>
+        <span class="na">sudo</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">before_install</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">export CHROME_BIN=chromium-browser</span>
           <span class="pi">-</span> <span class="s">export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
           <span class="pi">-</span> <span class="s">export ANDROID_HOME=/usr/local/android-sdk</span>
           <span class="pi">-</span> <span class="s">echo yes | android update sdk --all --filter build-tools-23.0.2 --no-ui --force</span>
           <span class="pi">-</span> <span class="s">export DISPLAY=:99.0</span>
           <span class="pi">-</span> <span class="s">sh -e /etc/init.d/xvfb start</span>
-        <span class="s">before_script</span><span class="pi">:</span>
+        <span class="na">before_script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">. $HOME/.nvm/nvm.sh</span>
           <span class="pi">-</span> <span class="s">nvm install 7</span>
           <span class="pi">-</span> <span class="s">echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a</span>
           <span class="pi">-</span> <span class="s">emulator -avd test -no-audio -no-window &amp;</span>
           <span class="pi">-</span> <span class="s">android-wait-for-emulator</span>
           <span class="pi">-</span> <span class="s">adb shell input keyevent 82 &amp;</span>
-        <span class="s">script</span><span class="pi">:</span>
+        <span class="na">script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">make travis-android-chrome</span>
-      <span class="pi">-</span> <span class="s">os</span><span class="pi">:</span> <span class="s">linux</span>
-        <span class="s">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
-        <span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
-        <span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-        <span class="s">node_js</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">os</span><span class="pi">:</span> <span class="s">linux</span>
+        <span class="na">env</span><span class="pi">:</span> <span class="s">TEST_SUITE=pc-browser</span>
+        <span class="na">language</span><span class="pi">:</span> <span class="s">node_js</span>
+        <span class="na">sudo</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">node_js</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s2">"</span><span class="s">7"</span>
-        <span class="s">addons</span><span class="pi">:</span>
-          <span class="s">apt</span><span class="pi">:</span>
-            <span class="s">packages</span><span class="pi">:</span>
+        <span class="na">addons</span><span class="pi">:</span>
+          <span class="na">apt</span><span class="pi">:</span>
+            <span class="na">packages</span><span class="pi">:</span>
               <span class="pi">-</span> <span class="s">xvfb</span>
-        <span class="s">before_install</span><span class="pi">:</span>
+        <span class="na">before_install</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">export DISPLAY=':99.0'</span>
           <span class="pi">-</span> <span class="s">Xvfb :99 -screen 0 1366x768x24 &gt; /dev/null 2&gt;&amp;1 &amp;</span>
-        <span class="s">script</span><span class="pi">:</span>
+        <span class="na">script</span><span class="pi">:</span>
           <span class="pi">-</span> <span class="s">make travis-pc-electron</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </article>

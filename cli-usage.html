@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • Solution for Automation Test with Ease</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -244,52 +244,48 @@
 
 <h3 id="run-test-tasks">Run test tasks</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
-<span class="gp">$ </span>macaca run --verbose
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># run test in current cwd</span>
+<span class="nv">$ </span>macaca run <span class="nt">--verbose</span>
 
 <span class="c"># run test in a pointed directry and set a framework</span>
 <span class="c"># mocha, jasmine, tman, ava supported for Node.js env.</span>
-<span class="gp">$ </span>macaca run -d ./test -f mocha
+<span class="nv">$ </span>macaca run <span class="nt">-d</span> ./test <span class="nt">-f</span> mocha
 
 <span class="c"># output log file as html code</span>
-<span class="gp">$ </span>macaca run -o
+<span class="nv">$ </span>macaca run <span class="nt">-o</span>
 
 <span class="c"># run in silence, desktop only</span>
-<span class="gp">$ </span>macaca run --no-window
+<span class="nv">$ </span>macaca run <span class="nt">--no-window</span>
 
 <span class="c"># custom mocha reporter</span>
-<span class="gp">$ </span><span class="nv">CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run -d ./test --reporter macaca-simple-reportor
-</code></pre>
-</div>
+<span class="nv">$ CUSTOM_DIR</span><span class="o">=</span>path/to/screenshot macaca run <span class="nt">-d</span> ./test <span class="nt">--reporter</span> macaca-simple-reportor
+</code></pre></div></div>
 
 <h3 id="start-webdriver-server-only">Start webdriver server only</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># normal usage</span>
-<span class="gp">$ </span>macaca server --verbose
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># normal usage</span>
+<span class="nv">$ </span>macaca server <span class="nt">--verbose</span>
 
 <span class="c"># set a port</span>
-<span class="gp">$ </span>macaca server -p 3456
-</code></pre>
-</div>
+<span class="nv">$ </span>macaca server <span class="nt">-p</span> 3456
+</code></pre></div></div>
 
 <h3 id="environment-doctor">Environment doctor</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca doctor
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>macaca doctor
+</code></pre></div></div>
 
 <h3 id="more-help">More Help</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca -h
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>macaca <span class="nt">-h</span>
 
 <span class="c"># helper for server</span>
-<span class="gp">$ </span>macaca server -h
+<span class="nv">$ </span>macaca server <span class="nt">-h</span>
 
 <span class="c"># helper for how to run test</span>
-<span class="gp">$ </span>macaca run -h
+<span class="nv">$ </span>macaca run <span class="nt">-h</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </article>

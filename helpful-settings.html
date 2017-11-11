@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • Solution for Automation Test with Ease</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -248,21 +248,20 @@
 
 <h4 id="basic-usage">Basic usage</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
   <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
   <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
 <span class="p">});</span>
 
-<span class="kr">const</span> <span class="nx">desiredCaps</span> <span class="o">=</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">desiredCaps</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">platformName</span><span class="p">:</span> <span class="s1">'ios'</span><span class="p">,</span>
   <span class="na">deviceName</span><span class="p">:</span> <span class="s1">'iPhone 6s'</span><span class="p">,</span>
   <span class="na">app</span><span class="p">:</span> <span class="s1">'path/to/app'</span>
 <span class="p">}</span>
 
 <span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">desiredCaps</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="common-capabilities">Common Capabilities</h4>
 
@@ -597,11 +596,11 @@
   </tbody>
 </table>
 
-<h4 id="section">连续操作</h4>
+<h4 id="连续操作">连续操作</h4>
 
 <p>连续执行多个 touch 操作，类似于下图的密码解锁。</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">driver</span><span class="p">.</span><span class="nx">touch</span><span class="p">([{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">driver</span><span class="p">.</span><span class="nx">touch</span><span class="p">([{</span>
   <span class="na">type</span><span class="p">:</span> <span class="s1">'drag'</span><span class="p">,</span>
   <span class="na">fromX</span><span class="p">:</span> <span class="mi">265</span><span class="p">,</span>
   <span class="na">fromY</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
@@ -619,8 +618,7 @@
   <span class="na">toY</span><span class="p">:</span> <span class="mi">1460</span><span class="p">,</span>
   <span class="na">duration</span><span class="p">:</span> <span class="mi">3</span>
 <span class="p">}]);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="http://wx3.sinaimg.cn/large/6d308bd9gy1ffji0wxvjij20ri0mg4al.jpg" alt="touch-gestures" /></p>
 

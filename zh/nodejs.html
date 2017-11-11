@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,27 +240,26 @@
 </aside>
 
   <article>
-    <h1 id="nodejs-">使用 Node.js 语言</h1>
+    <h1 id="使用-nodejs-语言">使用 Node.js 语言</h1>
 
-<h2 id="section">环境</h2>
+<h2 id="环境">环境</h2>
 
 <p>由于Macaca工具链就是基于Node.js实现的，所以在安装环境的时候已经配置过Node.js环境，无需再次配置。</p>
 
-<h2 id="section-1">快速创建</h2>
+<h2 id="快速创建">快速创建</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone git@github.com:macaca-sample/macaca-nodejs-boilerplate.git
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:macaca-sample/macaca-nodejs-boilerplate.git
+</code></pre></div></div>
 
 <p>一个Macaca可以使用的工程就创建好了，可在此基础上添加和运行测试用例，Macaca 推荐使用<a href="//github.com/mochajs/mocha">mocha 测试框架</a>。</p>
 
-<h2 id="section-2">示例合集</h2>
+<h2 id="示例合集">示例合集</h2>
 
 <p><a href="//github.com/macaca-sample/sample-nodejs">示例仓库</a>中包含iOS, Android的App测试示例，手机系统浏览器的测试示例以及PC端浏览器的测试示例。</p>
 
-<h2 id="section-3">用法示例</h2>
+<h2 id="用法示例">用法示例</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1">// 引入官方webdriver client 包</span>
 <span class="kd">var</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
 
@@ -294,16 +293,14 @@
 <span class="p">});</span>
 
 <span class="p">...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="api">扩展 API</h2>
+<h2 id="扩展-api">扩展 API</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">wd</span><span class="p">.</span><span class="nx">addPromiseChainMethod</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wd</span><span class="p">.</span><span class="nx">addPromiseChainMethod</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
+</code></pre></div></div>
 
-<h2 id="api-">API 文档</h2>
+<h2 id="api-文档">API 文档</h2>
 
 <p>API 文档请见<a href="//macacajs.github.io/macaca-wd">文档链接</a></p>
 

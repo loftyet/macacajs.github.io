@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,9 +240,9 @@
 </aside>
 
   <article>
-    <h1 id="ui">页面UI测试</h1>
+    <h1 id="页面ui测试">页面UI测试</h1>
 
-<h2 id="torchjs">使用 torchjs(推荐)</h2>
+<h2 id="使用-torchjs推荐">使用 torchjs(推荐)</h2>
 
 <blockquote>
   <p>Test framework to light up the world.</p>
@@ -250,58 +250,56 @@
 
 <p><img src="http://wx4.sinaimg.cn/large/6d308bd9gy1fiw8er0a5eg20zc0k0he0.gif" alt="" /></p>
 
-<h3 id="section">安装</h3>
+<h3 id="安装">安装</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i torchjs --save-dev
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i torchjs <span class="nt">--save-dev</span>
+</code></pre></div></div>
 
-<h3 id="section-1">配置</h3>
+<h3 id="配置">配置</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>torch --help
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>torch <span class="nt">--help</span>
 
   Usage: torch <span class="o">[</span>options]
 
   Options:
 
-    -h, --help                              output usage information
-    -V, --version                           output the version number
-    -C, --no-colors                         force disabling of colors
-    -O, --reporter-options &lt;<span class="nv">k</span><span class="o">=</span>v,k2<span class="o">=</span>v2,...&gt;  reporter-specific options
-    -R, --reporter &lt;name&gt;                   specify the reporter to use
-    -S, --sort                              sort <span class="nb">test </span>files
-    -b, --bail                              bail after first <span class="nb">test </span>failure
-    -g, --grep &lt;pattern&gt;                    only run tests matching &lt;pattern&gt;
-    -f, --fgrep &lt;string&gt;                    only run tests containing &lt;string&gt;
-    -i, --invert                            inverts --grep and --fgrep matches
-    -r, --require &lt;name&gt;                    require the given module
-    -s, --slow &lt;ms&gt;                         <span class="s2">"slow"</span> <span class="nb">test </span>threshold <span class="k">in </span>milliseconds <span class="o">[</span>75]
-    -t, --timeout &lt;ms&gt;                      <span class="nb">set test</span>-case timeout <span class="k">in </span>milliseconds <span class="o">[</span>2000]
-    -u, --ui &lt;name&gt;                         specify user-interface <span class="o">(</span>bdd|tdd|exports<span class="o">)</span>
-    --check-leaks                           check <span class="k">for </span>global variable leaks
-    --compile                               compile with babel
-    --compile-opts &lt;path&gt;                   path of compile options
-    --compilers &lt;ext&gt;:&lt;module&gt;,...          use the given module<span class="o">(</span>s<span class="o">)</span> to compile files
-    --coverage                              report coverage
-    --debug                                 <span class="nb">enable </span>Electron debugger on port <span class="o">[</span>5858]; <span class="k">for</span> --renderer tests show window and dev-tools
-    --debug-brk                             like --debug but pauses the script on the first line
-    --globals &lt;names&gt;                       allow the given comma-delimited global <span class="o">[</span>names]
-    --inline-diffs                          display actual/expected differences inline within each string
-    --interactive                           run tests <span class="k">in </span>renderer process <span class="k">in </span>a visible window that can be reloaded to re-run tests
-    --interfaces                            display available interfaces
-    --no-timeouts                           disables timeouts
-    --notify-on-fail                        notify on failures
-    --notify-on-success                     notify on success
-    --opts &lt;path&gt;                           specify opts path
-    --preload &lt;name&gt;                        preload the given script <span class="k">in </span>renderer process
-    --recursive                             include sub directories
-    --renderer                              run tests <span class="k">in </span>renderer process
-    --require-main &lt;name&gt;                   load the given script <span class="k">in </span>main process before executing tests
-    --source-pattern &lt;sources&gt;              glob pattern of <span class="nb">source </span>files
-    --watch                                 watching <span class="nb">source </span>file changes
-    --watch-aggregate-timeout               delay <span class="nb">time </span><span class="k">for </span>re-run <span class="nb">test </span>cases after files changed
-</code></pre>
-</div>
+    <span class="nt">-h</span>, <span class="nt">--help</span>                              output usage information
+    <span class="nt">-V</span>, <span class="nt">--version</span>                           output the version number
+    <span class="nt">-C</span>, <span class="nt">--no-colors</span>                         force disabling of colors
+    <span class="nt">-O</span>, <span class="nt">--reporter-options</span> &lt;<span class="nv">k</span><span class="o">=</span>v,k2<span class="o">=</span>v2,...&gt;  reporter-specific options
+    <span class="nt">-R</span>, <span class="nt">--reporter</span> &lt;name&gt;                   specify the reporter to use
+    <span class="nt">-S</span>, <span class="nt">--sort</span>                              sort <span class="nb">test </span>files
+    <span class="nt">-b</span>, <span class="nt">--bail</span>                              bail after first <span class="nb">test </span>failure
+    <span class="nt">-g</span>, <span class="nt">--grep</span> &lt;pattern&gt;                    only run tests matching &lt;pattern&gt;
+    <span class="nt">-f</span>, <span class="nt">--fgrep</span> &lt;string&gt;                    only run tests containing &lt;string&gt;
+    <span class="nt">-i</span>, <span class="nt">--invert</span>                            inverts <span class="nt">--grep</span> and <span class="nt">--fgrep</span> matches
+    <span class="nt">-r</span>, <span class="nt">--require</span> &lt;name&gt;                    require the given module
+    <span class="nt">-s</span>, <span class="nt">--slow</span> &lt;ms&gt;                         <span class="s2">"slow"</span> <span class="nb">test </span>threshold <span class="k">in </span>milliseconds <span class="o">[</span>75]
+    <span class="nt">-t</span>, <span class="nt">--timeout</span> &lt;ms&gt;                      <span class="nb">set </span>test-case timeout <span class="k">in </span>milliseconds <span class="o">[</span>2000]
+    <span class="nt">-u</span>, <span class="nt">--ui</span> &lt;name&gt;                         specify user-interface <span class="o">(</span>bdd|tdd|exports<span class="o">)</span>
+    <span class="nt">--check-leaks</span>                           check <span class="k">for </span>global variable leaks
+    <span class="nt">--compile</span>                               compile with babel
+    <span class="nt">--compile-opts</span> &lt;path&gt;                   path of compile options
+    <span class="nt">--compilers</span> &lt;ext&gt;:&lt;module&gt;,...          use the given module<span class="o">(</span>s<span class="o">)</span> to compile files
+    <span class="nt">--coverage</span>                              report coverage
+    <span class="nt">--debug</span>                                 <span class="nb">enable </span>Electron debugger on port <span class="o">[</span>5858]<span class="p">;</span> <span class="k">for</span> <span class="nt">--renderer</span> tests show window and dev-tools
+    <span class="nt">--debug-brk</span>                             like <span class="nt">--debug</span> but pauses the script on the first line
+    <span class="nt">--globals</span> &lt;names&gt;                       allow the given comma-delimited global <span class="o">[</span>names]
+    <span class="nt">--inline-diffs</span>                          display actual/expected differences inline within each string
+    <span class="nt">--interactive</span>                           run tests <span class="k">in </span>renderer process <span class="k">in </span>a visible window that can be reloaded to re-run tests
+    <span class="nt">--interfaces</span>                            display available interfaces
+    <span class="nt">--no-timeouts</span>                           disables timeouts
+    <span class="nt">--notify-on-fail</span>                        notify on failures
+    <span class="nt">--notify-on-success</span>                     notify on success
+    <span class="nt">--opts</span> &lt;path&gt;                           specify opts path
+    <span class="nt">--preload</span> &lt;name&gt;                        preload the given script <span class="k">in </span>renderer process
+    <span class="nt">--recursive</span>                             include sub directories
+    <span class="nt">--renderer</span>                              run tests <span class="k">in </span>renderer process
+    <span class="nt">--require-main</span> &lt;name&gt;                   load the given script <span class="k">in </span>main process before executing tests
+    <span class="nt">--source-pattern</span> &lt;sources&gt;              glob pattern of <span class="nb">source </span>files
+    <span class="nt">--watch</span>                                 watching <span class="nb">source </span>file changes
+    <span class="nt">--watch-aggregate-timeout</span>               delay <span class="nb">time </span><span class="k">for </span>re-run <span class="nb">test </span>cases after files changed
+</code></pre></div></div>
 
 <p><a href="//github.com/macacajs/torchjs">更多配置</a></p>
 
@@ -316,21 +314,20 @@
 
 <hr />
 
-<h2 id="uitest">使用 UITest</h2>
+<h2 id="使用-uitest">使用 UITest</h2>
 
-<h3 id="section-2">安装</h3>
+<h3 id="安装-1">安装</h3>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i uitest --save-dev
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i uitest <span class="nt">--save-dev</span>
+</code></pre></div></div>
 
-<h3 id="section-3">用法</h3>
+<h3 id="用法">用法</h3>
 
 <p><img src="http://ww3.sinaimg.cn/large/6d308bd9gw1f6wsic5dmxj20rl0qqtbi.jpg" alt="" /></p>
 
 <p>直接引入 <code class="highlighter-rouge">uitest-mocha-shim.js</code> 文件即可在浏览器中运行。</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>macaca mocha test<span class="nt">&lt;/title&gt;</span>
@@ -366,8 +363,7 @@
     <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="nodejs">Node.js</h3>
 
@@ -375,7 +371,7 @@
 
 <p>在命令行里运行</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">uitest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'uitest'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">uitest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'uitest'</span><span class="p">);</span>
 
 <span class="nx">uitest</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="s1">'file:///Users/name/path/index.html'</span><span class="p">,</span>
@@ -389,18 +385,16 @@
 <span class="p">}).</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'uitest error'</span><span class="p">)</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="gulp">Gulp</h3>
 
 <p>也可以通过 Gulp 引入：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i gulp-uitest --save-dev
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i gulp-uitest <span class="nt">--save-dev</span>
+</code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">uitest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-uitest'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">uitest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-uitest'</span><span class="p">);</span>
 <span class="c1">//test</span>
 <span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'test'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">gulp</span>
@@ -414,8 +408,7 @@
     <span class="p">}));</span>
 <span class="p">});</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><a href="//github.com/macacajs/uitest">更多关于 UITest</a></li>

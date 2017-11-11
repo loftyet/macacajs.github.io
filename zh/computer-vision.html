@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,31 +240,30 @@
 </aside>
 
   <article>
-    <h1 id="section">计算机视觉</h1>
+    <h1 id="计算机视觉">计算机视觉</h1>
 
 <p>Macaca 提供计算机视觉解决方案，用来处理 View 体系之外的问题。如识别测试过程中的截图、测试游戏类产品等，本文档会介绍 OpenCV, Sikuli 和其它被广泛使用的库是如何与 Macaca 结合使用的。另外也会介绍 NodeCV 服务部署，然后便可随时随地使用此图形服务。</p>
 
 <h2 id="opencv">OpenCV</h2>
 
-<h3 id="section-1">安装</h3>
+<h3 id="安装">安装</h3>
 
 <p>MacOS 可使用 brew 来安装:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>brew install opencv
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install opencv
+</code></pre></div></div>
 
 <p>请使用稳定的v2(2.4.13.2)版本，源码包<a href="//codeload.github.com/opencv/opencv/zip/2.4.13.2">下载地址</a>，windows 平台的安装请参考 <a href="//github.com/opencv/opencv">OpenCV 官网</a>。</p>
 
 <p>如果不想本机安装使用的请直接使用后面提到的 NodeCV 服务，避免环境的诸多问题。</p>
 
-<h3 id="section-2">各语言使用方法</h3>
+<h3 id="各语言使用方法">各语言使用方法</h3>
 
 <h4 id="nodejs">Node.js:</h4>
 
 <p>只需要引入 <a href="https://github.com/xudafeng/nodecv">nodecv</a> 模块即可完成图像相似度，特征匹配，特征识别等功能，如下示例。</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">nodecv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'nodecv'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nodecv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'nodecv'</span><span class="p">);</span>
 
 <span class="nx">nodecv</span><span class="p">.</span><span class="nx">imread</span><span class="p">(</span><span class="nx">image1Path</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">image1</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
@@ -278,31 +277,29 @@
       <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
       <span class="p">}</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="na">Dissimilarity</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Dissimilarity: </span><span class="p">${</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>匹配方式枚举：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CV_TM_SQDIFF        =0 平方差匹配法
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CV_TM_SQDIFF        =0 平方差匹配法
 CV_TM_SQDIFF_NORMED =1 归一化平方差匹配法
 CV_TM_CCORR         =2 相关匹配法
 CV_TM_CCORR_NORMED  =3 归一化相关匹配法
 CV_TM_CCOEFF        =4 相关系数匹配法
 CV_TM_CCOEFF_NORMED =5 归一化相关系数匹配法
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>更多 Node.js 示例请访问 <a href="//github.com/macaca-sample/cv-sample-node">macaca-sample/cv-sample-node</a>。</p>
 
 <h4 id="python">Python:</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="k">class</span> <span class="nc">opencvSample</span><span class="p">:</span>
 
@@ -318,8 +315,7 @@ CV_TM_CCOEFF_NORMED =5 归一化相关系数匹配法
             <span class="k">return</span> <span class="n">similarity</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>更多 Python 示例请访问 <a href="//github.com/macaca-sample/cv-sample-python">macaca-sample/cv-sample-python</a>。</p>
 
@@ -327,15 +323,14 @@ CV_TM_CCOEFF_NORMED =5 归一化相关系数匹配法
 
 <p>Java 端请直接使用 <a href="//github.com/bytedeco/javacv">JavaCV</a>，更多 Java 示例请访问 <a href="//github.com/macaca-sample/cv-sample-java">macaca-sample/cv-sample-java</a>。</p>
 
-<h3 id="nodecv-">部署 NodeCV 服务</h3>
+<h3 id="部署-nodecv-服务">部署 NodeCV 服务</h3>
 
 <p>Macaca 提供便捷的 Opencv 服务部署，只需要 Docker 环境便可一键部署。</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone git@github.com:macacajs/nodecv-server.git --depth<span class="o">=</span>1
-<span class="gp">$ </span><span class="nb">cd </span>nodecv-server
-<span class="gp">$ </span>docker build . -t<span class="o">=</span><span class="s2">"node-server"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:macacajs/nodecv-server.git <span class="nt">--depth</span><span class="o">=</span>1
+<span class="nv">$ </span><span class="nb">cd </span>nodecv-server
+<span class="nv">$ </span>docker build <span class="nb">.</span> <span class="nt">-t</span><span class="o">=</span><span class="s2">"node-server"</span>
+</code></pre></div></div>
 
 <p>然后便可在任意服务器环境，甚至<a href="//github.com/macacajs/nodecv-server/issues/1">树莓派</a>启动 OpenCV 的 <code class="highlighter-rouge">HTTP</code> 服务，<a href="//github.com/macaca-sample">macaca-sample</a> 也提供各语言针对服务端通信的示例。</p>
 
@@ -345,41 +340,37 @@ CV_TM_CCOEFF_NORMED =5 归一化相关系数匹配法
 
 <h2 id="api">API</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/dissimilarity
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /opencv/dissimilarity
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/matchtemplate
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /opencv/matchtemplate
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /opencv/cascadedetect
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /opencv/cascadedetect
+</code></pre></div></div>
 
 <p>请求 HTTP 服务示例：</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
-  <span class="na">url</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">remoteHost</span><span class="p">}</span><span class="sr">/opencv/</span><span class="nx">dissimilarity</span><span class="err">`</span><span class="p">,</span>
-  <span class="nx">formData</span><span class="err">:</span> <span class="nx">formData</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">remoteHost</span><span class="p">}</span><span class="s2">/opencv/dissimilarity`</span><span class="p">,</span>
+  <span class="na">formData</span><span class="p">:</span> <span class="nx">formData</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">httpResponse</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'upload failed:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server responded with:'</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Dissimilarity</span> <span class="na">is</span><span class="p">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Dissimilarity is: </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">dissimilarity</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>更多请见 <a href="//github.com/macacajs/nodecv-server">nodecv-server</a>。</p>
 
-<h2 id="section-3">其它方案</h2>
+<h2 id="其它方案">其它方案</h2>
 
 <h3 id="sikuli">Sikuli</h3>
 

@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,44 +240,40 @@
 </aside>
 
   <article>
-    <h1 id="section">元素查看器</h1>
+    <h1 id="元素查看器">元素查看器</h1>
 
-<h2 id="android-">Android 端</h2>
+<h2 id="android-端">Android 端</h2>
 
 <p><img src="http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwlhpakwg20s40kge3k.gif" alt="" /></p>
 
-<h2 id="ios-">iOS 端</h2>
+<h2 id="ios-端">iOS 端</h2>
 
 <p><img src="http://ww4.sinaimg.cn/large/7dfcf2f7gw1f7bwp1mgiyg20s40kg7wh.gif" alt="" /></p>
 
-<h2 id="section-1">安装</h2>
+<h2 id="安装">安装</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm i app-inspector -g
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i app-inspector <span class="nt">-g</span>
+</code></pre></div></div>
 
-<h2 id="section-2">用法</h2>
+<h2 id="用法">用法</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 直接 -u + 设备的 udid 即可</span>
-<span class="gp">$ </span>app-inspector -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 直接 -u + 设备的 udid 即可</span>
+<span class="nv">$ </span>app-inspector <span class="nt">-u</span> xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+</code></pre></div></div>
 
-<h2 id="ios--1">iOS 真机环境</h2>
+<h2 id="ios-真机环境">iOS 真机环境</h2>
 
 <p><img src="http://wx1.sinaimg.cn/large/6d308bd9gy1fg7cnt9hf6j20t70h7782.jpg" alt="" /></p>
 
 <p>在安装过程中可以将 TEAM_ID 通过环境变量传入即可支持真机，TEAM_ID 如何获取请见上图。</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nv">DEVELOPMENT_TEAM_ID</span><span class="o">=</span>TEAM_ID npm i app-inspector -g
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ DEVELOPMENT_TEAM_ID</span><span class="o">=</span>TEAM_ID npm i app-inspector <span class="nt">-g</span>
+</code></pre></div></div>
 
-<h2 id="section-3">帮助</h2>
+<h2 id="帮助">帮助</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>app-inspector -h
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>app-inspector <span class="nt">-h</span>
+</code></pre></div></div>
 
 <p><a href="//github.com/macacajs/app-inspector">更多关于 Inspector</a></p>
 

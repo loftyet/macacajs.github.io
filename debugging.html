@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • Solution for Automation Test with Ease</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -244,31 +244,28 @@
 
 <h2 id="launch-server-only">Launch server only</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>macaca server --verbose
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>macaca server <span class="nt">--verbose</span>
+</code></pre></div></div>
 
 <h2 id="repl">REPL</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># go into REPL environment</span>
-<span class="gp">$ </span>node
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># go into REPL environment</span>
+<span class="nv">$ </span>node
+</code></pre></div></div>
 
 <h2 id="devtool-usage">Devtool Usage</h2>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># only version 1.11.2 can be use</span>
-<span class="gp">$ </span>npm i -g devtool@1.11.2
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># only version 1.11.2 can be use</span>
+<span class="nv">$ </span>npm i <span class="nt">-g</span> devtool@1.11.2
 <span class="c"># run devtool in your project directory</span>
-<span class="gp">$ </span>devtool
-</code></pre>
-</div>
+<span class="nv">$ </span>devtool
+</code></pre></div></div>
 
 <p><img src="http://ww3.sinaimg.cn/large/3fb01b8agw1f2m0n619wpj21d019aaey.jpg" alt="" /></p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// run sample code</span>
-<span class="o">&gt;</span> <span class="kr">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'wd'</span><span class="p">);</span>
-<span class="o">&gt;</span> <span class="kr">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// run sample code</span>
+<span class="o">&gt;</span> <span class="kd">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'wd'</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="kd">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
     <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
     <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
   <span class="p">});</span>
@@ -279,8 +276,7 @@
     <span class="na">deviceName</span><span class="p">:</span> <span class="s1">'iPhone 6s'</span><span class="p">,</span>
     <span class="na">app</span><span class="p">:</span> <span class="s1">'path/to/app'</span>
   <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="//github.com/Jam3/devtool">More About Devtool</a></p>
 

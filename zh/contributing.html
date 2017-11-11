@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -240,7 +240,7 @@
 </aside>
 
   <article>
-    <h1 id="section">成为贡献者</h1>
+    <h1 id="成为贡献者">成为贡献者</h1>
 
 <hr />
 
@@ -248,7 +248,7 @@
 
 <hr />
 
-<h2 id="section-1">前言</h2>
+<h2 id="前言">前言</h2>
 
 <p>本篇文档写给正即将成为 <code class="highlighter-rouge">contributor</code> 的你。Macaca 起源于国内，长期保持技术开放的形态。整套方案涉及的语言栈很多，仅用户端就有 Java, Node.js, Python 等语言栈，工具层面也包括 <code class="highlighter-rouge">C++</code>, <code class="highlighter-rouge">shell</code> 等。开发平台涉及 <code class="highlighter-rouge">Docker</code>, <code class="highlighter-rouge">iOS</code>, <code class="highlighter-rouge">Android</code>, <code class="highlighter-rouge">Chromium</code>, <code class="highlighter-rouge">x11</code> 等多个开发平台，横跨 <code class="highlighter-rouge">软件测试</code>、<code class="highlighter-rouge">计算机视觉</code>、<code class="highlighter-rouge">Node.js工具链</code>、<code class="highlighter-rouge">WEB及客户端技术</code> 等多领域。</p>
 
@@ -256,48 +256,45 @@
   <p>无论擅长哪一个技术领域，哪一种语言，都可以尝试加入 Macaca，贡献形式不限。</p>
 </blockquote>
 
-<h2 id="issue">贡献 Issue</h2>
+<h2 id="贡献-issue">贡献 Issue</h2>
 
 <p>在新创建 <code class="highlighter-rouge">issue</code> 和在已有 <code class="highlighter-rouge">issue</code> 下评论，请尽量描述所遇到的问题和表达的意思，尽量避免反复确认信息，请在 <a href="./faq">FAQ</a> 先确认问题是否已知。</p>
 
-<h2 id="section-2">贡献文档</h2>
+<h2 id="贡献文档">贡献文档</h2>
 
 <p>如有文档遗漏或错误，欢迎补充，形式不限。</p>
 
-<h2 id="section-3">贡献代码</h2>
+<h2 id="贡献代码">贡献代码</h2>
 
-<h3 id="fork">第一步：Fork</h3>
+<h3 id="第一步fork">第一步：Fork</h3>
 
 <p>选择需要修改的仓库，Fork 到自己本地，如。</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone git@github.com:macacajs/macaca-ios.git
-<span class="gp">$ </span><span class="nb">cd </span>macaca-ios
-<span class="gp">$ </span>git remote add upstream git://github.com/macacajs/macaca-ios.git
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:macacajs/macaca-ios.git
+<span class="nv">$ </span><span class="nb">cd </span>macaca-ios
+<span class="nv">$ </span>git remote add upstream git://github.com/macacajs/macaca-ios.git
+</code></pre></div></div>
 
-<h3 id="section-4">第二步：创建分支</h3>
+<h3 id="第二步创建分支">第二步：创建分支</h3>
 
 <p>请根据修改级别创建分支名如：<code class="highlighter-rouge">features-xxx</code> 或 <code class="highlighter-rouge">bugfix-xxx</code></p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git checkout -b features-xxx -t origin/master
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout <span class="nt">-b</span> features-xxx <span class="nt">-t</span> origin/master
+</code></pre></div></div>
 
-<h3 id="section-5">第三步：提交</h3>
+<h3 id="第三步提交">第三步：提交</h3>
 
 <p>确认你的用户名和邮箱正确：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git config --global user.name <span class="s2">"awesome"</span>
-<span class="gp">$ </span>git config --global user.email <span class="s2">"awesome@macacajs.com"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git config <span class="nt">--global</span> user.name <span class="s2">"awesome"</span>
+<span class="nv">$ </span>git config <span class="nt">--global</span> user.email <span class="s2">"awesome@macacajs.com"</span>
+</code></pre></div></div>
 
-<h3 id="pr">第四步：发起 PR</h3>
+<h3 id="第四步发起-pr">第四步：发起 PR</h3>
 
 <p>向 <code class="highlighter-rouge">github/macacajs</code> 下的原仓库发起 <code class="highlighter-rouge">pull request(PR)</code>，通过前提为当前仓库 <code class="highlighter-rouge">CI</code> 通过，<code class="highlighter-rouge">github/macaca-sample</code> 下的 <code class="highlighter-rouge">sample</code> 回归通过。</p>
 
-<h2 id="section-6">如何调试</h2>
+<h2 id="如何调试">如何调试</h2>
 
 <p>Macaca 是很多模块是集成在一起才能运行的，环境较单一功能的开源库要复杂很多。请参考具体<code class="highlighter-rouge">核心模块</code>仓库下的 <code class="highlighter-rouge">CONTRIBUTING.md</code> 了解如何调试。</p>
 
@@ -315,7 +312,7 @@
   <li><a href="//github.com/macacajs/wd.py/blob/master/CONTRIBUTING.rst">wd.py/CONTRIBUTING.md</a></li>
 </ul>
 
-<h2 id="macaca-">加入 Macaca 开源团队</h2>
+<h2 id="加入-macaca-开源团队">加入 Macaca 开源团队</h2>
 
 <p>在任意模块有意义 <code class="highlighter-rouge">PR</code> 3次以上，或解决重要问题的提交者，在征得提交者同意的情况下会邀请加入 <code class="highlighter-rouge">Macaca Open Source Team</code>。</p>
 

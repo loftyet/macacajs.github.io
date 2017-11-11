@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.3.0" />
+    <meta name="generator" content="Jekyll v3.6.2" />
     <meta name="description" content="" />
     <title>Macaca • Solution for Automation Test with Ease</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -266,67 +266,63 @@
 
 <p>Prepare basic docker image:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-docker-base --depth<span class="o">=</span>1
-<span class="gp">$ </span><span class="nb">cd </span>reliable-docker-base
-<span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-docker-base"</span> .
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/reliablejs/reliable-docker-base <span class="nt">--depth</span><span class="o">=</span>1
+<span class="nv">$ </span><span class="nb">cd </span>reliable-docker-base
+<span class="nv">$ </span>docker build <span class="nt">-t</span><span class="o">=</span><span class="s2">"reliable-docker-base"</span> <span class="nb">.</span>
+</code></pre></div></div>
 
 <p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-docker-base</code>.</p>
 
 <p>Prepare master <code class="highlighter-rouge">reliable-master</code> image:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-master --depth<span class="o">=</span>1
-<span class="gp">$ </span><span class="nb">cd </span>reliable-master
-<span class="gp">$ </span>docker build -t<span class="o">=</span><span class="s2">"reliable-master"</span> .
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/reliablejs/reliable-master <span class="nt">--depth</span><span class="o">=</span>1
+<span class="nv">$ </span><span class="nb">cd </span>reliable-master
+<span class="nv">$ </span>docker build <span class="nt">-t</span><span class="o">=</span><span class="s2">"reliable-master"</span> <span class="nb">.</span>
+</code></pre></div></div>
 
 <p>Run <code class="highlighter-rouge">docker images</code>, you could find image named <code class="highlighter-rouge">reliable-master</code>.</p>
 
 <p>Launch from compose file:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git --depth<span class="o">=</span>1
-<span class="gp">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
-<span class="gp">$ </span>make start
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/reliablejs/reliable-macaca-docker-compose.git <span class="nt">--depth</span><span class="o">=</span>1
+<span class="nv">$ </span><span class="nb">cd </span>reliable-macaca-docker-compose
+<span class="nv">$ </span>make start
+</code></pre></div></div>
 
 <p>Edit <code class="highlighter-rouge">docker-compose.yml</code> like this, in ordrer to config your master and slave.</p>
 
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">reliable-master</span><span class="pi">:</span>
-  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable-master"</span>
-  <span class="s">restart</span><span class="pi">:</span> <span class="s2">"</span><span class="s">UNLESS-STOP"</span>
-  <span class="s">image</span><span class="pi">:</span> <span class="s">reliable-master</span>
-  <span class="s">ports</span><span class="pi">:</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">reliable-master</span><span class="pi">:</span>
+  <span class="na">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable-master"</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s2">"</span><span class="s">UNLESS-STOP"</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">reliable-master</span>
+  <span class="na">ports</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s2">"</span><span class="s">${RELIABLE_MASTER_PORT}:${RELIABLE_MASTER_PORT}"</span>
-  <span class="s">links</span><span class="pi">:</span>
+  <span class="na">links</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">mongo:mongo</span>
     <span class="pi">-</span> <span class="s">redis:redis</span>
-  <span class="s">environment</span><span class="pi">:</span>
+  <span class="na">environment</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">DB_SERVICE=mongo</span>
     <span class="pi">-</span> <span class="s">DB_PORT=27017</span>
     <span class="pi">-</span> <span class="s">DB_NAME=reliable_dev</span>
-  <span class="s">volumes</span><span class="pi">:</span>
+  <span class="na">volumes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
-  <span class="s">command</span><span class="pi">:</span> <span class="s">/reliable-master/bin/reliable-master server -p ${RELIABLE_MASTER_PORT} --verbose</span>
+  <span class="na">command</span><span class="pi">:</span> <span class="s">/reliable-master/bin/reliable-master server -p ${RELIABLE_MASTER_PORT} --verbose</span>
 
-<span class="s">mongo</span><span class="pi">:</span>
-  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_mongo"</span>
-  <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-  <span class="s">image</span><span class="pi">:</span> <span class="s">mongo</span>
-  <span class="s">volumes</span><span class="pi">:</span>
+<span class="na">mongo</span><span class="pi">:</span>
+  <span class="na">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_mongo"</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">mongo</span>
+  <span class="na">volumes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">/var/mongo/data/db:/data/db</span>
     <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
 
-<span class="s">redis</span><span class="pi">:</span>
-  <span class="s">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_redis"</span>
-  <span class="s">restart</span><span class="pi">:</span> <span class="s">always</span>
-  <span class="s">image</span><span class="pi">:</span> <span class="s">redis</span>
-  <span class="s">volumes</span><span class="pi">:</span>
+<span class="na">redis</span><span class="pi">:</span>
+  <span class="na">container_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">reliable_redis"</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">redis</span>
+  <span class="na">volumes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="configuring">Configuring</h2>
 
@@ -371,9 +367,8 @@ Mail service configuration, see <a href="//github.com/nodemailer/nodemailer" tar
 
 <p>You can use <code class="highlighter-rouge">crontab</code> to backup data. See <a href="//github.com/reliablejs/reliable-master/blob/master/scripts/cron.sh" target="_blank">scripts/cron.sh</a>, edit it for customization, and add it to your crontab script. Like:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>crontab -e
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crontab <span class="nt">-e</span>
+</code></pre></div></div>
 
 <p>Configuration:</p>
 
