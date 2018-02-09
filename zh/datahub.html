@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/nodejs">
+  <body data-page="/datahub">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -178,7 +178,7 @@
     <li><a href="recorder">录制回放器</a></li>
     
     
-    <li><a href="datahub">数据环境</a></li>
+    <li class="current"><a href="datahub">数据环境</a></li>
     
     
     <li><a href="nosmoke">冒烟遍历器</a></li>
@@ -201,7 +201,7 @@
   <ul>
     
     
-    <li class="current"><a href="nodejs">Node.js</a></li>
+    <li><a href="nodejs">Node.js</a></li>
     
     
     <li><a href="java">Java</a></li>
@@ -245,69 +245,9 @@
 </aside>
 
   <article>
-    <h1 id="使用-nodejs-语言">使用 Node.js 语言</h1>
+    <h1 id="一体化数据环境">一体化数据环境</h1>
 
-<h2 id="环境">环境</h2>
-
-<p>由于Macaca工具链就是基于Node.js实现的，所以在安装环境的时候已经配置过Node.js环境，无需再次配置。</p>
-
-<h2 id="快速创建">快速创建</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone git@github.com:macaca-sample/macaca-nodejs-boilerplate.git
-</code></pre></div></div>
-
-<p>一个Macaca可以使用的工程就创建好了，可在此基础上添加和运行测试用例，Macaca 推荐使用<a href="//github.com/mochajs/mocha">mocha 测试框架</a>。</p>
-
-<h2 id="示例合集">示例合集</h2>
-
-<p><a href="//github.com/macaca-sample/sample-nodejs">示例仓库</a>中包含iOS, Android的App测试示例，手机系统浏览器的测试示例以及PC端浏览器的测试示例。</p>
-
-<h2 id="用法示例">用法示例</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="c1">// 引入官方webdriver client 包</span>
-<span class="kd">var</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
-
-<span class="c1">// 定义webdriver client 要链接的服务端 host 和 port</span>
-<span class="kd">var</span> <span class="nx">remoteConfig</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-  <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span> <span class="c1">// Macaca server 默认使用 3456 端口</span>
-<span class="p">};</span>
-
-<span class="c1">// 后面 driver 直接使用链式调用即可</span>
-<span class="kd">var</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">(</span><span class="nx">remoteConfig</span><span class="p">);</span>
-
-<span class="nx">before</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-    <span class="na">platformName</span><span class="p">:</span> <span class="s1">'desktop'</span><span class="p">,</span> <span class="c1">// iOS, Android, Desktop</span>
-    <span class="na">browserName</span><span class="p">:</span> <span class="s1">'chrome'</span>    <span class="c1">// Chrome, Electron</span>
-    <span class="na">app</span><span class="p">:</span> <span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">app</span>         <span class="c1">// Only for mobile</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">after</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">driver</span>
-    <span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">quit</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="nx">it</span><span class="p">(</span><span class="s1">'#1 should'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-  <span class="p">...</span>
-
-<span class="p">});</span>
-
-<span class="p">...</span>
-</code></pre></div></div>
-
-<h2 id="扩展-api">扩展 API</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wd</span><span class="p">.</span><span class="nx">addPromiseChainMethod</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="api-文档">API 文档</h2>
-
-<p>API 文档请见<a href="//macacajs.github.io/macaca-wd">文档链接</a></p>
+<p>coming soon <a href="//github.com/macacajs/macaca-datahub">macaca-datahub</a></p>
 
 
   </article>

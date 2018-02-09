@@ -17,7 +17,7 @@
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
   </head>
-  <body data-page="/nodejs">
+  <body data-page="/datahub">
     <input type="hidden" id="lang" value="en"/>
 
     <header class="clearfix">
@@ -178,7 +178,7 @@
     <li><a href="recorder">Recorder</a></li>
     
     
-    <li><a href="datahub">DataHub</a></li>
+    <li class="current"><a href="datahub">DataHub</a></li>
     
     
     <li><a href="nosmoke">NoSmoke</a></li>
@@ -201,7 +201,7 @@
   <ul>
     
     
-    <li class="current"><a href="nodejs">Node.js</a></li>
+    <li><a href="nodejs">Node.js</a></li>
     
     
     <li><a href="java">Java</a></li>
@@ -245,54 +245,9 @@
 </aside>
 
   <article>
-    <h1 id="nodejs">Node.js</h1>
+    <h1 id="macaca-datahub">Macaca DataHub</h1>
 
-<h2 id="usage">Usage</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'macaca-wd'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">remoteConfig</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-  <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
-<span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">(</span><span class="nx">remoteConfig</span><span class="p">);</span>
-
-<span class="nx">before</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-    <span class="na">platformName</span><span class="p">:</span> <span class="s1">'desktop'</span><span class="p">,</span> <span class="c1">// iOS, Android, Desktop</span>
-    <span class="na">browserName</span><span class="p">:</span> <span class="s1">'chrome'</span>    <span class="c1">// Chrome, Electron</span>
-    <span class="na">app</span><span class="p">:</span> <span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">app</span>         <span class="c1">// Only for mobile</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="nx">after</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">driver</span>
-    <span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">quit</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="nx">it</span><span class="p">(</span><span class="s1">'#1 should'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-  <span class="p">...</span>
-
-<span class="p">});</span>
-
-<span class="p">...</span>
-</code></pre></div></div>
-
-<h2 id="extend">Extend</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wd</span><span class="p">.</span><span class="nx">addPromiseChainMethod</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">method</span><span class="p">);</span>
-</code></pre></div></div>
-
-<h2 id="links">Links</h2>
-
-<ul>
-  <li><a href="//macacajs.github.io/macaca-wd">API doc</a></li>
-  <li><a href="//github.com/macacajs/macaca-wd">source code</a></li>
-  <li><a href="//github.com/macaca-sample/sample-nodejs">sample</a></li>
-</ul>
+<p>coming soon <a href="//github.com/macacajs/macaca-datahub">macaca-datahub</a></p>
 
 
   </article>
