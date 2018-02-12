@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="/assets/polymer/webcomponents-lite.min.js"></script>
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
+    <base target="_blank" />
   </head>
   <body data-page="home">
     <input type="hidden" id="lang" value="en"/>
@@ -25,23 +26,23 @@
     <a href="/" class="brand">Macaca</a>
 
     <nav id="nav">
-      <a href="/" class="current">
+      <a href="/" class="current" target="_self">
         <paper-ripple class="peach"></paper-ripple>
         Home
       </a>
-      <a href="/introduction">
+      <a href="/about-macaca" target="_self">
         <paper-ripple class="peach"></paper-ripple>
         Document
       </a>
-      <a href="/support">
+      <a href="/support" target="_self">
         <paper-ripple class="peach"></paper-ripple>
         Support
       </a>
-      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=" target="_blank">
+      <a href="//github.com/alibaba/macaca/issues?utf8=%E2%9C%93&q=">
         <paper-ripple class="peach"></paper-ripple>
         GitHub
       </a>
-      <a href="javascript:void(0)" id="lang-button">
+      <a href="javascript:void(0)" id="lang-button" target="_self">
         中文版
       </a>
     </nav>
@@ -107,7 +108,7 @@
 
     </h1>
 
-    <a href="./quick-start" class="getting-started">
+    <a href="./quick-start" class="getting-started" target="_self">
       <paper-ripple class="maroon"></paper-ripple>
       Getting Started
     </a>
