@@ -358,6 +358,9 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ adb pull /storage/emulated/0/coverage.exec .
+</code></pre></div></div>
+
 <p>Generate report by Macaca coverage tool:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>macaca coverage <span class="nt">-r</span> java <span class="nt">-f</span> ./coverage.exec <span class="nt">-c</span> ./android_app_bootstrap/build/intermediates/classes/debug <span class="nt">-s</span> ./android_app_bootstrap/src/main/java <span class="nt">--html</span> ./reporter
