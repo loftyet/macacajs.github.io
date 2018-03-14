@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no, email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="generator" content="Jekyll v3.6.2" />
+    <meta name="generator" content="Jekyll v3.7.3" />
     <meta name="description" content="" />
     <title>Macaca • 面向多端的自动化测试</title>
     <link rel="canonical" href="https://macacajs.github.io" />
@@ -262,28 +262,28 @@
   <li>请安装 <a href="//github.com/libimobiledevice/usbmuxd">usbmuxd</a> 以便于通过 USB 通道测试 iOS 真机，不需要测试真机则不用安装</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install usbmuxd
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>usbmuxd
 </code></pre></div></div>
 
 <ul>
   <li>请安装 <a href="//github.com/libimobiledevice/ideviceinstaller">ideviceinstaller</a> 用来给真机安装 App。</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install ideviceinstaller
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>ideviceinstaller
 </code></pre></div></div>
 
 <ul>
   <li>应用中如含有 WebView，请安装 <a href="//github.com/google/ios-webkit-debug-proxy">ios-webkit-debug-proxy</a></li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install ios-webkit-debug-proxy
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>ios-webkit-debug-proxy
 </code></pre></div></div>
 
 <ul>
   <li>请安装 <a href="//github.com/Carthage/Carthage">carthage</a> 来构建 Macaca <a href="//github.com/macacajs/XCTestWD">XCTestWD</a>.</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install carthage
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>carthage
 </code></pre></div></div>
 
 <p>备注：使用brew命令需要安装<a href="http://brew.sh/index_zh-cn.html">Homebrew</a>（一款常用的 MacOS 的包管理器），请按照官网提示安装。</p>
@@ -326,7 +326,7 @@
 
 <p>请安装 <a href="https://gradle.org">gradle</a> 来构建 <a href="//github.com/macacajs/UIAutomatorWD">UIAutomatorWD</a> 和其它依赖包。</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew install gradle
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>gradle
 </code></pre></div></div>
 
 <p>可以设置Maven源地址获取更快的安装速度。</p>
@@ -339,7 +339,7 @@
   <li>如果在运行 npm i macaca-android -g 的过程中出现 [You have not accepted the license agreements of the following SDK components]，请执行如下命令(该命令将同意所有的AndroidSDK 协议)后再次执行安装。</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>yes | <span class="nv">$ANDROID_HOME</span>/tools/bin/sdkmanager <span class="nt">--licenses</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">yes</span> | <span class="nv">$ANDROID_HOME</span>/tools/bin/sdkmanager <span class="nt">--licenses</span>
 </code></pre></div></div>
 
 <h2 id="chromedriver">ChromeDriver</h2>
@@ -397,7 +397,7 @@
 
 <p>Homebrew 可以使用如下镜像：</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOMEBREW_BOTTLE_DOMAIN</span><span class="o">=</span>https://mirrors.ustc.edu.cn/homebrew-bottles brew install ios-webkit-debug-proxy
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HOMEBREW_BOTTLE_DOMAIN</span><span class="o">=</span>https://mirrors.ustc.edu.cn/homebrew-bottles brew <span class="nb">install </span>ios-webkit-debug-proxy
 </code></pre></div></div>
 
 
