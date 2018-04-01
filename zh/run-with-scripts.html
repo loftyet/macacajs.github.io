@@ -18,7 +18,7 @@
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
     <base target="_blank" />
   </head>
-  <body data-page="/debugging">
+  <body data-page="/run-with-scripts">
     <input type="hidden" id="lang" value="zh"/>
 
     <header class="clearfix">
@@ -184,7 +184,7 @@
   <ul>
     
     
-    <li class="current"><a href="debugging" target="_self">单步调试器</a></li>
+    <li><a href="debugging" target="_self">单步调试器</a></li>
     
     
     <li><a href="inspector" target="_self">元素查看器</a></li>
@@ -219,7 +219,7 @@
   <ul>
     
     
-    <li><a href="run-with-scripts" target="_self">使用集成脚本</a></li>
+    <li class="current"><a href="run-with-scripts" target="_self">使用集成脚本</a></li>
     
     
     <li><a href="run-with-docker" target="_self">使用Docker</a></li>
@@ -249,35 +249,17 @@
 </aside>
 
   <article>
-    <h1 id="单步调试用例">单步调试用例</h1>
+    <h1 id="持续集成脚本">持续集成脚本</h1>
 
-<h2 id="先将服务启动">先将服务启动</h2>
+<p>Macaca 提供完整的持续集成脚本，便于你在公用服务travis-ci, circleci 以及自行搭建 jenkins 等持续集成服务时参考和使用。</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>macaca server <span class="nt">--verbose</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i macaca-scripts <span class="nt">-g</span>
+<span class="nv">$ </span>macaca-scripts
 </code></pre></div></div>
 
-<h2 id="repl-环境">REPL 环境</h2>
+<p><a href="//github.com/macacajs/macaca-scripts">更多脚本</a></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 直接使用 Node.js REPL 环境</span>
-<span class="nv">$ </span>node
-</code></pre></div></div>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// run sample code</span>
-<span class="o">&gt;</span> <span class="kd">const</span> <span class="nx">wd</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'wd'</span><span class="p">);</span>
-<span class="o">&gt;</span> <span class="kd">const</span> <span class="nx">driver</span> <span class="o">=</span> <span class="nx">wd</span><span class="p">.</span><span class="nx">promiseChainRemote</span><span class="p">({</span>
-    <span class="na">host</span><span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-    <span class="na">port</span><span class="p">:</span> <span class="mi">3456</span>
-  <span class="p">});</span>
-
-<span class="o">&gt;</span> <span class="nx">driver</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
-    <span class="na">platformName</span><span class="p">:</span> <span class="s1">'ios'</span><span class="p">,</span>
-    <span class="na">platformVersion</span><span class="p">:</span> <span class="s1">'9.3'</span><span class="p">,</span>
-    <span class="na">deviceName</span><span class="p">:</span> <span class="s1">'iPhone 6s'</span><span class="p">,</span>
-    <span class="na">app</span><span class="p">:</span> <span class="s1">'path/to/app'</span>
-  <span class="p">});</span>
-</code></pre></div></div>
-
-<p><a href="//nodejs.org/en/docs/inspector/">更多关于 Node.js 调试器</a></p>
+<p>详细文档即将发布。</p>
 
 
   </article>

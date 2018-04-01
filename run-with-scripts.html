@@ -18,7 +18,7 @@
     <link rel="import" href="/assets/polymer/paper-ripple.html" />
     <base target="_blank" />
   </head>
-  <body data-page="/run-with-docker">
+  <body data-page="/run-with-scripts">
     <input type="hidden" id="lang" value="en"/>
 
     <header class="clearfix">
@@ -219,10 +219,10 @@
   <ul>
     
     
-    <li><a href="run-with-scripts" target="_self">Integration with scripts</a></li>
+    <li class="current"><a href="run-with-scripts" target="_self">Integration with scripts</a></li>
     
     
-    <li class="current"><a href="run-with-docker" target="_self">Run with docker</a></li>
+    <li><a href="run-with-docker" target="_self">Run with docker</a></li>
     
     
     <li><a href="master-deployment" target="_self">Reliable Master</a></li>
@@ -249,46 +249,17 @@
 </aside>
 
   <article>
-    <h1 id="run-with-docker">Run with Docker</h1>
+    <h1 id="integration-with-scripts">Integration with scripts</h1>
 
-<h2 id="driver-list">Driver List</h2>
+<p>All in one intergration shell scripts support travis-ci, circleci, jenkins and so on.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Dockerfile</th>
-      <th>Pulls</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>macaca-android</td>
-      <td><a href="//github.com/macacajs/macaca-android-docker">macaca-android-docker</a></td>
-      <td><a href="https://hub.docker.com/r/macacajs/macaca-android"><img src="https://img.shields.io/docker/pulls/macacajs/macaca-android.svg?style=flat-square" alt="build status" /></a></td>
-    </tr>
-    <tr>
-      <td>macaca-electron</td>
-      <td><a href="//github.com/macacajs/macaca-electron-docker">macaca-electron-docker</a></td>
-      <td><a href="https://hub.docker.com/r/macacajs/macaca-electron-docker"><img src="https://img.shields.io/docker/pulls/macacajs/macaca-electron-docker.svg?style=flat-square" alt="build status" /></a></td>
-    </tr>
-    <tr>
-      <td>macaca-puppeteer</td>
-      <td><a href="//github.com/macacajs/macaca-puppeteer-docker">macaca-puppeteer-docker</a></td>
-      <td><a href="https://hub.docker.com/r/macacajs/macaca-puppeteer-docker"><img src="https://img.shields.io/docker/pulls/macacajs/macaca-puppeteer-docker.svg?style=flat-square" alt="build status" /></a></td>
-    </tr>
-    <tr>
-      <td>nodecv</td>
-      <td><a href="//github.com/macacajs/nodecv-server">nodecv-server</a></td>
-      <td><a href="https://hub.docker.com/r/macacajs/nodecv"><img src="https://img.shields.io/docker/pulls/macacajs/nodecv.svg?style=flat-square" alt="build status" /></a></td>
-    </tr>
-    <tr>
-      <td>macaca-datahub</td>
-      <td><a href="//github.com/macacajs/macaca-datahub">macaca-datahub</a></td>
-      <td><a href="https://hub.docker.com/r/macacajs/macaca-datahub/"><img src="https://img.shields.io/docker/pulls/macacajs/macaca-datahub.svg?style=flat-square" alt="build status" /></a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i macaca-scripts <span class="nt">-g</span>
+<span class="nv">$ </span>macaca-scripts
+</code></pre></div></div>
+
+<p><a href="//github.com/macacajs/macaca-scripts">More command</a></p>
+
+<p>Doc is comming soon.</p>
 
 
   </article>
